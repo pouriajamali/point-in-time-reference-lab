@@ -17,9 +17,9 @@ Synthetic, literal-loopback-only lab. No real feed, vendor data, historical pric
 | Uncertain commit is not a new correction | Kill an owned API before/after commit, then resolve with the same identity |
 | A parsed response may still be wrong | Client validates returned intent, instrument, effective time, cutoff and origin revision |
 
-## Run the local candidate
+## Run the preview
 
-Version `0.1.0-preview.1` awaits the final coordinated publication review after all four projects are prepared locally. No public download or successful public native-build CI is claimed here.
+Preview version: `0.1.0-preview.1`. Use the [release channel](https://github.com/pouriajamali/point-in-time-reference-lab/releases) for published Windows x64, Linux x64 and source archives, checksums and signatures. Verify downloaded bytes with [PROVENANCE.md](PROVENANCE.md) before executing them. Local builds and CI artifacts are separate from published releases.
 
 Windows PowerShell, from the extracted package:
 
