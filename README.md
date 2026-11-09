@@ -19,7 +19,7 @@ Synthetic, literal-loopback-only lab. No real feed, vendor data, historical pric
 
 ## Run the preview
 
-Preview version: `0.1.0-preview.1`. Use the [release channel](https://github.com/pouriajamali/point-in-time-reference-lab/releases) for published Windows x64, Linux x64 and source archives, checksums and signatures. Verify downloaded bytes with [PROVENANCE.md](PROVENANCE.md) before executing them. Local builds and CI artifacts are separate from published releases.
+Published preview: [`v0.1.0-preview.1`](https://github.com/pouriajamali/point-in-time-reference-lab/releases/tag/v0.1.0-preview.1). Download **[Windows x64](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/point-in-time-reference-lab-v0.1.0-preview.1-win-x64.zip)**, **[Linux x64](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/point-in-time-reference-lab-v0.1.0-preview.1-linux-x64.tar.gz)** or [source](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/point-in-time-reference-lab-v0.1.0-preview.1-source.zip). Get the [checksums](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/SHA256SUMS.txt), [checksum signature](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/SHA256SUMS.txt.sig) and [public key](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/SIGNING-PUBLIC-KEY.pub); verify downloaded bytes with [PROVENANCE.md](PROVENANCE.md) before executing them. Local builds and CI artifacts are separate from published releases.
 
 Windows PowerShell, from the extracted package:
 
