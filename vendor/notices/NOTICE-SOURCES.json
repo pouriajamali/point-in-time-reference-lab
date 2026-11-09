@@ -1,0 +1,83 @@
+{
+  "components": [
+    {
+      "id": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+      "version": "10.0.14",
+      "license": "MIT",
+      "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+      "nugetContentHash": "u6ELO72wDnSC8TTp3x+jJW/PnXiPsUQkqFC9cGrdl9bbKB5z5p27Y4hrpYt8VrJjkFjAzlw6jINh7ebOdCGyrQ==",
+      "rawSignedNupkgSha512Base64": "Cp+0XHjY+V7Ac2boAkKymKHAAvmpitw231tj4LufSuSlKTeMTRBQvjkKXR1ahkY/x+eCJQu3TDIGNmOgElkU0A==",
+      "repositoryCommit": "0427b9abbead3fa64c6655eb4290c537397131fa",
+      "licenseSource": {
+        "kind": "package",
+        "file": "LICENSE.txt",
+        "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/10.0.14/microsoft.aspnetcore.app.runtime.linux-x64.10.0.14.nupkg"
+      }
+    },
+    {
+      "id": "Microsoft.AspNetCore.App.Runtime.win-x64",
+      "version": "10.0.14",
+      "license": "MIT",
+      "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+      "nugetContentHash": "aybWX2VpYNS3XMl8PgZjIpzzbsWyrs+ugjKnK/bMwSGqqlpZbWALF6f+keKqp5wsg3SoNunaFi2hH9Ql91mePA==",
+      "rawSignedNupkgSha512Base64": "1k8096BmENepiqExfgA3ndME94v7RqMqTqLrNMyN+FpqD7WD6jKL9tYrYWi4WKNCAgvRMFVlAidzA3s/FDmIQg==",
+      "repositoryCommit": "0427b9abbead3fa64c6655eb4290c537397131fa",
+      "licenseSource": {
+        "kind": "package",
+        "file": "LICENSE.txt",
+        "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.win-x64/10.0.14/microsoft.aspnetcore.app.runtime.win-x64.10.0.14.nupkg"
+      }
+    },
+    {
+      "id": "Microsoft.NETCore.App.Runtime.linux-x64",
+      "version": "10.0.14",
+      "license": "MIT",
+      "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+      "nugetContentHash": "D1GLoCJT9uVa91+pIx5i0HGFcko4g/+L6T2/0DnjvFc8Ld0qFHIUpw7u8qdcDOOQhPUqeb3QQMA6KyiaVnqmTQ==",
+      "rawSignedNupkgSha512Base64": "IfDwQKE3gcK9u7iU7C/bOaqLNfoRf6zvXzGLHsJAbsC7Shwn5ztRCRWjD1mKRk5XUrPO9VWSC1+q8oimXRDlsg==",
+      "repositoryCommit": "0427b9abbead3fa64c6655eb4290c537397131fa",
+      "licenseSource": {
+        "kind": "package",
+        "file": "LICENSE.TXT",
+        "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.linux-x64/10.0.14/microsoft.netcore.app.runtime.linux-x64.10.0.14.nupkg"
+      }
+    },
+    {
+      "id": "Microsoft.NETCore.App.Runtime.win-x64",
+      "version": "10.0.14",
+      "license": "MIT",
+      "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+      "nugetContentHash": "Py+9fO4oGQwPrM2SDTOCZP1CburyfXradGLj49WFXFA1/awcgTOtY9Ao01P2mYTyEMY32W2WmQyftR3KlwJFfA==",
+      "rawSignedNupkgSha512Base64": "mLWGagTP5n7nMfJQI2XpXRYgvPcnyYvAc8ZiDfum8ShM0UcrPDyfW4Lqo45UtlCHCucERUHQuMTI6ybVweCN9A==",
+      "repositoryCommit": "0427b9abbead3fa64c6655eb4290c537397131fa",
+      "licenseSource": {
+        "kind": "package",
+        "file": "LICENSE.TXT",
+        "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.win-x64/10.0.14/microsoft.netcore.app.runtime.win-x64.10.0.14.nupkg"
+      }
+    },
+    {
+      "id": "Npgsql",
+      "version": "10.0.3",
+      "license": "PostgreSQL",
+      "copyright": "Copyright 2025 \u00a9 The Npgsql Development Team",
+      "nugetContentHash": "7nb5YzXuvWWJxB0J8DiyL3we+X4FOctZrt0fIBnucOIaIevFEEwGQVZKtiu9olXdlNAK1eNgqSral6r/jlhI4w==",
+      "rawSignedNupkgSha512Base64": "9wZYlR6r1uLGnAxBuUPOCmgbS6SDtVKyGkZ0tDGPaBHYbbdEDEajD0VErq+W/dn3gHfJ3WvOdZaNNNybnFCupA==",
+      "repositoryCommit": "d3768398c17877b3a916c3c4d87e8e11698991fc",
+      "licenseSource": {
+        "kind": "vendor",
+        "file": "Npgsql-10.0.3-LICENSE.txt",
+        "sha256": "2e1d9cc6ed4eb7fe6fa82091846c06b4f58571a2c3b54777db6baeca10dd2d74",
+        "url": "https://raw.githubusercontent.com/npgsql/npgsql/d3768398c17877b3a916c3c4d87e8e11698991fc/LICENSE"
+      }
+    }
+  ],
+  "excludedBuildTools": [
+    "xunit.v3/4.0.3"
+  ],
+  "policy": "Exact shipped deps/runtime graph, verified full upstream license, original metadata copyright; build tools/tests/externally fetched services not shipped."
+}

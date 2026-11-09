@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "postgresql": "18.6",
+  "platform": "ubuntu24.04-linux-amd64",
+  "files": [
+    {
+      "name": "postgresql-18_18.6-1.pgdg24.04+2_amd64.deb",
+      "url": "https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18/postgresql-18_18.6-1.pgdg24.04+2_amd64.deb",
+      "bytes": 7576708,
+      "sha256": "c0773357df8769abb70e92722196d9b53422d71c0f29a4f39c834b94276cfa3d",
+      "digestSource": "https://apt.postgresql.org/pub/repos/apt/dists/noble-pgdg/main/binary-amd64/Packages.gz"
+    },
+    {
+      "name": "postgresql-client-18_18.6-1.pgdg24.04+2_amd64.deb",
+      "url": "https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18/postgresql-client-18_18.6-1.pgdg24.04+2_amd64.deb",
+      "bytes": 2114236,
+      "sha256": "b9d10d99a73bf7aa375be2fe36626c40499cfdf553d0ad174674a88a1b256b43",
+      "digestSource": "https://apt.postgresql.org/pub/repos/apt/dists/noble-pgdg/main/binary-amd64/Packages.gz"
+    },
+    {
+      "name": "libpq5_18.6-1.pgdg24.04+2_amd64.deb",
+      "url": "https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18/libpq5_18.6-1.pgdg24.04+2_amd64.deb",
+      "bytes": 264072,
+      "sha256": "b487c5ed2ceb9244c6a9d6ae65818ed6707c3c44a2e14488394ae4194c52c53b",
+      "digestSource": "https://apt.postgresql.org/pub/repos/apt/dists/noble-pgdg/main/binary-amd64/Packages.gz"
+    },
+    {
+      "name": "libnuma1_2.0.18-1ubuntu0.24.04.1_amd64.deb",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/n/numactl/libnuma1_2.0.18-1ubuntu0.24.04.1_amd64.deb",
+      "sha256": "f333b8edf6f0b705c19f2a67008194df66f7aab0fa2350dc98510569a033ff29",
+      "bytes": 23396,
+      "digestSource": "Installed Ubuntu24.04 apt metadata; apt-cache show libnuma1"
+    },
+    {
+      "name": "liburing2_2.5-1build1_amd64.deb",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/libu/liburing/liburing2_2.5-1build1_amd64.deb",
+      "sha256": "c2aef62accee92a06263c3ad4ef46132c13e409b54296c44792a20491830a7b0",
+      "bytes": 21092,
+      "digestSource": "Installed Ubuntu24.04 apt metadata; apt-cache show liburing2"
+    }
+  ],
+  "indexSha256": "8df2ea9b5212f561f1bbb007efa59ad2946e4de497331b3cac4d52829458c629",
+  "verification": "Official HTTPS digest metadata; no package install or upstream signature claim",
+  "scope": "PostgreSQL-only extracted local fixtures; no system install or bundled servers"
+}

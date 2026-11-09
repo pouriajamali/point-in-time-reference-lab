@@ -1,0 +1,136 @@
+name: Native point-in-time reference packages and temporal faults
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      verify_release:
+        description: Verify aggregation and attestations without creating a release
+        type: boolean
+        default: false
+permissions:
+  contents: read
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+  DOTNET_GENERATE_ASPNET_CERTIFICATE: 'false'
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            rid: win-x64
+          - os: ubuntu-24.04
+            rid: linux-x64
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: '10.0.403'
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Locked source tests
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path artifacts -ErrorAction Stop | Out-Null
+          dotnet restore tests/Reference.Tests/Reference.Tests.csproj --locked-mode
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          dotnet run --project tests/Reference.Tests/Reference.Tests.csproj -c Release --no-restore -- -noLogo -result-xml artifacts/unit.xml
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build exact clean native package
+        run: python tools/package.py --rid ${{ matrix.rid }} --commit ${{ github.sha }} --work artifacts/build --out artifacts/delivery
+      - name: Canonical pinned-key and attacker-signature regressions
+        run: python tools/test_verifier.py --out artifacts/verifier-tests
+      - name: Current advisory data for locked dependencies
+        run: python tools/audit_dependencies.py --out artifacts/dependency-advisories.json
+      - name: Extract and execute the actual package
+        shell: pwsh
+        run: |
+          $archive = @(Get-ChildItem artifacts/delivery -File)
+          if ($archive.Count -ne 1) { throw 'Exactly one archive required' }
+          python tools/extract_package.py --archive $archive[0].FullName --out 'artifacts/extracted with spaces'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $package = @(Get-ChildItem 'artifacts/extracted with spaces' -Directory)
+          if ($package.Count -ne 1) { throw 'Exactly one package root required' }
+          python tools/check_package.py --package $package[0].FullName --commit '${{ github.sha }}' --out artifacts/package-checks.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Real local Linux temporal history and commit fault matrix
+        if: runner.os == 'Linux'
+        shell: pwsh
+        run: |
+          python tools/fetch_services.py --out artifacts/upstream
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python tools/prepare_linux.py --archives artifacts/upstream --out artifacts/services
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $package = @(Get-ChildItem 'artifacts/extracted with spaces' -Directory)
+          python tools/integration.py --fixtures artifacts/services --cli (Join-Path $package[0].FullName reference) --out artifacts/integration
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: bundle-${{ matrix.rid }}
+          path: artifacts/delivery/*
+          if-no-files-found: error
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: proof-${{ matrix.rid }}
+          path: |
+            artifacts/unit.xml
+            artifacts/package-checks.json
+            artifacts/dependency-advisories.json
+            artifacts/verifier-tests/receipt.json
+            artifacts/build/archive.json
+            artifacts/integration/receipt.json
+          if-no-files-found: error
+  aggregate:
+    if: startsWith(github.ref, 'refs/tags/v') || inputs.verify_release == true
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    env:
+      RELEASE_TAG: v0.1.0-preview.1
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: bundle-*
+          merge-multiple: true
+          path: artifacts/release
+      - name: Verify executed native archives and exact Git source
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: python tools/check_release.py --directory artifacts/release --commit "$SOURCE_SHA" --tag "$RELEASE_TAG"
+      - name: Attest exact archive digests
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          subject-checksums: artifacts/release/SHA256SUMS.txt
+          create-storage-record: false
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: verified-release-candidate
+          path: artifacts/release/*
+          if-no-files-found: error
+      - name: Publish tested preview without rebuilding
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ACTUAL_TAG: ${{ github.ref_name }}
+        run: |
+          test "$ACTUAL_TAG" = "$RELEASE_TAG"
+          gh release create "$RELEASE_TAG" artifacts/release/* --verify-tag --prerelease --title "$RELEASE_TAG — Point-in-Time Instrument Reference Lab" --notes-file docs/RELEASE.md

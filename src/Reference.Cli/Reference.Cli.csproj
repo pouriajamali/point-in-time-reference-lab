@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk.Web"><PropertyGroup><OutputType>Exe</OutputType><AssemblyName>reference</AssemblyName></PropertyGroup><ItemGroup><ProjectReference Include="../Reference.Core/Reference.Core.csproj" /></ItemGroup></Project>

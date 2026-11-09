@@ -1,0 +1,9 @@
+{
+  "operationId": "first",
+  "effectiveFrom": "2024-01-01T00:00:00Z",
+  "effectiveTo": "2024-02-01T00:00:00Z",
+  "tickSizeMicros": "10000",
+  "contractMultiplierMicros": "1000000",
+  "observedAt": "2024-03-01T12:00:00Z",
+  "sourceLabel": "synthetic"
+}
