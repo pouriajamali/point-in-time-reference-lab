@@ -7,7 +7,6 @@ using ReferenceLab;
 public sealed class ConnectionOwnershipTests
 {
     private static readonly TimeSpan Bound = TimeSpan.FromSeconds(8);
-
     private sealed class Resource : IAsyncDisposable
     {
         public int Disposals { get; private set; }
@@ -46,11 +45,12 @@ public sealed class ConnectionOwnershipTests
         var original = new InvalidOperationException("synthetic-open-failure");
         Task Open(Resource _, CancellationToken __)
         {
-            if (asynchronous) return Task.FromException(original);
+            if (asynchronous)
+                return Task.FromException(original);
             throw original;
         }
-        var actual = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Store.OpenOwned(resource, Open, CancellationToken.None));
+
+        var actual = await Assert.ThrowsAsync<InvalidOperationException>(() => Store.OpenOwned(resource, Open, CancellationToken.None));
         Assert.Same(original, actual);
         Assert.Equal(1, resource.Disposals);
     }
@@ -62,8 +62,7 @@ public sealed class ConnectionOwnershipTests
         using var cancellation = new CancellationTokenSource();
         cancellation.Cancel();
         var original = new OperationCanceledException(cancellation.Token);
-        var actual = await Assert.ThrowsAsync<OperationCanceledException>(() =>
-            Store.OpenOwned(resource, (_, _) => Task.FromException(original), cancellation.Token));
+        var actual = await Assert.ThrowsAsync<OperationCanceledException>(() => Store.OpenOwned(resource, (_, _) => Task.FromException(original), cancellation.Token));
         Assert.Same(original, actual);
         Assert.Equal(cancellation.Token, actual.CancellationToken);
         Assert.Equal(1, resource.Disposals);
@@ -74,11 +73,14 @@ public sealed class ConnectionOwnershipTests
     {
         var entered = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
         var finish = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
-        var resource = new Resource { Cleanup = async () =>
+        var resource = new Resource
         {
-            entered.SetResult();
-            await finish.Task;
-        }};
+            Cleanup = async () =>
+            {
+                entered.SetResult();
+                await finish.Task;
+            }
+        };
         var original = new InvalidOperationException("synthetic-open-failure");
         var open = Store.OpenOwned(resource, (_, _) => Task.FromException(original), CancellationToken.None);
         try
@@ -93,6 +95,7 @@ public sealed class ConnectionOwnershipTests
             var actual = await Assert.ThrowsAsync<InvalidOperationException>(() => open.WaitAsync(Bound, TestContext.Current.CancellationToken));
             Assert.Same(original, actual);
         }
+
         Assert.Equal(1, resource.Disposals);
     }
 
@@ -102,25 +105,22 @@ public sealed class ConnectionOwnershipTests
     public async Task CleanupFailureDoesNotReplaceOriginalOpenException(bool asynchronous)
     {
         var cleanupFailure = new ApplicationException("synthetic-cleanup-failure");
-        var resource = new Resource { Cleanup = () =>
+        var resource = new Resource
         {
-            if (asynchronous) return ValueTask.FromException(cleanupFailure);
-            throw cleanupFailure;
-        }};
+            Cleanup = () =>
+            {
+                if (asynchronous)
+                    return ValueTask.FromException(cleanupFailure);
+                throw cleanupFailure;
+            }
+        };
         var original = new InvalidOperationException("synthetic-open-failure");
-        var actual = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Store.OpenOwned(resource, (_, _) => Task.FromException(original), CancellationToken.None));
+        var actual = await Assert.ThrowsAsync<InvalidOperationException>(() => Store.OpenOwned(resource, (_, _) => Task.FromException(original), CancellationToken.None));
         Assert.Same(original, actual);
         Assert.Equal(1, resource.Disposals);
     }
 
-    private static NpgsqlConnection Connection(int port) => new(new NpgsqlConnectionStringBuilder
-    {
-        Host = "127.0.0.1", Port = port, Database = "synthetic", Username = "synthetic",
-        Password = "synthetic", Pooling = false, Timeout = 3, CommandTimeout = 3,
-        SslMode = SslMode.Disable
-    }.ConnectionString);
-
+    private static NpgsqlConnection Connection(int port) => new(new NpgsqlConnectionStringBuilder { Host = "127.0.0.1", Port = port, Database = "synthetic", Username = "synthetic", Password = "synthetic", Pooling = false, Timeout = 3, CommandTimeout = 3, SslMode = SslMode.Disable }.ConnectionString);
     [Fact]
     public async Task RealNpgsqlConnectionIsDisposedAfterRefusedOpen()
     {
@@ -129,8 +129,7 @@ public sealed class ConnectionOwnershipTests
         var endpoint = Assert.IsType<IPEndPoint>(reserved.LocalEndPoint);
         await using var connection = Connection(endpoint.Port);
         using var bound = new CancellationTokenSource(Bound);
-        var failure = await Assert.ThrowsAsync<NpgsqlException>(() =>
-            Store.OpenOwned(connection, (db, token) => db.OpenAsync(token), bound.Token));
+        var failure = await Assert.ThrowsAsync<NpgsqlException>(() => Store.OpenOwned(connection, (db, token) => db.OpenAsync(token), bound.Token));
         Assert.Equal(SocketError.ConnectionRefused, Assert.IsType<SocketException>(failure.InnerException).SocketErrorCode);
         // Closed state also occurs without disposal. Reuse must instead prove object disposal.
         await Assert.ThrowsAsync<ObjectDisposedException>(() => connection.OpenAsync(bound.Token));
@@ -148,13 +147,17 @@ public sealed class ConnectionOwnershipTests
         OperationCanceledException? driverCancellation = null;
         async Task Open(NpgsqlConnection db, CancellationToken token)
         {
-            try { await db.OpenAsync(token); }
+            try
+            {
+                await db.OpenAsync(token);
+            }
             catch (OperationCanceledException error)
             {
                 driverCancellation = error;
                 throw;
             }
         }
+
         var open = Store.OpenOwned(connection, Open, cancellation.Token);
         using var accepted = await listener.AcceptTcpClientAsync(bound.Token);
         // This owned socket sends no PostgreSQL handshake response; no external database is used.

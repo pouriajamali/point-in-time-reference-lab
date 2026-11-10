@@ -93,3 +93,7 @@ dotnet run --project tests/Reference.Tests -c Release --no-build -- -result-xml 
 See [temporal contract](docs/CONTRACT.md), [decisions](docs/ADR.md), [runbook](docs/RUNBOOK.md), [notices](NOTICE.md) and [provenance](PROVENANCE.md). Native local execution, local cross-builds, public CI and actual public downloads are separate evidence. Original code is MIT; private/shared assets and career materials remain outside scope.
 
 [CI resource policy](docs/CI-POLICY.md): documentation-only changes get real lightweight document/pipeline checks; source, tag and manual runs retain native validation. Published runtime tags and release assets remain unchanged.
+
+## Source readability and historical runtime
+
+The ownership correction and C# layout changes have separate reviewable commits. Formatting preserves complete syntax, token text and values, comments and directives. It is not compiled-byte or performance equivalence evidence. The historical [v0.1.0-preview.1 runtime source](https://github.com/pouriajamali/point-in-time-reference-lab/tree/d797dd185d06d6d28f57662bf7b97b2cf2cf6b25) remains pinned at `d797dd185d06d6d28f57662bf7b97b2cf2cf6b25`; use the actual bundle manifest and release tag for this version's source.
