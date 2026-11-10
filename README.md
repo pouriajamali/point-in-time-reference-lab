@@ -17,6 +17,10 @@ Synthetic, literal-loopback-only lab. No real feed, vendor data, historical pric
 | Uncertain commit is not a new correction | Kill an owned API before/after commit, then resolve with the same identity |
 | A parsed response may still be wrong | Client validates returned intent, instrument, effective time, cutoff and origin revision |
 
+## Connection ownership correction
+
+The current source candidate closes a newly allocated connection if opening fails or is cancelled. [Read the ownership decision, executable counterexamples and evidence limits](docs/CONNECTION-OWNERSHIP.md). The published preview linked below remains the earlier release until a new candidate passes its independent release gate.
+
 ## Run the preview
 
 Published preview: [`v0.1.0-preview.1`](https://github.com/pouriajamali/point-in-time-reference-lab/releases/tag/v0.1.0-preview.1). Download **[Windows x64](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/point-in-time-reference-lab-v0.1.0-preview.1-win-x64.zip)**, **[Linux x64](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/point-in-time-reference-lab-v0.1.0-preview.1-linux-x64.tar.gz)** or [source](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/point-in-time-reference-lab-v0.1.0-preview.1-source.zip). Get the [checksums](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/SHA256SUMS.txt), [checksum signature](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/SHA256SUMS.txt.sig) and [public key](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.1/SIGNING-PUBLIC-KEY.pub); verify downloaded bytes with [PROVENANCE.md](PROVENANCE.md) before executing them. Local builds and CI artifacts are separate from published releases.

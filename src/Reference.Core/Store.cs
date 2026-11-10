@@ -13,10 +13,31 @@ public sealed class Store
         if(builder.Host!="127.0.0.1" || builder.Database!="reference_lab" || builder.Username!="reference_lab" || builder.Port<1024 || string.IsNullOrWhiteSpace(builder.Password))throw new ArgumentException("DEDICATED_LOOPBACK_DATABASE_REQUIRED");
         builder.Timeout=3;builder.CommandTimeout=3;builder.Pooling=false;builder.IncludeErrorDetail=false;connection=builder.ConnectionString;
     }
-    private async Task<NpgsqlConnection> Open(CancellationToken token)
+    private Task<NpgsqlConnection> Open(CancellationToken token) =>
+        OpenOwned(new NpgsqlConnection(connection), static (db, cancellation) => db.OpenAsync(cancellation), token);
+
+    internal static async Task<T> OpenOwned<T>(T resource, Func<T, CancellationToken, Task> open, CancellationToken token)
+        where T : class, IAsyncDisposable
     {
-        var db=new NpgsqlConnection(connection);await db.OpenAsync(token);return db;
+        try
+        {
+            await open(resource, token);
+            return resource;
+        }
+        catch
+        {
+            try
+            {
+                await resource.DisposeAsync();
+            }
+            catch
+            {
+                // Cleanup must not replace the original open failure or cancellation.
+            }
+            throw;
+        }
     }
+
     private static async Task<object?> Scalar(NpgsqlConnection db,NpgsqlTransaction? tx,string sql,CancellationToken token,params (string,object)[] values)
     {
         await using var cmd=new NpgsqlCommand(sql,db,tx);
