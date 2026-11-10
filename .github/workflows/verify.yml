@@ -1,6 +1,8 @@
 name: Native point-in-time reference packages and temporal faults
 on:
   push:
+    branches: [main]
+    tags: ['*']
   pull_request:
   workflow_dispatch:
     inputs:
@@ -13,9 +15,38 @@ permissions:
 env:
   DOTNET_CLI_TELEMETRY_OPTOUT: '1'
   DOTNET_GENERATE_ASPNET_CERTIFICATE: 'false'
+concurrency:
+  # Main, tag and manual runs never share a pending/cancelling group.
+  # A PR uses its complete merge-base delta, so its newer run includes earlier source changes.
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('run-{0}', github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
+  ci_policy:
+    name: Changed files and documentation policy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    outputs:
+      native: ${{ steps.scope.outputs.native }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify event and documentation contracts
+        run: python3 -m unittest discover -s .github/ci -p test_policy.py -v
+      - name: Classify complete change and validate documentation
+        id: scope
+        run: python3 .github/ci/policy.py gate
+      - name: Check actual workflow syntax and expressions
+        run: python3 .github/ci/policy.py lint
   verify:
+    needs: ci_policy
+    if: needs.ci_policy.outputs.native == 'true'
     strategy:
+      max-parallel: 1
       fail-fast: false
       matrix:
         include:
@@ -73,12 +104,15 @@ jobs:
           python tools/integration.py --fixtures artifacts/services --cli (Join-Path $package[0].FullName reference) --out artifacts/integration
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
         with:
+          retention-days: ${{ (startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch') && 7 || 3 }}
           name: bundle-${{ matrix.rid }}
           path: artifacts/delivery/*
           if-no-files-found: error
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
+          retention-days: ${{ (startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch') && 7 || 3 }}
           name: proof-${{ matrix.rid }}
           path: |
             artifacts/unit.xml
@@ -123,6 +157,7 @@ jobs:
           create-storage-record: false
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
+          retention-days: ${{ (startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch') && 7 || 3 }}
           name: verified-release-candidate
           path: artifacts/release/*
           if-no-files-found: error
