@@ -149,13 +149,13 @@ public static class ResponseContract
 
     public static void History(HistoryPage page, long after)
     {
-        if (after < 0 || page.HeadRevision < after || page.HeadRevision > Contract.MaximumCorrections || page.Entries.Count > 16)
+        if (after < 0 || page.HeadRevision < after || page.HeadRevision > Contract.MaximumCorrections || page.Entries.Count != Math.Min(16, page.HeadRevision - after))
             throw new ArgumentException("INVALID_HISTORY_PAGE");
         var previous = after;
         foreach (var receipt in page.Entries)
         {
             Receipt(receipt);
-            if (receipt.KnowledgeRevision <= previous || receipt.KnowledgeRevision > page.HeadRevision)
+            if (receipt.KnowledgeRevision != previous + 1 || receipt.KnowledgeRevision > page.HeadRevision)
                 throw new ArgumentException("HISTORY_REVISION_ORDER");
             previous = receipt.KnowledgeRevision;
         }

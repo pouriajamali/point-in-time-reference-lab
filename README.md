@@ -17,6 +17,23 @@ Synthetic, literal-loopback-only lab. No real feed, vendor data, historical pric
 | Uncertain commit is not a new correction | Kill an owned API before/after commit, then resolve with the same identity |
 | A parsed response may still be wrong | Client validates returned intent, instrument, effective time, cutoff and origin revision |
 
+## History page completeness â€” working source candidate
+
+The `v0.1.0-preview.3` source candidate is **unpublished**. Local source unit runs recorded 51 passing cases on both Windows and Linux, including the twelve new validator vectors. Packaged-client and database proof remains pending. It rejects a history page unless it contains exactly `min(16, headRevision-afterRevision)` original receipts with consecutive committed revisions starting at `afterRevision+1`. Receipt validation stays in place. An empty tail with `afterRevision=16` and `headRevision=17` is incomplete even though its entries are trivially ordered.
+
+This requirement follows this one-instrument v1 transaction protocol: knowledge revisions use the locked committed head plus one in the same transaction as the original receipt. Storage `row_id` identities may have gaps. Completeness is relative to each page's reported head; it does not authenticate the server or provide a snapshot across pages.
+
+The same twelve validator vectors produced exactly five designated omission failures against the serviced baseline on each OS and passed with the repair. A seven-response loopback wire fixture has also been authored. The new PostgreSQL fixture declares sixteen initial receipts and a seventeenth late correction with an older `observedAt`; it compares both continuation pages, every original receipt/intent, effective queries at cutoffs16/17, and a separate SQL inventory against an independent input-list oracle. These database assertions and the packaged wire fixture have not yet produced a passing runtime receipt. The existing fourteen-case integration script and ownership tests remain unchanged.
+
+To verify a freshly built native candidate, use:
+
+```sh
+python3 tools/knowledge_boundary.py --wire-only --cli ./reference --out artifacts/wire-history
+python3 tools/knowledge_boundary.py --fixtures artifacts/services --cli ./reference --out artifacts/knowledge-boundary
+```
+
+Wire mode works with the native Windows executable as `--cli reference.exe`; database mode requires the existing non-root Linux profile and its five pinned fixture archives. Use fresh output folders. The four .15 runtime notice/content identities have been reconciled from the selected signed archives, normalized identities and original notice bytes. Native package checks, wire/database oracles and publication remain pending; the published preview.2 downloads below are retained.
+
 ## Connection ownership correction
 
 This version closes a newly allocated connection if opening fails or is cancelled. [Read the ownership decision, executable counterexamples and evidence limits](docs/CONNECTION-OWNERSHIP.md).
@@ -82,13 +99,15 @@ flowchart LR
 
 ## Build
 
-Exact SDK10.0.403 / .NET10.0.14 / C#14 / Npgsql10.0.3:
+Working candidate: exact SDK10.0.404 / .NET10.0.15 / C#14 / Npgsql10.0.3. Local source restore/build/unit runs passed with all three managed lockfiles unchanged. Source units and published native-package proof are separate gates:
 
 ```sh
 dotnet restore PointInTimeReference.slnx --locked-mode
 dotnet build PointInTimeReference.slnx -c Release --no-restore -m:1
 dotnet run --project tests/Reference.Tests -c Release --no-build -- -result-xml artifacts/unit.xml
 ```
+
+Private preparation from the sealed local package source adds `-p:DisableTransitiveFrameworkReferenceDownloads=true` to avoid prefetching framework families that no project directly references. Required Core/ASP.NET .15 packs, default signature validation and audit-all remain enabled. Hosted CI uses its ordinary online restore route.
 
 See [temporal contract](docs/CONTRACT.md), [decisions](docs/ADR.md), [runbook](docs/RUNBOOK.md), [notices](NOTICE.md) and [provenance](PROVENANCE.md). Native local execution, local cross-builds, public CI and actual public downloads are separate evidence. Original code is MIT; private/shared assets and career materials remain outside scope.
 

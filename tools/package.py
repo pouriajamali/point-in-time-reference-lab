@@ -31,7 +31,7 @@ def main():
     shutil.copytree(ROOT/'tests/provenance-fixture',package/'tests/provenance-fixture')
     assets=json.loads((ROOT/'src/Reference.Cli/obj/project.assets.json').read_text());folders=[Path(f) for f in assets['packageFolders']]
     deps=json.loads((package/'reference.deps.json').read_text());shipped={identity.removeprefix('runtimepack.'):entry for identity,entry in deps['libraries'].items() if entry['type'] in ['package','runtimepack']}
-    require(set(shipped)=={'Npgsql/10.0.3','Microsoft.NETCore.App.Runtime.'+a.rid+'/10.0.14','Microsoft.AspNetCore.App.Runtime.'+a.rid+'/10.0.14'},'Reviewed actual shipped graph changed')
+    require(set(shipped)=={'Npgsql/10.0.3','Microsoft.NETCore.App.Runtime.'+a.rid+'/10.0.15','Microsoft.AspNetCore.App.Runtime.'+a.rid+'/10.0.15'},'Reviewed actual shipped graph changed')
     locks=json.loads((ROOT/'src/Reference.Cli/packages.lock.json').read_text())['dependencies'];locked={(key,value['resolved'],value['contentHash']) for scope in locks.values() for key,value in scope.items() if 'contentHash' in value}
     mappings=json.loads((ROOT/'vendor/notices/NOTICE-SOURCES.json').read_text())['components'];licenses=package/'licenses';licenses.mkdir();dependencies=[]
     for identity,entry in sorted(shipped.items()):

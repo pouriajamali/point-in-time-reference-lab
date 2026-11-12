@@ -2,62 +2,62 @@
   "components": [
     {
       "id": "Microsoft.AspNetCore.App.Runtime.linux-x64",
-      "version": "10.0.14",
+      "version": "10.0.15",
       "license": "MIT",
       "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
-      "nugetContentHash": "u6ELO72wDnSC8TTp3x+jJW/PnXiPsUQkqFC9cGrdl9bbKB5z5p27Y4hrpYt8VrJjkFjAzlw6jINh7ebOdCGyrQ==",
-      "rawSignedNupkgSha512Base64": "Cp+0XHjY+V7Ac2boAkKymKHAAvmpitw231tj4LufSuSlKTeMTRBQvjkKXR1ahkY/x+eCJQu3TDIGNmOgElkU0A==",
-      "repositoryCommit": "0427b9abbead3fa64c6655eb4290c537397131fa",
+      "nugetContentHash": "/F3wBWfXxqWBQMZBAe8KjjPSQD7OLjrBBC/8nbA4ZVweHKdsZR8Ta8qZkoFdHop3JNZgD+y03GCQ4Fw1zQohWg==",
+      "rawSignedNupkgSha512Base64": "OY9hawrAFEnh1F0lbKMAcXRATMTPOoMDWwa2S23E0MPptyLgGcBVQeFEh3Xa2B3SMHlBDYpjKJAbokrJXamfow==",
+      "repositoryCommit": "8e0f8ed2312954727f8919d7d1c2f78b483b4ee7",
       "licenseSource": {
         "kind": "package",
         "file": "LICENSE.txt",
         "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
-        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/10.0.14/microsoft.aspnetcore.app.runtime.linux-x64.10.0.14.nupkg"
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/10.0.15/microsoft.aspnetcore.app.runtime.linux-x64.10.0.15.nupkg"
       }
     },
     {
       "id": "Microsoft.AspNetCore.App.Runtime.win-x64",
-      "version": "10.0.14",
+      "version": "10.0.15",
       "license": "MIT",
       "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
-      "nugetContentHash": "aybWX2VpYNS3XMl8PgZjIpzzbsWyrs+ugjKnK/bMwSGqqlpZbWALF6f+keKqp5wsg3SoNunaFi2hH9Ql91mePA==",
-      "rawSignedNupkgSha512Base64": "1k8096BmENepiqExfgA3ndME94v7RqMqTqLrNMyN+FpqD7WD6jKL9tYrYWi4WKNCAgvRMFVlAidzA3s/FDmIQg==",
-      "repositoryCommit": "0427b9abbead3fa64c6655eb4290c537397131fa",
+      "nugetContentHash": "iOp/XLbRe/wvAeKpYZXPdAtK1WZnCl7C5XZJsm6otvS2AYun+9ODisD9eZYXv/KdT/CtKZn3ITaL3X75EFwsMQ==",
+      "rawSignedNupkgSha512Base64": "GbC1BsO6jqVOj7LrAagG7x4Qi9rFt7ylOEHqXmZw+k9zeKMAlt8A4QBHt0C6XDg/cN93LBsL/WWTPEZAnEWJ7g==",
+      "repositoryCommit": "8e0f8ed2312954727f8919d7d1c2f78b483b4ee7",
       "licenseSource": {
         "kind": "package",
         "file": "LICENSE.txt",
         "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
-        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.win-x64/10.0.14/microsoft.aspnetcore.app.runtime.win-x64.10.0.14.nupkg"
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.win-x64/10.0.15/microsoft.aspnetcore.app.runtime.win-x64.10.0.15.nupkg"
       }
     },
     {
       "id": "Microsoft.NETCore.App.Runtime.linux-x64",
-      "version": "10.0.14",
+      "version": "10.0.15",
       "license": "MIT",
       "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
-      "nugetContentHash": "D1GLoCJT9uVa91+pIx5i0HGFcko4g/+L6T2/0DnjvFc8Ld0qFHIUpw7u8qdcDOOQhPUqeb3QQMA6KyiaVnqmTQ==",
-      "rawSignedNupkgSha512Base64": "IfDwQKE3gcK9u7iU7C/bOaqLNfoRf6zvXzGLHsJAbsC7Shwn5ztRCRWjD1mKRk5XUrPO9VWSC1+q8oimXRDlsg==",
-      "repositoryCommit": "0427b9abbead3fa64c6655eb4290c537397131fa",
+      "nugetContentHash": "ALsQzH86bVhGmWjv/sESo973cpasVCDicswfJt3bDB7/IUkEs17ilOCyxXbiAGDyCFylNDSAEaFyNwdoU/mAQw==",
+      "rawSignedNupkgSha512Base64": "Ak6y3EEqwNT/ZL5WEAoGbjxju8MisXpnRxYRynRifotaKEadhhWk5/z2KTvNbnRyAvMqrbN21TSnJY4NxZShxQ==",
+      "repositoryCommit": "8e0f8ed2312954727f8919d7d1c2f78b483b4ee7",
       "licenseSource": {
         "kind": "package",
         "file": "LICENSE.TXT",
         "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
-        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.linux-x64/10.0.14/microsoft.netcore.app.runtime.linux-x64.10.0.14.nupkg"
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.linux-x64/10.0.15/microsoft.netcore.app.runtime.linux-x64.10.0.15.nupkg"
       }
     },
     {
       "id": "Microsoft.NETCore.App.Runtime.win-x64",
-      "version": "10.0.14",
+      "version": "10.0.15",
       "license": "MIT",
       "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
-      "nugetContentHash": "Py+9fO4oGQwPrM2SDTOCZP1CburyfXradGLj49WFXFA1/awcgTOtY9Ao01P2mYTyEMY32W2WmQyftR3KlwJFfA==",
-      "rawSignedNupkgSha512Base64": "mLWGagTP5n7nMfJQI2XpXRYgvPcnyYvAc8ZiDfum8ShM0UcrPDyfW4Lqo45UtlCHCucERUHQuMTI6ybVweCN9A==",
-      "repositoryCommit": "0427b9abbead3fa64c6655eb4290c537397131fa",
+      "nugetContentHash": "vzCVKwBmeXZ31VkaU956oQE1zda/pweaw1q0vtnRWzivoPa4jyz9zVrmhrora1UJlPkzfBteQHf9bOYAF2ZuVw==",
+      "rawSignedNupkgSha512Base64": "MEGAkRGHrAXYA2t/Lo0mDxH+/O5NLqgWTcVh70iOZJTpoOCL/jKfOgDqYoDi3W9WcnviL4DhMl+5lWC8cxttSw==",
+      "repositoryCommit": "8e0f8ed2312954727f8919d7d1c2f78b483b4ee7",
       "licenseSource": {
         "kind": "package",
         "file": "LICENSE.TXT",
         "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
-        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.win-x64/10.0.14/microsoft.netcore.app.runtime.win-x64.10.0.14.nupkg"
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.win-x64/10.0.15/microsoft.netcore.app.runtime.win-x64.10.0.15.nupkg"
       }
     },
     {

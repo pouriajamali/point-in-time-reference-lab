@@ -63,7 +63,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
         with:
-          dotnet-version: '10.0.403'
+          dotnet-version: '10.0.404'
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
@@ -92,6 +92,9 @@ jobs:
           if ($package.Count -ne 1) { throw 'Exactly one package root required' }
           python tools/check_package.py --package $package[0].FullName --commit '${{ github.sha }}' --out artifacts/package-checks.json
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $nativeCli = if ($IsWindows) { 'reference.exe' } else { 'reference' }
+          python (Join-Path $package[0].FullName 'tools/knowledge_boundary.py') --wire-only --cli (Join-Path $package[0].FullName $nativeCli) --out artifacts/wire-history
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Real local Linux temporal history and commit fault matrix
         if: runner.os == 'Linux'
         shell: pwsh
@@ -102,6 +105,8 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           $package = @(Get-ChildItem 'artifacts/extracted with spaces' -Directory)
           python tools/integration.py --fixtures artifacts/services --cli (Join-Path $package[0].FullName reference) --out artifacts/integration
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python (Join-Path $package[0].FullName 'tools/knowledge_boundary.py') --fixtures artifacts/services --cli (Join-Path $package[0].FullName reference) --out artifacts/knowledge-boundary
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
@@ -121,6 +126,8 @@ jobs:
             artifacts/verifier-tests/receipt.json
             artifacts/build/archive.json
             artifacts/integration/receipt.json
+            artifacts/wire-history/receipt.json
+            artifacts/knowledge-boundary/receipt.json
           if-no-files-found: error
   aggregate:
     if: startsWith(github.ref, 'refs/tags/v') || inputs.verify_release == true
@@ -132,7 +139,7 @@ jobs:
       id-token: write
       attestations: write
     env:
-      RELEASE_TAG: v0.1.0-preview.2
+      RELEASE_TAG: v0.1.0-preview.3
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
