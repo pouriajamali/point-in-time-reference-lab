@@ -142,14 +142,14 @@ The Go compiler, auditor, caches, source archives and linter binaries are exclud
 from the application runtime packages and their three-component SPDX graph.
 Only the recipe/guard/reference text is included as build-time source tooling.
 
-The common public CI publication/import profile is still a separately gated,
-unimplemented proposal. Current local proof does not establish hosted CI or
-public preview.3 availability. The proposed path is an identity-bound shared
-producer output, imported and checked before the existing policy job, preserving
-its five-minute bound and all original native/release jobs. It must operate
-without private E receipts and include real runner caps, exact immutable import
-identities, reproduction and explicit CI/storage cost limits. No hosted dispatch,
-push, tag, release or account metadata change follows from local admission.
+The shared [public sealed tooling release](https://github.com/pouriajamali/data-admission-gate/releases/tag/tooling-actionlint-v1.7.12-go1.26.11-r1)
+was independently downloaded with all five exact hashes/sizes and its known-key
+checksum signature. [Producer hosted bootstrap](https://github.com/pouriajamali/data-admission-gate/actions/runs/43275123686)
+succeeded once on Windows2025 with actual CPU2/4GiB/64 Job controls. That result
+belongs only to the producer. This consumer retains CPU1, its own42 negative
+cases and native Windows/Linux local controls; its exact preview.3 hosted CI
+and app downloads are established separately at the app release tag. No producer
+bootstrap/build/audit or healthy local test replay is needed to consume that input.
 
 ## Sealed actionlint inputs and native profiles
 
@@ -193,5 +193,6 @@ Ninety original module/compiler/auditor texts remain. Copied Go Vulnerability
 Database advisory data is separately CC-BY-4.0; full original license and source/
 modification attribution are retained under producer-proofs/vulndb-* in each ZIP.
 Tooling inputs are separate from the app runtime, data contracts and release assets.
-Public asset availability, exact-commit CI and actual downloads/signatures require
-separate publication/readback evidence. No private or paid fallback is selected.
+Shared public asset availability has its own exact producer release/readback evidence.
+The app release and consumer exact-commit CI retain separate identities and receipts.
+No private or paid fallback is selected.
