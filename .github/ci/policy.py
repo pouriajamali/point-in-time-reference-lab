@@ -196,39 +196,11 @@ def gate() -> None:
 
 
 def lint() -> None:
-    # Pinned public upstream release; no token, global installation or latest URL.
-    version = '1.7.12'
-    if os.name == 'nt':
-        name, size, digest, executable = 'windows_amd64.zip', 2479065, '6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9', 'actionlint.exe'
-    else:
-        name, size, digest, executable = 'linux_amd64.tar.gz', 2353908, '8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8', 'actionlint'
-    archive_name = f'actionlint_{version}_{name}'
-    url = f'https://github.com/rhysd/actionlint/releases/download/v{version}/{archive_name}'
-    request = urllib.request.Request(url, headers={'User-Agent': 'BoundedPortfolioCiPolicy/1.0'})
-    with urllib.request.urlopen(request, timeout=45) as response:
-        require(response.status == 200 and response.url.startswith('https://'), 'HTTPS linter download required')
-        raw = response.read(4 * 1024 * 1024 + 1)
-    require(len(raw) == size and hashlib.sha256(raw).hexdigest() == digest, 'Pinned actionlint archive bytes')
-    work = Path(tempfile.mkdtemp(prefix='portfolio-actionlint-', dir=os.environ.get('RUNNER_TEMP')))
-    if name.endswith('.zip'):
-        with zipfile.ZipFile(io.BytesIO(raw)) as archive:
-            info = archive.getinfo(executable)
-            require(info.file_size <= 20 * 1024 * 1024 and not info.is_dir(), 'Linter executable cap')
-            binary = archive.read(info)
-    else:
-        with tarfile.open(fileobj=io.BytesIO(raw), mode='r:gz') as archive:
-            info = archive.getmember(executable)
-            require(info.isfile() and info.size <= 20 * 1024 * 1024, 'Linter executable type/cap')
-            binary = archive.extractfile(info).read()
-    target = work / executable
-    target.write_bytes(binary)
-    if os.name != 'nt':
-        target.chmod(0o755)
-    workflows = git_output('ls-files', '-z', '.github/workflows/*.yml', '.github/workflows/*.yaml').decode('utf-8').split('\0')
-    workflows = [name for name in workflows if name]
-    require(bool(workflows), 'Tracked workflows required for actionlint')
-    # Only actionlint itself is claimed; optional external ShellCheck/Pyflakes are not installed or inferred.
-    subprocess.run([str(target), '-color', '-shellcheck=', '-pyflakes=', *workflows], check=True, timeout=90)
+    # Same independent gate as the direct CLI. Missing admission is HOLD; no vendor fallback.
+    import sys
+    root = Path(__file__).resolve().parents[2]
+    subprocess.run([sys.executable, '-B', str(root / 'tools/run_actionlint.py')],
+                   cwd=root, check=True, timeout=90)
 
 
 if __name__ == '__main__':

@@ -98,5 +98,23 @@ class EventPolicyTests(unittest.TestCase):
                 policy.check_source_inventory(root)
 
 
+class LintAdmissionPolicyTests(unittest.TestCase):
+    def test_default_lint_delegates_to_independent_direct_guard(self):
+        import sys
+        root = Path(policy.__file__).resolve().parents[2]
+        with patch.object(policy.subprocess, 'run') as call:
+            policy.lint()
+        call.assert_called_once_with(
+            [sys.executable, '-B', str(root / 'tools/run_actionlint.py')],
+            cwd=root, check=True, timeout=90)
+
+    def test_direct_guard_failure_propagates_from_default_route(self):
+        import subprocess
+        failure = subprocess.CalledProcessError(1, ['guard'])
+        with patch.object(policy.subprocess, 'run', side_effect=failure):
+            with self.assertRaises(subprocess.CalledProcessError):
+                policy.lint()
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

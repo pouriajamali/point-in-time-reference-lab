@@ -21,3 +21,5 @@ This succession rule follows the initialized head0, singleton writer lock and at
 Limits: at most4,096 committed corrections/current segments and50,000 total history rows; projected capacity is checked before changes. Body16KiB, header8KiB,16connections/eight request slots, finite connection/statement/request deadlines. Limits are failure policy, not throughput/availability guarantees. API is plaintext on literal loopback and trusted local lab only, not authentication or a production service.
 
 Ordinary process restart retains state. Arbitrary external database rollback/restore, lineage recovery, multiple instruments/sites, real feeds, paid/proprietary data, price reconstruction and financial prediction are outside v1. There is no reset/history-rewrite path to regain availability.
+
+Build-time workflow tooling uses a separate [independent admission contract](ACTIONLINT-BUILD.md). Its compiler, auditor, module notices, resource limits and guarded executable identity do not alter the temporal wire contract, store/schema, ownership checks or three-component application runtime.
