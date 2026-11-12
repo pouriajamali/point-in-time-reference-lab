@@ -485,5 +485,14 @@
   ],
   "compilerAndAuditor": "actual37+22 producer notice inputs identity-checked; source files copied only as notice data, never upstream tests/generators",
   "applicationRuntimeSbom": "SEPARATE_UNCHANGED",
-  "publicDistribution": "PENDING_SEPARATE_EXACT_PUBLIC_GATE"
+  "publicDistribution": "PENDING_SEPARATE_EXACT_PUBLIC_GATE",
+  "publicAdvisoryDataSupplement": {
+    "license": "CC-BY-4.0",
+    "source": "https://vuln.go.dev/",
+    "files": [
+      "producer-proofs/vulndb-GO-VULNDB-LICENSE.txt",
+      "producer-proofs/vulndb-VULNDB-ATTRIBUTION.txt"
+    ],
+    "separateFromOriginal90ModuleCompilerAuditorTexts": true
+  }
 }

@@ -503,6 +503,8 @@ def workspace_path(candidate,ref,existing):
     return path
 
 def main():
+    import sys
+    if len(sys.argv)>1 and sys.argv[1]=='prepare-ci-sealed':prepare_sealed();return
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('phase',choices=['prepare','acquire','metadata','finish-graph','notices','graph','source-audit','build','finish-build','binary-audit','finish-binary-audit'])
     parser.add_argument('--work',type=Path,required=True); parser.add_argument('--source-archive',type=Path)
@@ -533,6 +535,57 @@ def main():
         elif args.phase=='binary-audit': scan(work,ref,compiler,auditor,args.target,True)
         elif args.phase=='build': require(args.number is not None,'BUILD_NUMBER_REQUIRED'); build(work,ref,compiler,go,args.target,args.number)
     print(json.dumps({'state':'BOUNDED_PHASE_FINISHED_ARTIFACT_STILL_UNADMITTED','phase':args.phase,'work':str(work)}))
+
+def prepare_sealed():
+    """Explicit source-pinned import only; ordinary lint never downloads or builds."""
+    import sys
+    from bounded_actionlint import portable_phase
+    parser=argparse.ArgumentParser();parser.add_argument('--target',choices=['windows-amd64','linux-amd64'],required=True);parser.add_argument('--archive',type=Path);parser.add_argument('--inner',action='store_true');args=parser.parse_args(sys.argv[2:])
+    ref=validate_reference(read_json(LOCK));require(args.target==('windows' if os.name=='nt' else 'linux')+'-amd64','SEALED_NATIVE_TARGET')
+    if not args.inner:
+        with portable_phase(ref,ROOT,'prepare-sealed') as phase:
+            import uuid
+            out=ROOT/'artifacts/sealed-import'/uuid.uuid4().hex;out.mkdir(parents=True)
+            argv=[sys.executable,'-B',str(Path(__file__).resolve()),'prepare-ci-sealed','--inner','--target',args.target]
+            if args.archive:argv+=['--archive',str(args.archive.absolute())]
+            phase.update(started=True,evidence=out/'process');result=run(argv,cwd=ROOT,env=os.environ.copy(),timeout=120,evidence=out/'process')
+            print(json.dumps({'state':'ACTUAL_SEALED_IMPORT_CHILD_COMPLETE','target':args.target,'actualCap':result['actualCap'],'receiptSha256':digest(out/'process/process.json')}))
+        return
+    phase_permission(ref,os.environ)
+    asset=ref.get('distribution',{}).get('assets',{}).get(args.target);require(type(asset) is dict,'SEALED_DISTRIBUTION_UNAPPROVED')
+    require(0<asset['bytes']<=64*1024**2 and asset['url'].startswith('https://github.com/pouriajamali/data-admission-gate/releases/download/tooling-actionlint-v1.7.12-go1.26.11-r1/'),'SEALED_ASSET_SCOPE')
+    if args.archive:path=contained(args.archive,args.archive.parent)
+    else:
+        import uuid
+        root=ROOT/'artifacts/sealed-downloads'/uuid.uuid4().hex;root.mkdir(parents=True);path=root/'sealed.zip'
+        require(not any(os.environ.get(k) for k in ('HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy')),'SEALED_PROXY_ENV')
+        class Redirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self,request,fp,code,msg,headers,url):
+                p=urllib.parse.urlsplit(url);require(p.scheme=='https' and p.hostname in ('github.com','release-assets.githubusercontent.com','objects.githubusercontent.com') and p.username is None and p.port in (None,443),'SEALED_REDIRECT')
+                return super().redirect_request(request,fp,code,msg,headers,url)
+        start=time.monotonic();total=0
+        with urllib.request.build_opener(urllib.request.ProxyHandler({}),Redirect()).open(asset['url'],timeout=30) as response,open(path,'xb') as output:
+            while True:
+                chunk=response.read(1024*1024)
+                if not chunk:break
+                total+=len(chunk);require(total<=asset['bytes'] and time.monotonic()-start<=90,'SEALED_DOWNLOAD_CAP');output.write(chunk)
+    require(path.stat().st_size==asset['bytes'],'SEALED_ARCHIVE_SIZE');check_file_hash(path,asset['sha256'],'SEALED_ARCHIVE_BYTES')
+    rows=archive_inventory(path,expanded_cap=128*1024**2,count_cap=1000);require(all(r['bytes']<=64*1024**2 for r in rows),'SEALED_MEMBER_CAP')
+    dest=ROOT/'artifacts/actionlint'/args.target;require(not dest.exists(),'SEALED_DESTINATION_EXISTS');dest.mkdir(parents=True)
+    import zipfile
+    with zipfile.ZipFile(path) as archive:
+        for row in rows:
+            target=contained(dest/row['path'],dest,existing=False)
+            if row['type']=='directory':target.mkdir(parents=True,exist_ok=True);continue
+            target.parent.mkdir(parents=True,exist_ok=True)
+            with archive.open(row['path']) as source,open(target,'xb') as output:shutil.copyfileobj(source,output,1024*1024)
+            check_file_hash(target,row['sha256'],'SEALED_MATERIALIZED_BYTES')
+    from check_actionlint import admitted_artifact
+    with admitted_artifact(ref,dest,args.target):pass
+    print(json.dumps({'state':'SEALED_INPUTS_IMPORTED_NO_TARGET_EXECUTION','target':args.target,'archiveSha256':asset['sha256']}))
+
+
+
 if __name__=='__main__':
     try: main()
     except (AdmissionError,CapError,OSError,KeyError,TypeError,ValueError) as exc: raise SystemExit('actionlint build HOLD: '+str(exc))

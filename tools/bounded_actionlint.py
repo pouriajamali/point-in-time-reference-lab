@@ -29,6 +29,7 @@ def linux_caps():
     return validate_linux_cap({'cgroup':rel,'kernelLimits':values,'bootId':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'uid':os.getuid()})
 
 def phase_permission(reference, incoming):
+    if incoming.get('ACTIONLINT_PORTABLE_PHASE_TOKEN'): return _portable_permission(reference,incoming)
     # A caller-supplied policy/hash pair is not a trust anchor: the source lock pins it.
     name=incoming.get('ACTIONLINT_LEASE_PROTOCOL'); token=incoming.get('ACTIONLINT_PHASE_TOKEN')
     need(name and token,'PHASE_PERMISSION_MISSING')
@@ -231,3 +232,53 @@ def _windows_run(argv,cwd,env,timeout,evidence):
         if nul and nul!=ctypes.c_void_p(-1).value: K.CloseHandle(nul)
         K.CloseHandle(job)
 if __name__=='__main__': raise SystemExit('Library only; use the independently guarded build/check/run entry points.')
+
+def _start_identity(pid):
+    if os.name!='nt':
+        text=Path('/proc',str(pid),'stat').read_text();return 'proc-start:'+text[text.rfind(')')+2:].split()[19]
+    from ctypes import wintypes as W
+    K,W=_kernel();K.OpenProcess.argtypes=[W.DWORD,W.BOOL,W.DWORD];K.OpenProcess.restype=W.HANDLE
+    K.GetProcessTimes.argtypes=[W.HANDLE,*[ctypes.POINTER(W.FILETIME)]*4]
+    handle=K.OpenProcess(0x1000,False,pid);need(handle,'PORTABLE_OWNER_PROCESS')
+    try:
+        times=[W.FILETIME() for _ in range(4)];need(K.GetProcessTimes(handle,*[ctypes.byref(x) for x in times]),'PORTABLE_OWNER_START')
+        return 'FILETIME:'+str((times[0].dwHighDateTime<<32)|times[0].dwLowDateTime)
+    finally:K.CloseHandle(handle)
+
+def _portable_profile(reference,root,incoming=None):
+    env=os.environ if incoming is None else incoming
+    profile=reference.get('execution',{}).get('portableProfile',{})
+    need(profile.get('state')=='AUTHORIZED' and profile.get('id')=='sealed-actionlint-native-v1','PORTABLE_PROFILE_UNAPPROVED')
+    need(profile.get('memoryMax')==MEMORY and profile.get('cpus')==CPUS and profile.get('tasksMax')==TASKS,'PORTABLE_PROFILE_LIMITS')
+    need(not (root.parent/'state/operator-helpers/CURRENT-LANE-REFERENCE.json').exists(),'MANAGED_LOCAL_CANONICAL_REQUIRED')
+    need(not env.get('ACTIONLINT_PHASE_TOKEN') and not env.get('ACTIONLINT_LEASE_PROTOCOL'),'PORTABLE_CANNOT_REPLACE_CANONICAL')
+    return profile
+
+def _portable_permission(reference,incoming):
+    root=Path(__file__).resolve().parents[1];_portable_profile(reference,root,incoming)
+    path=root/'artifacts/actionlint-local-phase.json';need(path.is_file() and not path.is_symlink() and path.stat().st_size<=65536,'PORTABLE_LEASE_MISSING')
+    holder=json.loads(path.read_bytes());need(holder.get('randomToken')==incoming.get('ACTIONLINT_PORTABLE_PHASE_TOKEN') and holder.get('projectId')==reference['projectId'],'PORTABLE_FOREIGN_LEASE')
+    need(holder.get('ownerProcessStartIdentity')==_start_identity(holder['ownerPID']) and holder.get('phase') in ('lint','prepare-sealed'),'PORTABLE_OWNER_IDENTITY')
+    if os.name!='nt':need(linux_caps()['cgroup']==holder.get('cgroup'),'PORTABLE_NATIVE_MEMBERSHIP')
+    return holder
+
+@contextlib.contextmanager
+def portable_phase(reference,root,phase):
+    import uuid
+    _portable_profile(reference,root);need(phase in ('lint','prepare-sealed'),'PORTABLE_PHASE')
+    (root/'artifacts').mkdir(exist_ok=True);path=root/'artifacts/actionlint-local-phase.json'
+    holder={'projectId':reference['projectId'],'randomToken':uuid.uuid4().hex,'ownerPID':os.getpid(),'ownerProcessStartIdentity':_start_identity(os.getpid()),'phase':phase}
+    if os.name!='nt':holder['cgroup']=linux_caps()['cgroup']
+    with open(path,'x',encoding='utf-8') as f:json.dump(holder,f)
+    previous=os.environ.get('ACTIONLINT_PORTABLE_PHASE_TOKEN');os.environ['ACTIONLINT_PORTABLE_PHASE_TOKEN']=holder['randomToken']
+    state={'started':False,'evidence':None}
+    try:yield state
+    finally:
+        safe=not state['started']
+        if state['evidence'] is not None:
+            receipt=Path(state['evidence'])/'process.json'
+            if receipt.is_file():
+                record=json.loads(receipt.read_bytes());safe=record.get('actualCap',{}).get('activeProcessesAtTeardown')==0 if os.name=='nt' else type(record.get('exitCode')) is int and not record.get('timedOut')
+        if previous is None:os.environ.pop('ACTIONLINT_PORTABLE_PHASE_TOKEN',None)
+        else:os.environ['ACTIONLINT_PORTABLE_PHASE_TOKEN']=previous
+        need(safe,'PORTABLE_TEARDOWN_UNKNOWN_LEASE_RETAINED');check_owner(json.loads(path.read_bytes()),holder);path.unlink()

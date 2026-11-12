@@ -118,3 +118,10 @@ See [temporal contract](docs/CONTRACT.md), [decisions](docs/ADR.md), [runbook](d
 The ownership correction and C# layout changes have separate reviewable commits. Formatting preserves complete syntax, token text and values, comments and directives. It is not compiled-byte or performance equivalence evidence. The historical [v0.1.0-preview.1 runtime source](https://github.com/pouriajamali/point-in-time-reference-lab/tree/d797dd185d06d6d28f57662bf7b97b2cf2cf6b25) remains pinned at `d797dd185d06d6d28f57662bf7b97b2cf2cf6b25`; use the actual bundle manifest and release tag for this version's source.
 
 The separate [maintainer actionlint build](docs/ACTIONLINT-BUILD.md) now consumes the exact admitted shared artifacts; all150 consumer negatives and both native default/direct valid/invalid controls passed locally. Its guarded default/direct routes, original-source and20-module graph identities are separate from the three-component application runtime. Local application and consumer proof do not establish public preview.3 availability.
+
+## Build-time sealed linter
+
+Fresh CI/contributor lint imports the exact reviewed public sealed archive; no
+producer drive/private receipts or local compiler are required. Managed task
+checkouts retain the canonical gate. See [native profile and signed input setup](docs/ACTIONLINT-BUILD.md).
+Archive availability and hosted cap acceptance require actual release/CI readback.

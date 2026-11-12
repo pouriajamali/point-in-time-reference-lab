@@ -150,3 +150,48 @@ its five-minute bound and all original native/release jobs. It must operate
 without private E receipts and include real runner caps, exact immutable import
 identities, reproduction and explicit CI/storage cost limits. No hosted dispatch,
 push, tag, release or account metadata change follows from local admission.
+
+## Sealed actionlint inputs and native profiles
+
+The reviewed source pins the two sealed maintainer archives at
+`tooling-actionlint-v1.7.12-go1.26.11-r1` in pouriajamali/data-admission-gate.
+Prepare is explicit; ordinary default/direct lint never downloads or falls back.
+Fresh checkout use does not need a producer drive, SDK, auditor or private receipt.
+The archived recipe/proof source paths describe producer observations only.
+The executed guards come from the reviewed checkout, not archive Python files.
+
+On fresh Windows x64:
+
+```text
+python tools/build_actionlint.py prepare-ci-sealed --target windows-amd64
+python .github/ci/policy.py lint
+python tools/run_actionlint.py
+```
+
+Both lint entries first check exact admitted bytes/proofs, then use one owned
+repository-local phase and actual suspended Windows Job children:4GiB memory,
+one CPU core and64processes. Import runs in a Job before download/materialization;
+actual caps and owned teardown are emitted in CI logs. A source profile is not
+proof that a particular hosted runner admitted those controls; a cap failure is HOLD.
+Linux x64 requires an existing UID1000 systemd user service with memory4GiB,
+swap0,CPUQuota100%,TasksMax64 and a bounded RuntimeMaxSec. Run explicit import
+(target linux-amd64) and lint inside that service; no sudo/install/startup/linger
+or container fallback is provided. Other UIDs/controllers stay unsupported/HOLD.
+
+Managed checkouts identified by their adjacent task-state marker, or an existing
+canonical phase environment, retain their original canonical owner/token gate.
+The fresh profile cannot replace it. Busy local phase files are never stolen or
+removed by age. Import and lint are separate bounded phases with exact ownership.
+
+Archive size/SHA256 pins in reviewed source authenticate the imported bytes.
+For independent release provenance, verify signed SHA256SUMS in namespace file
+with principal pouriajamali and the independently trusted fingerprint
+`SHA256:AgU5bZlJSjUu0KsWMmVEEr+BfXpcMVNroTA33bHcQdU`. The key downloaded
+beside an archive is not independent identity proof. Follow PROVENANCE.md.
+
+Ninety original module/compiler/auditor texts remain. Copied Go Vulnerability
+Database advisory data is separately CC-BY-4.0; full original license and source/
+modification attribution are retained under producer-proofs/vulndb-* in each ZIP.
+Tooling inputs are separate from the app runtime, data contracts and release assets.
+Public asset availability, exact-commit CI and actual downloads/signatures require
+separate publication/readback evidence. No private or paid fallback is selected.

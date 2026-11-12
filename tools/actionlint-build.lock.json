@@ -7974,6 +7974,14 @@
       "sha256": "53da41915cb4c2b35c1867339f6d62ac8e76674f367e729da25b581806a42f81",
       "proposalSha256": "7019cefefb09136338063e62254590a27bfe1a333cf0da92bed34a03043993d1",
       "materializationReceiptSha256": "b41ba0c7a44b57684fafeae9bf4f31fa230763bae2650c52bf851cd8571b86ba"
+    },
+    "portableProfile": {
+      "state": "AUTHORIZED",
+      "id": "sealed-actionlint-native-v1",
+      "memoryMax": 4294967296,
+      "cpus": 1,
+      "tasksMax": 64,
+      "boundary": "Fresh checkout only; managed marker and canonical env forbid this profile. Local source is a proposal until the coordinator technical gate."
     }
   },
   "inputs": {
@@ -41682,6 +41690,52 @@
         "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "process.json": "5c2cb8e7b2de09320ef6c2d3e42e709cad668f86e890e08a58fe6cf3a75ea2e2"
       }
+    }
+  },
+  "distribution": {
+    "kind": "sealed-maintainer-release",
+    "tag": "tooling-actionlint-v1.7.12-go1.26.11-r1",
+    "publisher": "pouriajamali/data-admission-gate",
+    "assets": {
+      "windows-amd64": {
+        "filename": "actionlint-1.7.12-go1.26.11-windows-amd64.zip",
+        "url": "https://github.com/pouriajamali/data-admission-gate/releases/download/tooling-actionlint-v1.7.12-go1.26.11-r1/actionlint-1.7.12-go1.26.11-windows-amd64.zip",
+        "bytes": 4056354,
+        "sha256": "000dc5e57ec0c1dc7f3ae0afd5f5b769032820c6b49cb53b70144bd81f5a493c"
+      },
+      "linux-amd64": {
+        "filename": "actionlint-1.7.12-go1.26.11-linux-amd64.zip",
+        "url": "https://github.com/pouriajamali/data-admission-gate/releases/download/tooling-actionlint-v1.7.12-go1.26.11-r1/actionlint-1.7.12-go1.26.11-linux-amd64.zip",
+        "bytes": 3944074,
+        "sha256": "c1295d133cb3fe1ffb03e43decd11b6b936d840ef78b1ab41b12d72ea50acbf7"
+      }
+    },
+    "signatureFiles": {
+      "SHA256SUMS.txt": {
+        "bytes": 222,
+        "sha256": "c476fa81a197deb7a91c105c3e4c2c47ab9d6e5a6d55785fafd7c76c9feea9f1",
+        "url": "https://github.com/pouriajamali/data-admission-gate/releases/download/tooling-actionlint-v1.7.12-go1.26.11-r1/SHA256SUMS.txt"
+      },
+      "SHA256SUMS.txt.sig": {
+        "bytes": 294,
+        "sha256": "6bd5ebf7258c19527bacb6ae19fee9485e893a9b773497308d0791a501f20071",
+        "url": "https://github.com/pouriajamali/data-admission-gate/releases/download/tooling-actionlint-v1.7.12-go1.26.11-r1/SHA256SUMS.txt.sig"
+      },
+      "SIGNING-PUBLIC-KEY.pub": {
+        "bytes": 112,
+        "sha256": "a59fbecc53a0b3109212b70a3a51247dbd3529512d189ac2462a27a057dad671",
+        "url": "https://github.com/pouriajamali/data-admission-gate/releases/download/tooling-actionlint-v1.7.12-go1.26.11-r1/SIGNING-PUBLIC-KEY.pub"
+      }
+    },
+    "expectedSigningFingerprint": "SHA256:AgU5bZlJSjUu0KsWMmVEEr+BfXpcMVNroTA33bHcQdU",
+    "signatureNamespace": "file",
+    "signingPrincipal": "pouriajamali",
+    "runtimeTrustAnchor": "Archive byte/size pins in reviewed source; signed checksum/key fingerprint verification supplies public independent provenance. Archived producer paths are observations, never fresh-runtime locators.",
+    "advisoryDataNotice": {
+      "license": "CC-BY-4.0",
+      "source": "https://vuln.go.dev/",
+      "fullOriginalLicenseArchivePath": "producer-proofs/vulndb-GO-VULNDB-LICENSE.txt",
+      "attributionArchivePath": "producer-proofs/vulndb-VULNDB-ATTRIBUTION.txt"
     }
   }
 }

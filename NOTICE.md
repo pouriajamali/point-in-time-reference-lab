@@ -9,3 +9,10 @@ Npgsql10.0.3 retains the PostgreSQL-style license and original copyright. Micros
 xUnit v3 4.0.3 is a source test dependency. Five pinned PostgreSQL/support archives are separately fetched references, not bundled servers or a system install. No paid/proprietary feed, private/shared model, data or commercial ownership claim is transferred.
 
 The separately reviewed [maintainer actionlint recipe](docs/ACTIONLINT-BUILD.md) is build-time source tooling only. It retains the upstream MIT source identity and requires the complete original Go/module license, PATENTS and NOTICE graph before tool admission. The tool binaries, Go compiler, auditor and module cache are not application runtime components or bundled assets. Its reviewed local tooling notice reference is tools/actionlint-notices.json; it does not replace the actual three-component application notices above.
+
+Go Vulnerability Database data in the tooling proof streams is licensed
+CC-BY-4.0, separately from the module/compiler/auditor notice graph. Source:
+https://vuln.go.dev/ and https://github.com/golang/vulndb/tree/master/data.
+The public sealed tooling ZIPs retain the complete original Go vulnerability
+database LICENSE and an attribution/formatting/analysis note under
+producer-proofs/vulndb-*. No upstream endorsement is claimed.
