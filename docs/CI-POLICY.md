@@ -14,3 +14,11 @@ This workflow policy separates documentation checks from unchanged runtime build
 - New retention does not delete old artifacts or logs. No artifact/cache deletion, paid capacity, self-hosted runner, account permission or budget change is performed by this policy. Any historical cleanup requires a separately reviewed inventory and explicit authorization.
 
 The lightweight job uses the standard windows-2025 runner, Python standard library, and the exact source-pinned sealed maintainer actionlint input described in ACTIONLINT-BUILD.md. Prepare is explicit; ordinary lint does not download or use a vendor/cache fallback. The actual import/linter child must prove CPU<=1 core, memory4GiB,64processes and owned teardown; unsupported caps fail closed. This cap does not describe the separate hosted .NET native jobs. Optional external ShellCheck/Pyflakes results are not claimed. Current account storage usage is not inferred from one repository artifact count.
+
+## Prepared preview.4 technology refresh
+
+Only the proposed SDK11.0.100 setup pin and preview.4 release tag change in the prepared workflow. Event classification, pinned actions, matrix sequencing, permissions, mandatory native/verifier/advisory checks and retention remain unchanged. This preparation does not trigger CI.
+
+The proposed later exact-public budget remains at most one tag run and one main run (55+45 raw job-minute ceilings, 50 raw Windows minutes and50 raw Linux minutes total), zero manual dispatch/retry, no larger/paid runner or new spending. These are proposals requiring exact allocation/headroom and candidate approval; they are not billed-cost estimates or account allowance evidence. No event is authorized now.
+
+Local SDK11 work must use the existing canonical lane with project05 CPU<=1, memory4GiB,64tasks and Linuxswap0, with actual identity/readback/owned teardown. Hosted runner containment is a different claim: existing app native CI has finite job/matrix bounds but no current per-process kernel hardcap proof. The complete execution allocation must explicitly accept that boundary or approve and bind an own hosted control; old CI success and the producer CPU2 result cannot supply project05 hardcap evidence.

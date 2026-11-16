@@ -1,0 +1,80 @@
+{
+  "schema": "project05-supported-ci-profile/v1",
+  "projectId": "05",
+  "designGateSha256": "9b3e0f376c5381b623f6a0f007bf6a6bb44f3dcbd1c2e4654de949a1eb97eec8",
+  "sourceContractSha256": "142dac81ae7f6e05f52319d3521d4825d5df028e37542b7623d16316ff7dd077",
+  "canonicalLocalProtocolSha256": "9120ca49a0d46673053aa0ec0cdbbc6f00731d71ea0b57ddab09e8fc3ac3ac8b",
+  "canonicalLocalProtocolPath": "E:\\Codex WorkSpace\\Git Projects\\portfolio-management\\development-management-20261110\\wave2-state\\LEASE-PROTOCOL.json",
+  "canonicalLocalSDKExecution": "EXCLUDED; CI does not create a competing E lane or modify the local protocol.",
+  "sdk": "11.0.100",
+  "runtime": "11.0.0",
+  "tfm": "net11.0",
+  "language": "15.0",
+  "version": "0.1.0-preview.4",
+  "caps": {
+    "cpuMax": 1,
+    "memoryMax": 4294967296,
+    "tasksMax": 64,
+    "swapMax": 0,
+    "logMax": 16777216,
+    "scratchMax": 2147483648,
+    "receiptMax": 8192,
+    "terminalSecondsMax": 10
+  },
+  "hostClasses": {
+    "win-x64": {
+      "name": "GitHubHostedWindowsServer2025x64",
+      "runner": "windows-2025",
+      "imageOS": "win25",
+      "kernelBuild": 26100,
+      "productType": 3
+    },
+    "linux-x64": {
+      "name": "GitHubHostedUbuntu24.04x64",
+      "runner": "ubuntu-24.04",
+      "imageOS": "ubuntu24",
+      "versionID": "24.04",
+      "uidGid": "ACTUAL_NONROOT_RUNNER_NOT_LITERAL1000"
+    }
+  },
+  "localStates": {
+    "LinuxLocalUbuntu24": "UNQUALIFIED_R3_STOP",
+    "WindowsLocal26H2": "SUPPORT_UNKNOWN_SDK_EXCLUDED"
+  },
+  "originalGlobalSDK_READY": false,
+  "rowSecondsMax": 1200,
+  "stageSeconds": {
+    "checkoutBootstrap": 60,
+    "SDK0Boundaries": 90,
+    "ownNativeControl": 85,
+    "admittedAcquisition": 90,
+    "materialization": 180,
+    "productAggregate": 635,
+    "terminalExistingUpload": 60
+  },
+  "newEventsAuthorized": 0,
+  "newJobs": 0,
+  "maxParallel": 1,
+  "newSpendDollarsMax": 0,
+  "producerInterface": {
+    "schemaId": "urn:pouria:dotnet11-host-qualification:v1",
+    "schemaFile": "producer-host-qualification.schema.json",
+    "sha256": "63e04fa5d270c87b93e6e1f4c38bfbcf336b950b39fe1854dc4e514f0661f14c",
+    "consumerDefinition": "#/$defs/consumerAdmission",
+    "state": "FROZEN_SOURCE_INTERFACE_ONLY_NOT_EXECUTION_OR_FACT_ACCEPTANCE"
+  },
+  "artifactPins": {
+    "win-x64": {
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/11.0.100/dotnet-sdk-11.0.100-win-x64.zip",
+      "bytes": 337835326,
+      "sha512": "5cdd9122c84873f090038548ebe8a4786e5c50a6b1b9792ca2c6dab82fd74a0d7f1d6cdf59e7dcd25e4903dd44f37af5d7ed73ecd3bca4d0cce948b5572452c3",
+      "manifestSha256": "7eb452d5eaa748773eb0b12d1abc8da1a9f1c192b06444dc88c6511de56b63c3"
+    },
+    "linux-x64": {
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/11.0.100/dotnet-sdk-11.0.100-linux-x64.tar.gz",
+      "bytes": 211463422,
+      "sha512": "1bec9cca2ec689b1e80245b84f2b53c9441d1aa6daccf2ceb27490768bffa95954fa585bd275def31069d874d543d9ba9e6591fe9ade2dbd9f34ec5c0fd0050c",
+      "manifestSha256": "d411111d23492b4d101dd62851d1d1fedf3a4badc057d999aedc155ae4cc103a"
+    }
+  }
+}

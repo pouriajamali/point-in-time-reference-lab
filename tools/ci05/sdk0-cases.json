@@ -1,0 +1,320 @@
+{
+  "scope": "IDENTITY_PROJECTIONS_ONLY_NO_ACTUAL_FACTS",
+  "negative": [
+    {
+      "id": "local-linux-r3",
+      "route": "identity",
+      "set": [
+        [
+          "ctx.hostClass",
+          "LinuxLocalUbuntu24"
+        ]
+      ]
+    },
+    {
+      "id": "local-windows26",
+      "route": "identity",
+      "set": [
+        [
+          "ctx.hostClass",
+          "WindowsLocal26H2"
+        ]
+      ]
+    },
+    {
+      "id": "wrong-rid",
+      "route": "identity",
+      "set": [
+        [
+          "ctx.rid",
+          "win-x64"
+        ]
+      ]
+    },
+    {
+      "id": "missing-host-fact",
+      "route": "missing"
+    },
+    {
+      "id": "changed-fact-digest",
+      "route": "identity",
+      "set": [
+        [
+          "row.factCanonicalSha256",
+          "0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      ]
+    },
+    {
+      "id": "wrong-producer",
+      "route": "identity",
+      "set": [
+        [
+          "row.producerCommit",
+          "0000000000000000000000000000000000000000"
+        ]
+      ]
+    },
+    {
+      "id": "current-source",
+      "route": "identity",
+      "set": [
+        [
+          "ctx.sourceCommit",
+          "0000000000000000000000000000000000000000"
+        ]
+      ]
+    },
+    {
+      "id": "archive",
+      "route": "identity",
+      "set": [
+        [
+          "row.archiveSha512",
+          "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      ]
+    },
+    {
+      "id": "tree",
+      "route": "identity",
+      "set": [
+        [
+          "row.treeSha256",
+          "0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      ]
+    },
+    {
+      "id": "qualification-catalog",
+      "route": "identity",
+      "set": [
+        [
+          "row.normalCatalogRole",
+          "REVIEWED_TYPED_ARCHIVE_INPUT_NOT_EXECUTED"
+        ]
+      ]
+    },
+    {
+      "id": "kernel-win26",
+      "route": "identity",
+      "set": [
+        [
+          "ctx.rid",
+          "win-x64"
+        ],
+        [
+          "ctx.hostClass",
+          "GitHubHostedWindowsServer2025x64"
+        ],
+        [
+          "row.admittedFor.rid",
+          "win-x64"
+        ],
+        [
+          "row.admittedFor.hostClass",
+          "GitHubHostedWindowsServer2025x64"
+        ],
+        [
+          "ctx.imageOS",
+          "win25"
+        ],
+        [
+          "ctx.kernelBuild",
+          26200
+        ],
+        [
+          "ctx.productType",
+          3
+        ],
+        [
+          "fact.factType",
+          "WindowsCIServer2025RID"
+        ],
+        [
+          "fact.qualifiedOn.rid",
+          "win-x64"
+        ],
+        [
+          "fact.qualifiedOn.hostClass",
+          "GitHubHostedWindowsServer2025x64"
+        ]
+      ],
+      "refreshProjectionDigest": true
+    },
+    {
+      "id": "ubuntu-version",
+      "route": "identity",
+      "set": [
+        [
+          "ctx.osVersion",
+          "22.04"
+        ]
+      ]
+    },
+    {
+      "id": "image",
+      "route": "identity",
+      "set": [
+        [
+          "ctx.imageVersion",
+          "other"
+        ]
+      ]
+    },
+    {
+      "id": "api",
+      "route": "identity",
+      "set": [
+        [
+          "ctx.apiVerified",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "selfhosted",
+      "route": "identity",
+      "set": [
+        [
+          "ctx.runnerEnvironment",
+          "self-hosted"
+        ]
+      ]
+    },
+    {
+      "id": "container",
+      "route": "identity",
+      "set": [
+        [
+          "ctx.container",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "control-source",
+      "route": "identity",
+      "set": [
+        [
+          "row.consumerControlHashes",
+          {}
+        ]
+      ]
+    },
+    {
+      "id": "root-uid",
+      "route": "caps",
+      "set": [
+        [
+          "proof.uid",
+          0
+        ]
+      ]
+    },
+    {
+      "id": "producer-cpu-not-consumer",
+      "route": "caps",
+      "set": [
+        [
+          "proof.cpuCores",
+          2
+        ]
+      ]
+    },
+    {
+      "id": "memory",
+      "route": "caps",
+      "set": [
+        [
+          "proof.memoryMax",
+          8589934592
+        ]
+      ]
+    },
+    {
+      "id": "tasks",
+      "route": "caps",
+      "set": [
+        [
+          "proof.tasksMax",
+          128
+        ]
+      ]
+    },
+    {
+      "id": "swap",
+      "route": "caps",
+      "set": [
+        [
+          "proof.swapMax",
+          1
+        ]
+      ]
+    },
+    {
+      "id": "held-membership",
+      "route": "caps",
+      "set": [
+        [
+          "proof.heldChildMembershipBeforeResume",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "terminal-unknown",
+      "route": "terminal"
+    },
+    {
+      "id": "deadline",
+      "route": "caps",
+      "set": [
+        [
+          "remaining",
+          60
+        ]
+      ]
+    },
+    {
+      "id": "ambient-sdk",
+      "route": "sdkroot"
+    },
+    {
+      "id": "producer-repository",
+      "route": "identity",
+      "set": [
+        [
+          "row.qualifiedOn.repository",
+          "other"
+        ]
+      ]
+    },
+    {
+      "id": "manager-unadmitted",
+      "route": "unadmitted"
+    },
+    {
+      "id": "ambiguous-host-facts",
+      "route": "ambiguous"
+    },
+    {
+      "id": "synthetic-not-runtime",
+      "route": "synthetic"
+    }
+  ],
+  "positive": [
+    {
+      "id": "producer-current-ids-differ",
+      "route": "positive-ids"
+    },
+    {
+      "id": "dynamic-nonroot-uid-not-producer",
+      "route": "positive-uid"
+    },
+    {
+      "id": "one-rid-with-other-absent",
+      "route": "positive-single"
+    }
+  ]
+}

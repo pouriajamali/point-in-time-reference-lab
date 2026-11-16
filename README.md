@@ -6,6 +6,14 @@ A late correction can change a later query while leaving an earlier as-known que
 
 Synthetic, literal-loopback-only lab. No real feed, vendor data, historical price reconstruction, orders, account connection, prediction or production service.
 
+## .NET 11 technology refresh — source preparation only
+
+The `v0.1.0-preview.4` working branch pins SDK11.0.100, `net11.0`, stable C#15 and Core/ASP.NET11.0.0. This is a maintenance candidate, with no feature, schema, temporal contract or performance change claimed.
+
+Only source and documentation have been prepared. The three managed lockfiles and four runtime notice identities still describe the delivered .NET10 baseline; they have deliberately not been regenerated or relabeled. Building, executing or packaging this branch remains gated on one admitted shared SDK11 handoff, actual new runtime identities/notices, and reviewed project05 controls and kernel containment. SDK metadata is not acquisition, compatibility or runtime proof.
+
+Npgsql10.0.3, xunit.v3 4.0.3, all application/test code, semantic fixtures and the original signing trust root remain fixed. The existing preview.3 downloads and their accepted source/CI evidence below remain the usable published release. Do not treat this prepared branch as a new download or deployment.
+
 ## Decision and proof first
 
 | Decision | Executable evidence |
@@ -125,3 +133,32 @@ Fresh CI/contributor lint imports the exact reviewed public sealed archive; no
 producer drive/private receipts or local compiler are required. Managed task
 checkouts retain the canonical gate. See [native profile and signed input setup](docs/ACTIONLINT-BUILD.md).
 The shared sealed input was published and independently downloaded at [its tooling tag](https://github.com/pouriajamali/data-admission-gate/releases/tag/tooling-actionlint-v1.7.12-go1.26.11-r1); [producer bootstrap CI](https://github.com/pouriajamali/data-admission-gate/actions/runs/43275123686) applies to that producer only. Consumer CPU1 and app packages use their own exact preview.3 CI evidence.
+
+
+## SDK11 consumer input source candidate
+
+The separate SDK11/.NET11/C#15 maintenance route is source preparation only.
+The shared producer04 normal input module/catalog retain byte-identical identities
+`d9c690d8c82825b018c04089c279036829d3baf2534c2634bba84910c415a37d` /
+`686c6c778f7841e6015fa401f3892b853df80e3341fbb5d02b27c682887c1c78`.
+Only the accepted Linux producer fact `757abf2d3dde65d10cd895cfc97eaeccb7fc11e8685b94ad046e6a8ec8829007`
+and its `0452e1f3b4f2662d57e9b273428bb37ab0c5a733551a92394ca2a4e8b9b4ac08`
+acceptance may supply Linux input history. Windows normal input remains denied.
+This does not establish consumer compatibility, current own kernel control or SDK readiness.
+
+The proposed own controller `tools/ci05/ci_route05.py` retains CPU1/4GiB/64tasks,
+Linux swap0 and the original absolute1200s row deadline. It records an actual
+stopped worker with retained pidfd before continuation; frozen63e consumerAdmission
+binds its own current held evidence, tracked contract/profile and complete source-pin
+table. Historical producer IDs/UID do not become consumer IDs/UID. The shared
+`transport(rid,directory,context)` remains inside the own nonroot capped main worker;
+no downloaded SDK is executed by the shared input library and no global SDK/PATH,
+cache, job, event or time budget is added.
+
+Actual net11 managed locks, exact native Core/Host and ASP.NET runtime packages,
+raw signed versus normalized identities, signatures, notices and current advisories
+remain separate blocking product inputs. All original51unit/8package/7wire cases perOS,
+Linux14case/23correction/1866point and17newcorrection/19row/18active/page/replay/conflict
+checks and verifier8test/27process scope remain required. Existing preview.3 downloads
+and runtime evidence are unchanged. One consolidated exact source/runtime/public
+approval is still required before apply, acquisition, SDK/native work, CI or publication.

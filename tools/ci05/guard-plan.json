@@ -1,0 +1,116 @@
+{
+  "schema": "project05-supported-ci-guard-plan/v1",
+  "state": "SOURCE_ONLY_NOT_EXECUTED",
+  "sdk0": {
+    "negativePerMode": 30,
+    "identityOnlyPositivePerMode": 3,
+    "modes": [
+      {
+        "name": "normal",
+        "flags": [
+          "-S",
+          "-B"
+        ],
+        "PYTHONOPTIMIZE": null
+      },
+      {
+        "name": "O",
+        "flags": [
+          "-S",
+          "-B",
+          "-O"
+        ],
+        "PYTHONOPTIMIZE": null
+      },
+      {
+        "name": "env2",
+        "flags": [
+          "-S",
+          "-B"
+        ],
+        "PYTHONOPTIMIZE": "2",
+        "forbiddenFlags": [
+          "-I",
+          "-E"
+        ]
+      }
+    ],
+    "totalPlannedObservations": 99,
+    "sdkSpawns": 0,
+    "networkAttempts": 0,
+    "secondsPerMode": 30,
+    "aggregateSeconds": 90,
+    "logBytesPerMode": 1048576,
+    "fixtureFileBytesMax": 16384,
+    "fixtureTotalBytesMax": 524288,
+    "receiptBytesMax": 8192,
+    "fixtureSemantics": "Incomplete synthetic identity projections only; no emitted actual host fact, READY flag, SDK body, raw qualification or runtime admission. Public controller import/execution is excluded from harness.",
+    "historical144or96": "No replay or relabel"
+  },
+  "nativeControl": {
+    "hostClasses": [
+      "GitHubHostedWindowsServer2025x64",
+      "GitHubHostedUbuntu24.04x64"
+    ],
+    "perHostExecutionNow": 0,
+    "futurePrerequisite": "Actual independently accepted04 matching host/RID fact plus exact own controller/profile/source/host gate; synthetic fixtures never satisfy it.",
+    "readinessSecondsMax": 45,
+    "fixedChildTargetSecondsMax": 30,
+    "terminalSecondsMax": 10,
+    "aggregateSecondsMax": 85,
+    "argv": [
+      "$EXISTING_PYTHON",
+      "-I",
+      "-S",
+      "-B",
+      "-c",
+      "import os; print(\"PROJECT05_OWN_NATIVE_CONTROL_MARKER\",os.getpid())"
+    ],
+    "membership": "Held current own child identity and actual own kernel caps before target; never borrow producer membership or require producer/current IDs equal.",
+    "caps": {
+      "cpuCoresMax": 1,
+      "memoryMax": 4294967296,
+      "tasksMax": 64,
+      "linuxSwapMax": 0
+    },
+    "terminal": "Windows held process handle wait and ownJob zero; Linux held pidfd/MainPID/ControlPID/existing cgroup zero and exact unit typed result, remaining-wall query before cause fsync before retirement; unknown retains custody/lease."
+  },
+  "rowBudget": {
+    "seconds": 1200,
+    "maxParallel": 1,
+    "stageCeilings": {
+      "checkoutBootstrap": 60,
+      "sdk0ChangedBoundaries": 90,
+      "ownNativeControl": 85,
+      "normalAcquisition": 90,
+      "normalMaterialization": 180,
+      "productAggregate": 635,
+      "terminalExistingUpload": 60
+    },
+    "deadline": "One absolute current API job started_at +1200; every stage shrinks to remaining wall; no reset, retry/new event/cache/job/storage artifact.",
+    "productEnvelope": "Original full product recipe list remains required. Budget is reservation, no performance/completion claim."
+  },
+  "stillHeld": [
+    "Linux accepted producer757ab/acceptance0452 history is source-bound; own exact candidate/current image admission still absent",
+    "Windows normal remains DENIED_NO_ACCEPTED_PRODUCER_FACT; all original final RIDs/scenarios remain required",
+    "Actual native Core/Host/ASP.NET signed raw packs and normalized hashes/notices/advisories plus actual net11 locks remain unsealed",
+    "No current own native bootstrap/caps/held-worker/terminal/application execution evidence",
+    "No apply/acquisition/SDK/native/CI/public/signing gate"
+  ],
+  "newSharedWiringSDK0": {
+    "state": "FINITE_SOURCE_VALUE_EXECUTION_ONLY",
+    "script": "tools/ci05/test_normal_binding05.py",
+    "negativePerMode": 17,
+    "positiveValueControlsPerMode": 2,
+    "modes": [
+      0,
+      1,
+      2
+    ],
+    "plannedObservations": 57,
+    "wallSecondsPerModeMax": 10,
+    "stdoutBytesPerModeMax": 65536,
+    "networkSDKNativeOrControllerImports": 0,
+    "scope": "Pure selected own binding function AST only. No common healthy test replay; no actual fact/caps/host/runtime proof."
+  }
+}

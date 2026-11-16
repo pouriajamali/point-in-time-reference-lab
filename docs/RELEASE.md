@@ -1,3 +1,13 @@
+# v0.1.0-preview.4 — prepared .NET11 maintenance source, unpublished
+
+Prepared declarations: SDK11.0.100, net11.0, stable C#15 and Core/ASP.NET11.0.0. This candidate preserves the complete existing application, tests, schema, ownership/temporal behavior and semantic fixtures. No new feature or performance/quality improvement is claimed.
+
+Source preparation has not run an SDK, restore, build, unit/native/helper test or package. The current lockfiles and runtime notice map retain their actual .NET10 baseline identity. Net11 lock regeneration and actual raw-signed/normalized runtime11/full-notice evidence are pending the single admitted SDK11 producer handoff and reviewed project05 kernel controls. There are no new runtime hashes, compatibility results, signed archives, public CI or downloads to report.
+
+The accepted preview.3 release and all earlier tags/assets/signatures remain immutable. Fresh preview.4 binaries must come from their own future exact source; earlier bytes will not be renamed or relabeled. Publication requires the separate exact candidate/CI/signing/download gate.
+
+---
+
 # v0.1.0-preview.3 — Point-in-Time Instrument Reference Lab
 
 The history client rejects omitted or truncated pages unless they contain exactly min(16, headRevision-afterRevision) original receipts, consecutively from afterRevision+1. Full receipt validation remains active; storage row_id gaps remain legal. This is a synthetic, literal-loopback-only reference API/CLI, with no real feed, trading account or production-service claim.

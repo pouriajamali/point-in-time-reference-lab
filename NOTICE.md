@@ -16,3 +16,7 @@ https://vuln.go.dev/ and https://github.com/golang/vulndb/tree/master/data.
 The public sealed tooling ZIPs retain the complete original Go vulnerability
 database LICENSE and an attribution/formatting/analysis note under
 producer-proofs/vulndb-*. No upstream endorsement is claimed.
+
+## Prepared runtime11 candidate
+
+The source-only preview.4 proposal selects Core/ASP.NET11.0.0, but its actual signed runtime package bytes, normalized identities and complete original notices have not been admitted. The existing runtime10.0.15 records above and in NOTICE-SOURCES.json retain their delivered preview.3 attribution. They are not runtime11 evidence. No new runtime license/copyright/hash claim is made by this source preparation; Npgsql10.0.3 and its original notice remain unchanged.

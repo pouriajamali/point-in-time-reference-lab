@@ -1,0 +1,47 @@
+{
+  "schema": "project05-host-fact-admissions/v1",
+  "state": "INERT_SOURCE_HELD_NO_OWN_RUNTIME_ADMISSION",
+  "producer": "04",
+  "entries": [
+    {
+      "projectId": "05",
+      "acceptance": "SOURCE_HELD_PRODUCER_ACCEPTANCE_ONLY_NOT_OWN_EXECUTION",
+      "factFile": "tools/sdk11-normal/accepted-linux-fact.json",
+      "factBytesSha256": "757abf2d3dde65d10cd895cfc97eaeccb7fc11e8685b94ad046e6a8ec8829007",
+      "factCanonicalSha256": "fbd8275e14595adaad8265337cbc6b6a333c020369c6690564a4f3c626865ae7",
+      "producerCommit": "803eb71621bad8eb45e30aaf3d4560b8c058d07c",
+      "producerTree": "66794c0d3f4e2b3e6b7bd2aedc98972745a0783d",
+      "qualifiedOn": {
+        "hostClass": "GitHubHostedUbuntu24.04x64",
+        "rid": "linux-x64",
+        "imageOS": "ubuntu24",
+        "imageVersion": "20261111.370.1",
+        "runId": "43920284996",
+        "job": "verify",
+        "attempt": "1",
+        "repository": "pouriajamali/data-admission-gate",
+        "architecture": "x64",
+        "instanceId": "GitHub Actions 1000002308",
+        "osVersion": "Ubuntu 24.04",
+        "kernelBuild": "7.0.0-1017-azure",
+        "uid": 1001,
+        "gid": 1001
+      },
+      "hostPolicy": {
+        "hostClass": "GitHubHostedUbuntu24.04x64",
+        "rid": "linux-x64",
+        "sdk": "11.0.100",
+        "runtime": "11.0.0",
+        "memberManifestSha256": "d411111d23492b4d101dd62851d1d1fedf3a4badc057d999aedc155ae4cc103a"
+      },
+      "imageVersions": [],
+      "archiveSha512": "1bec9cca2ec689b1e80245b84f2b53c9441d1aa6daccf2ceb27490768bffa95954fa585bd275def31069d874d543d9ba9e6591fe9ade2dbd9f34ec5c0fd0050c",
+      "treeSha256": "d411111d23492b4d101dd62851d1d1fedf3a4badc057d999aedc155ae4cc103a",
+      "normalCatalogRole": "ADMITTED_IMMUTABLE_CONSUMER_INPUT",
+      "normalCatalogPath": "tools/sdk11-normal-inputs.lock.json",
+      "normalCatalogSha256": "686c6c778f7841e6015fa401f3892b853df80e3341fbb5d02b27c682887c1c78"
+    }
+  ],
+  "windows": "DENIED_NO_ACCEPTED_PRODUCER_FACT",
+  "binding": "Only the separately admitted own controller may compose canonical consumerAdmission after actual own stopped caps evidence and full tracked source table. Current consumer job uses logical GITHUB_JOB=verify; numeric API job identity retained separately. Empty imageVersions intentionally denies before own exact host gate."
+}

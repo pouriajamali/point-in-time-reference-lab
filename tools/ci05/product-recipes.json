@@ -1,0 +1,184 @@
+{
+  "schema": "project05-fixed-product-recipes/v1",
+  "rows": [
+    {
+      "stage": "locked-source",
+      "stageCeilingSeconds": 300,
+      "rid": "EACH",
+      "argv": [
+        "$SDK",
+        "restore",
+        "tests/Reference.Tests/Reference.Tests.csproj",
+        "--locked-mode",
+        "--disable-parallel"
+      ]
+    },
+    {
+      "stage": "unit51",
+      "stageCeilingSeconds": 180,
+      "rid": "EACH",
+      "argv": [
+        "$SDK",
+        "run",
+        "--project",
+        "tests/Reference.Tests/Reference.Tests.csproj",
+        "-c",
+        "Release",
+        "--no-restore",
+        "--",
+        "-noLogo",
+        "-result-xml",
+        "artifacts/unit.xml"
+      ]
+    },
+    {
+      "stage": "package",
+      "stageCeilingSeconds": 600,
+      "rid": "EACH",
+      "argv": [
+        "$PYTHON",
+        "tools/package.py",
+        "--rid",
+        "$RID",
+        "--commit",
+        "$SOURCE_SHA",
+        "--dotnet",
+        "$SDK",
+        "--work",
+        "artifacts/build",
+        "--out",
+        "artifacts/delivery"
+      ]
+    },
+    {
+      "stage": "verifier8_27",
+      "stageCeilingSeconds": 180,
+      "rid": "EACH",
+      "argv": [
+        "$PYTHON",
+        "tools/test_verifier.py",
+        "--out",
+        "artifacts/verifier-tests"
+      ]
+    },
+    {
+      "stage": "audit",
+      "stageCeilingSeconds": 180,
+      "rid": "EACH",
+      "argv": [
+        "$PYTHON",
+        "tools/audit_dependencies.py",
+        "--out",
+        "artifacts/dependency-advisories.json"
+      ]
+    },
+    {
+      "stage": "extract",
+      "stageCeilingSeconds": 180,
+      "rid": "EACH",
+      "argv": [
+        "$PYTHON",
+        "tools/extract_package.py",
+        "--archive",
+        "$ARCHIVE",
+        "--out",
+        "artifacts/extracted with spaces"
+      ]
+    },
+    {
+      "stage": "package8",
+      "stageCeilingSeconds": 180,
+      "rid": "EACH",
+      "argv": [
+        "$PYTHON",
+        "tools/check_package.py",
+        "--package",
+        "$PACKAGE",
+        "--commit",
+        "$SOURCE_SHA",
+        "--out",
+        "artifacts/package-checks.json"
+      ]
+    },
+    {
+      "stage": "wire7",
+      "stageCeilingSeconds": 180,
+      "rid": "EACH",
+      "argv": [
+        "$PYTHON",
+        "$PACKAGED_BOUNDARY",
+        "--wire-only",
+        "--cli",
+        "$CLI",
+        "--out",
+        "artifacts/wire-history"
+      ]
+    },
+    {
+      "stage": "linux_fetch5",
+      "stageCeilingSeconds": 120,
+      "rid": "linux-x64",
+      "argv": [
+        "$PYTHON",
+        "tools/fetch_services.py",
+        "--out",
+        "artifacts/upstream"
+      ]
+    },
+    {
+      "stage": "linux_extract5",
+      "stageCeilingSeconds": 180,
+      "rid": "linux-x64",
+      "argv": [
+        "$PYTHON",
+        "tools/prepare_linux.py",
+        "--archives",
+        "artifacts/upstream",
+        "--out",
+        "artifacts/services"
+      ]
+    },
+    {
+      "stage": "linux_pg14",
+      "stageCeilingSeconds": 600,
+      "rid": "linux-x64",
+      "argv": [
+        "$PYTHON",
+        "tools/integration.py",
+        "--fixtures",
+        "artifacts/services",
+        "--cli",
+        "$CLI",
+        "--out",
+        "artifacts/integration"
+      ]
+    },
+    {
+      "stage": "linux_pg17",
+      "stageCeilingSeconds": 600,
+      "rid": "linux-x64",
+      "argv": [
+        "$PYTHON",
+        "$PACKAGED_BOUNDARY",
+        "--fixtures",
+        "artifacts/services",
+        "--cli",
+        "$CLI",
+        "--out",
+        "artifacts/knowledge-boundary"
+      ]
+    }
+  ],
+  "aggregateProductSecondsMax": 635,
+  "rowSecondsMax": 1200,
+  "stageCeilingsNeverExtendDeadline": true,
+  "shellEvaluation": false,
+  "lockGeneration": "Not in sealed product route; deliberate SDK/RID lock transition and actual runtime notice admission remain separate fullM0 stages, not fake source hashes.",
+  "requiredPrerequisites": [
+    "Own admitted producer fact for same hostclass/RID",
+    "Current API-backed consumer job/source/controller/cap proof",
+    "Actual sealed net11 locks and new Core/ASP.NET raw/normalized/notices",
+    "Byte-identical common04 normal transport d9c690d8/catalog686c6c77 + actual own held/source/profile/admission context; Windows denied"
+  ],
+  "executionState": "INERT_BOUND_TO_COMMON_NORMAL_SOURCE_OWN_EXACT_RUNTIME_GATE_AND_REAL_PRODUCT_INPUTS_STILL_REQUIRED"
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "sdk11-own-normal-input-profile/v1",
+  "state": "ADMITTED_SOURCE_PROFILE",
+  "projectId": "05",
+  "repository": "pouriajamali/point-in-time-reference-lab",
+  "rowSeconds": 1200,
+  "memoryMaxBytes": 4294967296,
+  "swapMaxBytes": 0,
+  "tasksMax": 64,
+  "cpuQuotaMicros": 100000,
+  "cpuPeriodMicros": 100000,
+  "ownedUnitPrefix": "pit05-ci-"
+}

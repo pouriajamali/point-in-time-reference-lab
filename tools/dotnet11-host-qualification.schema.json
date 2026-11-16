@@ -1,0 +1,1213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Host-scoped SDK11 CI observations, not transferable readiness",
+  "type": "object",
+  "required": [
+    "schema",
+    "factType",
+    "outcome",
+    "qualifiedOn",
+    "source",
+    "bootstrap",
+    "cpu",
+    "archive",
+    "tree",
+    "caps",
+    "commands",
+    "denials",
+    "publisherAndNative",
+    "terminal",
+    "boundaries",
+    "toolchain"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "sdk11-host-qualification/v1"
+    },
+    "factType": {
+      "enum": [
+        "WindowsCIServer2025RID",
+        "LinuxCIUbuntu24RID"
+      ]
+    },
+    "outcome": {
+      "const": "NATIVE_HOST_QUALIFICATION_OBSERVED"
+    },
+    "qualifiedOn": {
+      "type": "object",
+      "required": [
+        "hostClass",
+        "rid",
+        "osVersion",
+        "kernelBuild",
+        "imageOS",
+        "imageVersion",
+        "uid",
+        "gid",
+        "runId",
+        "job",
+        "attempt",
+        "repository",
+        "architecture",
+        "instanceId"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "hostClass": {
+          "enum": [
+            "GitHubHostedWindowsServer2025x64",
+            "GitHubHostedUbuntu24.04x64"
+          ]
+        },
+        "rid": {
+          "enum": [
+            "win-x64",
+            "linux-x64"
+          ]
+        },
+        "osVersion": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "kernelBuild": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "imageOS": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "imageVersion": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "uid": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "gid": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "runId": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "job": {
+          "const": "verify"
+        },
+        "attempt": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "repository": {
+          "const": "pouriajamali/data-admission-gate"
+        },
+        "architecture": {
+          "const": "x64"
+        },
+        "instanceId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "commit",
+        "tree",
+        "ref",
+        "workflowSha256",
+        "controllerSha256",
+        "helperSha256",
+        "schemaSha256",
+        "catalogSha256",
+        "normalGuardSha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "tree": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "ref": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "workflowSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "controllerSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "helperSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "schemaSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "catalogSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "normalGuardSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "bootstrap": {
+      "type": "object",
+      "required": [
+        "boundary",
+        "pythonVersion",
+        "pythonExeSha256",
+        "stdlibClosureSha256",
+        "stdlibModules",
+        "nativeTools"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "boundary": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "pythonVersion": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "pythonExeSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "stdlibClosureSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "stdlibModules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "relative",
+              "bytes",
+              "sha256"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "relative": {
+                "type": "string",
+                "maxLength": 4096
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          },
+          "maxItems": 512
+        },
+        "nativeTools": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "sha256",
+              "version",
+              "provenance"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 4096
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "version": {
+                "type": "string",
+                "maxLength": 4096
+              },
+              "provenance": {
+                "type": "string",
+                "maxLength": 4096
+              }
+            }
+          },
+          "maxItems": 32
+        }
+      }
+    },
+    "cpu": {
+      "type": "object",
+      "required": [
+        "method",
+        "processorCount",
+        "evidenceSha256",
+        "features"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "processorCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evidenceSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "features": {
+          "const": [
+            "CX16",
+            "LAHF_SAHF",
+            "POPCNT",
+            "SSE3",
+            "SSSE3",
+            "SSE4_1",
+            "SSE4_2"
+          ]
+        }
+      }
+    },
+    "archive": {
+      "type": "object",
+      "required": [
+        "url",
+        "bytes",
+        "sha512",
+        "httpStatus",
+        "contentLength",
+        "redirects",
+        "contentEncoding"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha512": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{128}$"
+        },
+        "httpStatus": {
+          "const": 200
+        },
+        "contentLength": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "redirects": {
+          "const": 0
+        },
+        "contentEncoding": {
+          "const": "identity"
+        }
+      }
+    },
+    "tree": {
+      "type": "object",
+      "required": [
+        "memberManifestSha256",
+        "members",
+        "outputFiles",
+        "outputDirectories",
+        "expandedFileBytes",
+        "criticalMembers",
+        "notices"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "memberManifestSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "members": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "outputFiles": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "outputDirectories": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expandedFileBytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "criticalMembers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "path",
+              "bytes",
+              "mode",
+              "sha256",
+              "type"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "type": "string",
+                "maxLength": 4096
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "mode": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "type": {
+                "const": "file"
+              }
+            }
+          },
+          "maxItems": 8
+        },
+        "notices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "path",
+              "bytes",
+              "mode",
+              "sha256",
+              "type"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "type": "string",
+                "maxLength": 4096
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "mode": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "type": {
+                "const": "file"
+              }
+            }
+          },
+          "maxItems": 32
+        }
+      }
+    },
+    "caps": {
+      "type": "object",
+      "required": [
+        "kind",
+        "memoryMax",
+        "tasksMax",
+        "effectiveCpuCores",
+        "swapMax",
+        "membershipBeforeExec",
+        "heldChildIdentityBeforeExec",
+        "uid",
+        "gid",
+        "kernelReadbackSha256",
+        "peakMemoryBytes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "actual-Windows-Job",
+            "actual-Linux-cgroup-v2"
+          ]
+        },
+        "memoryMax": {
+          "const": 4294967296
+        },
+        "tasksMax": {
+          "const": 64
+        },
+        "effectiveCpuCores": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 2
+        },
+        "swapMax": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "membershipBeforeExec": {
+          "const": true
+        },
+        "heldChildIdentityBeforeExec": {
+          "const": true
+        },
+        "uid": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "gid": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "kernelReadbackSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "peakMemoryBytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "commands": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "prefixItems": [
+        {
+          "type": "object",
+          "required": [
+            "name",
+            "exitCode",
+            "outputSha256",
+            "outputPreview",
+            "membershipBeforeExec",
+            "pid",
+            "processStartIdentity",
+            "terminal",
+            "evidenceSha256",
+            "seconds"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "version"
+            },
+            "exitCode": {
+              "const": 0
+            },
+            "outputSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "outputPreview": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "membershipBeforeExec": {
+              "const": true
+            },
+            "pid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "processStartIdentity": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "terminal": {
+              "const": true
+            },
+            "evidenceSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "name",
+            "exitCode",
+            "outputSha256",
+            "outputPreview",
+            "membershipBeforeExec",
+            "pid",
+            "processStartIdentity",
+            "terminal",
+            "evidenceSha256",
+            "seconds"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "info"
+            },
+            "exitCode": {
+              "const": 0
+            },
+            "outputSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "outputPreview": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "membershipBeforeExec": {
+              "const": true
+            },
+            "pid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "processStartIdentity": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "terminal": {
+              "const": true
+            },
+            "evidenceSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "name",
+            "exitCode",
+            "outputSha256",
+            "outputPreview",
+            "membershipBeforeExec",
+            "pid",
+            "processStartIdentity",
+            "terminal",
+            "evidenceSha256",
+            "seconds"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "list-sdks"
+            },
+            "exitCode": {
+              "const": 0
+            },
+            "outputSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "outputPreview": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "membershipBeforeExec": {
+              "const": true
+            },
+            "pid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "processStartIdentity": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "terminal": {
+              "const": true
+            },
+            "evidenceSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "name",
+            "exitCode",
+            "outputSha256",
+            "outputPreview",
+            "membershipBeforeExec",
+            "pid",
+            "processStartIdentity",
+            "terminal",
+            "evidenceSha256",
+            "seconds"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "list-runtimes"
+            },
+            "exitCode": {
+              "const": 0
+            },
+            "outputSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "outputPreview": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "membershipBeforeExec": {
+              "const": true
+            },
+            "pid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "processStartIdentity": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "terminal": {
+              "const": true
+            },
+            "evidenceSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "name",
+            "exitCode",
+            "outputSha256",
+            "outputPreview",
+            "membershipBeforeExec",
+            "pid",
+            "processStartIdentity",
+            "terminal",
+            "evidenceSha256",
+            "seconds"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "compiler"
+            },
+            "exitCode": {
+              "const": 0
+            },
+            "outputSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "outputPreview": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "membershipBeforeExec": {
+              "const": true
+            },
+            "pid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "processStartIdentity": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "terminal": {
+              "const": true
+            },
+            "evidenceSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "name",
+            "exitCode",
+            "outputSha256",
+            "outputPreview",
+            "membershipBeforeExec",
+            "pid",
+            "processStartIdentity",
+            "terminal",
+            "evidenceSha256",
+            "seconds"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "restore"
+            },
+            "exitCode": {
+              "const": 0
+            },
+            "outputSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "outputPreview": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "membershipBeforeExec": {
+              "const": true
+            },
+            "pid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "processStartIdentity": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "terminal": {
+              "const": true
+            },
+            "evidenceSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "name",
+            "exitCode",
+            "outputSha256",
+            "outputPreview",
+            "membershipBeforeExec",
+            "pid",
+            "processStartIdentity",
+            "terminal",
+            "evidenceSha256",
+            "seconds"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "build"
+            },
+            "exitCode": {
+              "const": 0
+            },
+            "outputSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "outputPreview": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "membershipBeforeExec": {
+              "const": true
+            },
+            "pid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "processStartIdentity": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "terminal": {
+              "const": true
+            },
+            "evidenceSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "name",
+            "exitCode",
+            "outputSha256",
+            "outputPreview",
+            "membershipBeforeExec",
+            "pid",
+            "processStartIdentity",
+            "terminal",
+            "evidenceSha256",
+            "seconds"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "hello"
+            },
+            "exitCode": {
+              "const": 0
+            },
+            "outputSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "outputPreview": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "membershipBeforeExec": {
+              "const": true
+            },
+            "pid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "processStartIdentity": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "terminal": {
+              "const": true
+            },
+            "evidenceSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      ],
+      "items": false
+    },
+    "denials": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "mode",
+          "optimize",
+          "count",
+          "candidateSpawns",
+          "networkAttempts",
+          "receiptSha256"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "type": "string",
+            "maxLength": 4096
+          },
+          "optimize": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "count": {
+            "const": 12
+          },
+          "candidateSpawns": {
+            "const": 0
+          },
+          "networkAttempts": {
+            "const": 0
+          },
+          "receiptSha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "publisherAndNative": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "kind",
+          "status",
+          "evidenceSha256"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 4096
+          },
+          "kind": {
+            "type": "string",
+            "maxLength": 4096
+          },
+          "status": {
+            "type": "string",
+            "maxLength": 4096
+          },
+          "evidenceSha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      },
+      "maxItems": 32
+    },
+    "terminal": {
+      "type": "object",
+      "required": [
+        "workerExitCode",
+        "ownedPopulation",
+        "supervisorObservedTerminal",
+        "typedStopResult",
+        "terminalEvidenceSha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "workerExitCode": {
+          "const": 0
+        },
+        "ownedPopulation": {
+          "const": 0
+        },
+        "supervisorObservedTerminal": {
+          "const": true
+        },
+        "typedStopResult": {
+          "const": "success"
+        },
+        "terminalEvidenceSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "boundaries": {
+      "const": [
+        "ORIGINAL_GLOBAL_SDK_READY_REMAINS_FALSE",
+        "LOCAL_R3_STOP_UNQUALIFIED",
+        "LOCAL_WINDOWS26H2_UNKNOWN_EXCLUDED",
+        "QUALIFIED_ON_IS_IMMUTABLE_PRODUCER_HISTORY",
+        "CONSUMER_ADMITTED_FOR_HOST_CLASS_IS_SEPARATE",
+        "NO_PRODUCT_COMPATIBILITY_OR_PERFORMANCE_PROOF",
+        "INDEPENDENT_GITHUB_RUN_JOB_SOURCE_READBACK_STILL_REQUIRED"
+      ]
+    },
+    "toolchain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sdk",
+        "runtime",
+        "framework",
+        "language"
+      ],
+      "properties": {
+        "sdk": {
+          "const": "11.0.100"
+        },
+        "runtime": {
+          "const": "11.0.0"
+        },
+        "framework": {
+          "const": "net11.0"
+        },
+        "language": {
+          "const": "15.0"
+        }
+      }
+    }
+  },
+  "$id": "urn:pouria:dotnet11-host-qualification:v1",
+  "$defs": {
+    "consumerAdmission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "state",
+        "projectId",
+        "producerFactSha256",
+        "admittedFor",
+        "currentExecution",
+        "identityRule"
+      ],
+      "properties": {
+        "schema": {
+          "const": "sdk11-consumer-host-admission/v1"
+        },
+        "state": {
+          "const": "ADMITTED_EXACT_SUPPORTED_HOST_CLASS"
+        },
+        "projectId": {
+          "type": "string",
+          "pattern": "^0[1-6]$"
+        },
+        "producerFactSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "admittedFor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "hostClass",
+            "rid",
+            "sdk",
+            "runtime",
+            "memberManifestSha256",
+            "contractSha256",
+            "sourcePinTableSha256",
+            "controllerSha256",
+            "profileSha256"
+          ],
+          "properties": {
+            "hostClass": {
+              "enum": [
+                "GitHubHostedWindowsServer2025x64",
+                "GitHubHostedUbuntu24.04x64"
+              ]
+            },
+            "rid": {
+              "enum": [
+                "win-x64",
+                "linux-x64"
+              ]
+            },
+            "sdk": {
+              "const": "11.0.100"
+            },
+            "runtime": {
+              "const": "11.0.0"
+            },
+            "memberManifestSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "contractSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "sourcePinTableSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "controllerSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "profileSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "currentExecution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "runId",
+            "job",
+            "attempt",
+            "instanceId",
+            "ownCapsEvidenceSha256"
+          ],
+          "properties": {
+            "runId": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "job": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "attempt": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "instanceId": {
+              "type": "string",
+              "maxLength": 4096
+            },
+            "ownCapsEvidenceSha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "identityRule": {
+          "const": "QUALIFIED_ON_IS_HISTORICAL_PRODUCER_INSTANCE_CURRENT_CONSUMER_JOB_MAY_DIFFER"
+        }
+      }
+    }
+  }
+}

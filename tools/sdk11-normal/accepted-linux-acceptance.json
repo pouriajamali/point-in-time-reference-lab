@@ -1,0 +1,433 @@
+{
+  "runId": 43920284996,
+  "observedAt": "2026-11-16T17:40:05.7169013Z",
+  "jobs": [
+    {
+      "id": 133485418032,
+      "name": "verify (ubuntu-24.04, linux-x64)",
+      "status": "completed",
+      "conclusion": "success",
+      "check_run_url": "https://api.github.com/repos/pouriajamali/data-admission-gate/check-runs/133485418032",
+      "runner_name": "GitHub Actions 1000002308",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-16T17:37:44Z",
+          "completed_at": "2026-11-16T17:37:45Z"
+        },
+        {
+          "name": "Existing Windows Python and outer clock only",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 2,
+          "started_at": "2026-11-16T17:37:45Z",
+          "completed_at": "2026-11-16T17:37:45Z"
+        },
+        {
+          "name": "Existing Ubuntu Python and outer clock only",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-16T17:37:45Z",
+          "completed_at": "2026-11-16T17:37:45Z"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-16T17:37:45Z",
+          "completed_at": "2026-11-16T17:37:47Z"
+        },
+        {
+          "name": "Fixed Windows qualifier or own consumer04 controller",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 5,
+          "started_at": "2026-11-16T17:37:47Z",
+          "completed_at": "2026-11-16T17:37:47Z"
+        },
+        {
+          "name": "Fixed Ubuntu qualifier or own consumer04 controller",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-16T17:37:47Z",
+          "completed_at": "2026-11-16T17:38:10Z"
+        },
+        {
+          "name": "Locked offline admission regressions",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 7,
+          "started_at": "2026-11-16T17:38:10Z",
+          "completed_at": "2026-11-16T17:38:11Z"
+        },
+        {
+          "name": "Build clean exact-commit distributable",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-11-16T17:38:11Z",
+          "completed_at": "2026-11-16T17:38:11Z"
+        },
+        {
+          "name": "Extract the actual archive",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 9,
+          "started_at": "2026-11-16T17:38:11Z",
+          "completed_at": "2026-11-16T17:38:11Z"
+        },
+        {
+          "name": "Execute own extracted apphost with synthetic bundles",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 10,
+          "started_at": "2026-11-16T17:38:11Z",
+          "completed_at": "2026-11-16T17:38:11Z"
+        },
+        {
+          "name": "Compare four frozen semantic and wire oracles",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 11,
+          "started_at": "2026-11-16T17:38:11Z",
+          "completed_at": "2026-11-16T17:38:11Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 12,
+          "started_at": "2026-11-16T17:38:11Z",
+          "completed_at": "2026-11-16T17:38:11Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 13,
+          "started_at": "2026-11-16T17:38:11Z",
+          "completed_at": "2026-11-16T17:38:11Z"
+        },
+        {
+          "name": "Preserve bounded qualification failure when controller proof is unavailable",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 14,
+          "started_at": "2026-11-16T17:38:11Z",
+          "completed_at": "2026-11-16T17:38:11Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-11-16T17:38:11Z",
+          "completed_at": "2026-11-16T17:38:12Z"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 30,
+          "started_at": "2026-11-16T17:38:12Z",
+          "completed_at": "2026-11-16T17:38:12Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 31,
+          "started_at": "2026-11-16T17:38:12Z",
+          "completed_at": "2026-11-16T17:38:12Z"
+        }
+      ]
+    },
+    {
+      "id": 133485418698,
+      "name": "verify (windows-2025, win-x64)",
+      "status": "completed",
+      "conclusion": "failure",
+      "check_run_url": "https://api.github.com/repos/pouriajamali/data-admission-gate/check-runs/133485418698",
+      "runner_name": "GitHub Actions 1000002306",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-16T17:37:21Z",
+          "completed_at": "2026-11-16T17:37:22Z"
+        },
+        {
+          "name": "Existing Windows Python and outer clock only",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-16T17:37:23Z",
+          "completed_at": "2026-11-16T17:37:24Z"
+        },
+        {
+          "name": "Existing Ubuntu Python and outer clock only",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 3,
+          "started_at": "2026-11-16T17:37:24Z",
+          "completed_at": "2026-11-16T17:37:24Z"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-16T17:37:24Z",
+          "completed_at": "2026-11-16T17:37:34Z"
+        },
+        {
+          "name": "Fixed Windows qualifier or own consumer04 controller",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 5,
+          "started_at": "2026-11-16T17:37:34Z",
+          "completed_at": "2026-11-16T17:37:35Z"
+        },
+        {
+          "name": "Fixed Ubuntu qualifier or own consumer04 controller",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 6,
+          "started_at": "2026-11-16T17:37:35Z",
+          "completed_at": "2026-11-16T17:37:35Z"
+        },
+        {
+          "name": "Locked offline admission regressions",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 7,
+          "started_at": "2026-11-16T17:37:35Z",
+          "completed_at": "2026-11-16T17:37:35Z"
+        },
+        {
+          "name": "Build clean exact-commit distributable",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-11-16T17:37:35Z",
+          "completed_at": "2026-11-16T17:37:35Z"
+        },
+        {
+          "name": "Extract the actual archive",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 9,
+          "started_at": "2026-11-16T17:37:35Z",
+          "completed_at": "2026-11-16T17:37:35Z"
+        },
+        {
+          "name": "Execute own extracted apphost with synthetic bundles",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 10,
+          "started_at": "2026-11-16T17:37:35Z",
+          "completed_at": "2026-11-16T17:37:35Z"
+        },
+        {
+          "name": "Compare four frozen semantic and wire oracles",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 11,
+          "started_at": "2026-11-16T17:37:35Z",
+          "completed_at": "2026-11-16T17:37:35Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 12,
+          "started_at": "2026-11-16T17:37:35Z",
+          "completed_at": "2026-11-16T17:37:35Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 13,
+          "started_at": "2026-11-16T17:37:35Z",
+          "completed_at": "2026-11-16T17:37:35Z"
+        },
+        {
+          "name": "Preserve bounded qualification failure when controller proof is unavailable",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14,
+          "started_at": "2026-11-16T17:37:35Z",
+          "completed_at": "2026-11-16T17:37:36Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-11-16T17:37:36Z",
+          "completed_at": "2026-11-16T17:37:37Z"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 30,
+          "started_at": "2026-11-16T17:37:37Z",
+          "completed_at": "2026-11-16T17:37:39Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 31,
+          "started_at": "2026-11-16T17:37:39Z",
+          "completed_at": "2026-11-16T17:37:39Z"
+        }
+      ]
+    },
+    {
+      "id": 133485421092,
+      "name": "Changed files and documentation policy",
+      "status": "completed",
+      "conclusion": "skipped",
+      "check_run_url": "https://api.github.com/repos/pouriajamali/data-admission-gate/check-runs/133485421092",
+      "runner_name": null,
+      "steps": []
+    },
+    {
+      "id": 133486020321,
+      "name": "release",
+      "status": "completed",
+      "conclusion": "skipped",
+      "check_run_url": "https://api.github.com/repos/pouriajamali/data-admission-gate/check-runs/133486020321",
+      "runner_name": null,
+      "steps": []
+    }
+  ],
+  "artifacts": {
+    "total_count": 2,
+    "artifacts": [
+      {
+        "id": 14253686761,
+        "node_id": "MDg6QXJ0aWZhY3QxNDI1MzY4Njc2MQ==",
+        "name": "proof-win-x64",
+        "size_in_bytes": 804,
+        "url": "https://api.github.com/repos/pouriajamali/data-admission-gate/actions/artifacts/14253686761",
+        "archive_download_url": "https://api.github.com/repos/pouriajamali/data-admission-gate/actions/artifacts/14253686761/zip",
+        "expired": false,
+        "digest": "sha256:b027712cac23741ff46da1b3fe0bc4c33efb066e2bc26085789fec3d8f3c3e6d",
+        "created_at": "2026-11-16T17:37:37Z",
+        "updated_at": "2026-11-16T17:37:37Z",
+        "expires_at": "2026-11-19T17:37:36Z",
+        "workflow_run": {
+          "id": 43920284996,
+          "repository_id": 1451216676,
+          "head_repository_id": 1451216676,
+          "head_branch": "codex/sdk11-supported-ci-qualification-20261116",
+          "head_sha": "803eb71621bad8eb45e30aaf3d4560b8c058d07c"
+        }
+      },
+      {
+        "id": 14252463641,
+        "node_id": "MDg6QXJ0aWZhY3QxNDI1MjQ2MzY0MQ==",
+        "name": "proof-linux-x64",
+        "size_in_bytes": 12404,
+        "url": "https://api.github.com/repos/pouriajamali/data-admission-gate/actions/artifacts/14252463641",
+        "archive_download_url": "https://api.github.com/repos/pouriajamali/data-admission-gate/actions/artifacts/14252463641/zip",
+        "expired": false,
+        "digest": "sha256:c1d659e4dfcfd69ea8e87287609adfe948043c6a1c46826c9fd623f462a729c6",
+        "created_at": "2026-11-16T17:38:12Z",
+        "updated_at": "2026-11-16T17:38:12Z",
+        "expires_at": "2026-11-19T17:38:11Z",
+        "workflow_run": {
+          "id": 43920284996,
+          "repository_id": 1451216676,
+          "head_repository_id": 1451216676,
+          "head_branch": "codex/sdk11-supported-ci-qualification-20261116",
+          "head_sha": "803eb71621bad8eb45e30aaf3d4560b8c058d07c"
+        }
+      }
+    ]
+  },
+  "rootReview": {
+    "state": "LINUX_PRODUCER_HOST_FACT_ACCEPTED_WINDOWS_DENIED",
+    "linuxFactSha256": "757abf2d3dde65d10cd895cfc97eaeccb7fc11e8685b94ad046e6a8ec8829007",
+    "linuxArtifactDigest": "c1d659e4dfcfd69ea8e87287609adfe948043c6a1c46826c9fd623f462a729c6",
+    "checks": [
+      "actual_download_size_digest_member_safety",
+      "exact_commit_source_tree_six_source_pins",
+      "typed_schema_host_nonroot_caps_cpu_terminal",
+      "sealed_catalog_member_manifest_counts_bytes_critical_notices",
+      "bootstrap_stdlib_closure",
+      "eight_commands_exit0_membership_identity_terminal_output_hashes",
+      "three_denial_modes_36_no_spawn_no_network",
+      "actual_run_job_attempt_runner_identity"
+    ],
+    "qualifiedOn": {
+      "hostClass": "GitHubHostedUbuntu24.04x64",
+      "rid": "linux-x64",
+      "imageOS": "ubuntu24",
+      "imageVersion": "20261111.370.1",
+      "runId": "43920284996",
+      "job": "verify",
+      "attempt": "1",
+      "repository": "pouriajamali/data-admission-gate",
+      "architecture": "x64",
+      "instanceId": "GitHub Actions 1000002308",
+      "osVersion": "Ubuntu 24.04",
+      "kernelBuild": "7.0.0-1017-azure",
+      "uid": 1001,
+      "gid": 1001
+    },
+    "scope": "Producer history for Ubuntu24.04 linux-x64 only; not consumer admission or product compatibility",
+    "windowsFailure": {
+      "actualStage": 0,
+      "attempt": "1",
+      "boundary": "SANITIZED_FAILURE_ONLY_NOT_HOST_FACT_NOT_PASS_NO_SDK_OR_RAW_OUTPUT",
+      "cause": {
+        "code": "CHILD_NONZERO:1",
+        "errno": null,
+        "exceptionType": "CapError"
+      },
+      "controllerSha256": "1d6b9a6cb7cfbac0c46be6de519b65a4f913475d87544528cc4c405632446244",
+      "job": "verify",
+      "rid": "win-x64",
+      "runId": "43920284996",
+      "schema": "sdk11-ci-failure-summary/v1",
+      "sourceCommit": "803eb71621bad8eb45e30aaf3d4560b8c058d07c",
+      "state": "FAILURE_OBSERVED_NO_QUALIFICATION",
+      "stopOutcome": {
+        "exitCode": "UNKNOWN",
+        "exitStatus": "UNKNOWN",
+        "remainingPopulationExcludingObserver": "UNKNOWN",
+        "serviceResult": "UNKNOWN"
+      },
+      "terminal": {
+        "cleanupResult": "UNKNOWN",
+        "evidenceSha256": "4a9ce9db1d65009679fba2fb38d8f6e394c8e96d91c4f1c0b3916c2ab31d09cf",
+        "launcherTerminal": "UNKNOWN",
+        "ownedPopulation": 0,
+        "workerExitCode": 1,
+        "workerPidfdTerminal": "NOT_APPLICABLE_WINDOWS"
+      },
+      "workerCause": {
+        "code": "Q_HOST_OS",
+        "errno": null,
+        "exceptionType": "Denied"
+      },
+      "workflowSha256": "6f6607c49cd33858c9cfe0063966a907e86844006d01352caa9a70a16cb1a7bf"
+    },
+    "globalSDK_READY": false,
+    "consumerAdmission": "NONE",
+    "rerunAuthority": "NONE"
+  }
+}

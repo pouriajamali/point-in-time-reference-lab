@@ -1,0 +1,990 @@
+{
+  "toolchain": {
+    "sdk": "11.0.100",
+    "runtime": "11.0.0",
+    "framework": "net11.0",
+    "language": "15.0"
+  },
+  "schema": "sdk11-host-qualification/v1",
+  "factType": "LinuxCIUbuntu24RID",
+  "outcome": "NATIVE_HOST_QUALIFICATION_OBSERVED",
+  "qualifiedOn": {
+    "hostClass": "GitHubHostedUbuntu24.04x64",
+    "rid": "linux-x64",
+    "imageOS": "ubuntu24",
+    "imageVersion": "20261111.370.1",
+    "runId": "43920284996",
+    "job": "verify",
+    "attempt": "1",
+    "repository": "pouriajamali/data-admission-gate",
+    "architecture": "x64",
+    "instanceId": "GitHub Actions 1000002308",
+    "osVersion": "Ubuntu 24.04",
+    "kernelBuild": "7.0.0-1017-azure",
+    "uid": 1001,
+    "gid": 1001
+  },
+  "source": {
+    "commit": "803eb71621bad8eb45e30aaf3d4560b8c058d07c",
+    "tree": "66794c0d3f4e2b3e6b7bd2aedc98972745a0783d",
+    "ref": "refs/heads/codex/sdk11-supported-ci-qualification-20261116",
+    "workflowSha256": "6f6607c49cd33858c9cfe0063966a907e86844006d01352caa9a70a16cb1a7bf",
+    "controllerSha256": "2182f7989e9d7c4bf3aa4fb7d8878106fbf75de9f49f0746dea2cad8c0e35d4e",
+    "helperSha256": "0d63594368cb6839145d4b1798730fe8fab05f6a94d86834f3a82d52475e7227",
+    "schemaSha256": "63e04fa5d270c87b93e6e1f4c38bfbcf336b950b39fe1854dc4e514f0661f14c",
+    "catalogSha256": "307d56b0590f5adf8bfdc03ca22d151b987774c2e49934598cfd0ac0700c0571",
+    "normalGuardSha256": "4786dae59cb9b0cef0d71d75d895dbdce63568844a547da3f80555a82bf2b1b6"
+  },
+  "bootstrap": {
+    "boundary": "TRUSTED_HOSTED_IMAGE_SHELL_PYTHON_BEFORE_CAPS_NO_SDK_OR_ACQUISITION",
+    "pythonVersion": "3.12.3",
+    "pythonExeSha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+    "stdlibClosureSha256": "55e12f1a3c0ef9230f2a6000c4f5a6cb8ed6e23ce67ad4a19528d6bf900f001b",
+    "stdlibModules": [
+      {
+        "relative": "PYTHON/lib/python3.12/__future__.py",
+        "bytes": 5218,
+        "sha256": "981d4c398849f9ebcab72300d9c1fe288fd6d7f28957b3b3fa3a493a5836d95c"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/_collections_abc.py",
+        "bytes": 32082,
+        "sha256": "90324ee3e1c4ca5319f7242d4b7c1e90eb8418b3f999d07c853aa488356282e6"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/_compression.py",
+        "bytes": 5681,
+        "sha256": "3ad5d60627477a60939ee44fc1bb3a05dbe8fb52f0f75039b8f5d8f1a278b981"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/_weakrefset.py",
+        "bytes": 5893,
+        "sha256": "91895a451d06e9f521a1171b31b9b19bc9740f35af00d4fa106338ab7167c9ac"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/abc.py",
+        "bytes": 6538,
+        "sha256": "e558702a95cdce3febd289da021715d2b92bc43995b8a1bc58dfa1c3d8010287"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/argparse.py",
+        "bytes": 101750,
+        "sha256": "29395feb61bc376ca4ff9d44069af8d914ec2a1f25a4bd7978f6e2afef5bc07f"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/base64.py",
+        "bytes": 20602,
+        "sha256": "65c70b5b6361c6f7a71ecc2df0f55315474b669221dd8d81d7c1ae8d56748ada"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/bisect.py",
+        "bytes": 3423,
+        "sha256": "f1cf7b85fc36b5da249813fc5ab97d9464f8cc1bc817f7146206fa2713e35999"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/bz2.py",
+        "bytes": 11847,
+        "sha256": "76ab3252924e71e859d7d90e8d3db13b6554975cfcac0fdadced4de7f8779330"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/calendar.py",
+        "bytes": 25418,
+        "sha256": "fb3fbcc0a0c8f33941153c425e5c39aedae687c86fcb001bf3a9526a9584459c"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/codecs.py",
+        "bytes": 36870,
+        "sha256": "7b7839e53a77961153240aecfe11edc8054d05b1dedd83894450dae21ec05785"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/collections/__init__.py",
+        "bytes": 52378,
+        "sha256": "0af967cd58036507b3d0fbc33b7a996c61dbb52a94b0b738c8bef12cd4cc7dd4"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/collections/abc.py",
+        "bytes": 119,
+        "sha256": "9cb4208f99128a0489b6c8e6c61637617dd7d4250c59e065491957eda084dd10"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/contextlib.py",
+        "bytes": 27637,
+        "sha256": "8b7a477f978a8532852fd81e241c78182516bc4975d672d580a5848a76e11eb6"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/copy.py",
+        "bytes": 8412,
+        "sha256": "cbd25547933176fcf6bb05c2adc9f4796d15ac20b9b82dcf890daea7203daeab"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/copyreg.py",
+        "bytes": 7614,
+        "sha256": "c8eda41f05c6bf95a4da4726a530409d2485ae060b8d019b3a8034389a15d3e9"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/ctypes/__init__.py",
+        "bytes": 18182,
+        "sha256": "0782592567ad71097198a3afe985ac3e2ea0b9b5e75452402c9460c89a86318a"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/ctypes/_endian.py",
+        "bytes": 2535,
+        "sha256": "c5d692bdce10dfee242752620061bab684633bc72445a3def484961ef1bdbf3a"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/datetime.py",
+        "bytes": 268,
+        "sha256": "ef20dc6b3554cd585dddffdc573f1f9a7a54c522f2a3fb4576c44edbb1e14238"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/__init__.py",
+        "bytes": 1764,
+        "sha256": "e4f46e3414c4602c9abb8b404a45e84412fc49dbe38a3d163f9575132dc7c93e"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/_encoded_words.py",
+        "bytes": 8541,
+        "sha256": "4178321600c0a19ca04cfe8542ce44487f339d15d89a473b58cea63c0b230217"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/_parseaddr.py",
+        "bytes": 17821,
+        "sha256": "4308932872acbf4a674312a45a49b870e48026e3dfedc878ee2f512ddf2f30ba"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/_policybase.py",
+        "bytes": 15534,
+        "sha256": "3db4bf3be5bdba13ab9a78ce30784c330d6dbc657b4e9142210dc8b264cfd424"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/base64mime.py",
+        "bytes": 3551,
+        "sha256": "e2b4b87a5f42a8c5780e343f675513bbcc6abdd23fa14f8f1a7d4f7d72304770"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/charset.py",
+        "bytes": 17063,
+        "sha256": "a90653f13a4dc5eb3205079dda1d62561a8bf9a7b45585f5dbf90aa31a966680"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/encoders.py",
+        "bytes": 1778,
+        "sha256": "690b275529788cc48e8f541a2aef321dc31e92f75764ac7924896db72d8a9555"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/errors.py",
+        "bytes": 3814,
+        "sha256": "dbfb4bbfc85e9d556d3385dc6356518846d8a122bc643b171ea61b6e8dc42c8b"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/feedparser.py",
+        "bytes": 22796,
+        "sha256": "6046239fcdd6977d1c25841581cabedaeec8046cc5fedcb8ff2d6450a36442bd"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/header.py",
+        "bytes": 24092,
+        "sha256": "4d9baa908ad5288dd8fad8cf20b3802ffac77ba1642727804a633b201c56e5ca"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/iterators.py",
+        "bytes": 2129,
+        "sha256": "1080a2d03779176d6d45f6ecd976dbe69f5579f7e4e83b75224c3f92fd258102"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/message.py",
+        "bytes": 48110,
+        "sha256": "5dca7305c5218c06527d699e6b526eaf0c34bb6c2dda155d4e7f0815429e677c"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/parser.py",
+        "bytes": 4975,
+        "sha256": "88890ea9994c55ff7d6c1fd570fece2785f51ed407ee95df4aff946e250bcd66"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/quoprimime.py",
+        "bytes": 9864,
+        "sha256": "77b454bd3ba3b5e3776be28ae3a0fd8de5d1e50d5b8ee10dd539c37c2bd68082"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/email/utils.py",
+        "bytes": 16071,
+        "sha256": "3952883e261b8d7b6873001047f838c88cee6dfbba10df537a9c07eb2e7d66ad"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/encodings/__init__.py",
+        "bytes": 5884,
+        "sha256": "78c4744d407690f321565488710b5aaf6486b5afa8d185637aa1e7633ab59cd8"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/encodings/aliases.py",
+        "bytes": 15677,
+        "sha256": "6fdcc49ba23a0203ae6cf28e608f8e6297d7c4d77d52e651db3cb49b9564c6d2"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/encodings/idna.py",
+        "bytes": 9710,
+        "sha256": "9ca58e82d12b171f25d57239ad237dae5c44214a70f2f4f39358c2759b8b9013"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/encodings/utf_8.py",
+        "bytes": 1005,
+        "sha256": "ba0cac060269583523ca9506473a755203037c57d466a11aa89a30a5f6756f3d"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/encodings/utf_8_sig.py",
+        "bytes": 4133,
+        "sha256": "1ef3da8d8aa08149e7f274dc64dbfce2155da812e5258ca8e8f832428d3b5c2d"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/enum.py",
+        "bytes": 81636,
+        "sha256": "c8ead615c159598370295649eb296819ad4b40d50b200c4fec2d4269bf7af9ae"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/fnmatch.py",
+        "bytes": 5999,
+        "sha256": "6683da36e47af523f3f41e18ad244d837783e19e98911cc0b7415dea81494ebc"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/functools.py",
+        "bytes": 38126,
+        "sha256": "cca971c456e1bec8b751aecdf41466f34dbf72321ee0840627280ba2ccf9d033"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/genericpath.py",
+        "bytes": 5572,
+        "sha256": "2b0b35d2206778af4081cf81dd9b513876e72c35a55bec941402e1fa62b1f1aa"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/gettext.py",
+        "bytes": 21747,
+        "sha256": "1cc6fd33bdce3bb29c0c37ec9a2f5bf15a315e9776b329247e6675c028a8af39"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/gzip.py",
+        "bytes": 24859,
+        "sha256": "31e7275c5c20d1b414063c28088b68e7a3e657af60c9c23435bf92e77a1fd1e5"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/hashlib.py",
+        "bytes": 9349,
+        "sha256": "6dbdebf270868b391080e21dc9687eddfaf321c965ad979f68d3f5c423c613ab"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/http/__init__.py",
+        "bytes": 8308,
+        "sha256": "17f4f6832cfc84b5b9600414bab80b77e67ccb611bdfed10a3f2beca9d0d568b"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/http/client.py",
+        "bytes": 58537,
+        "sha256": "0242200eed2aa47dc2723c99605055c9b792dc197ab36884db0a193772ba99d1"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/importlib/__init__.py",
+        "bytes": 4774,
+        "sha256": "c9e1b3dbc619ac31e7017ac43668a20200872c1c0e79ae379c0dab6ed399b730"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/importlib/_abc.py",
+        "bytes": 1354,
+        "sha256": "80aab7931dc999dee581c8b8b56fcd973fe156335a96ceeaf6acfc03cebf10e8"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/importlib/_bootstrap.py",
+        "bytes": 57056,
+        "sha256": "9653944363a4773cc32bbb34426024597a9d2ee4cd42e7912b4daf8cadfb53ed"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/importlib/_bootstrap_external.py",
+        "bytes": 69197,
+        "sha256": "97c6211750d63067712ad2cd74d50be33337f1fb1cd2c769022ced9b401edd92"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/importlib/util.py",
+        "bytes": 10840,
+        "sha256": "ca54e6458dbe521d591e5b8d9bb651ef929bfae946706c98470cdd569041a64f"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/io.py",
+        "bytes": 3582,
+        "sha256": "7cec3cb8ac004058dd0a5af246e6d950fb59c7ddd0058fda48bcb3fcb98d8822"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/ipaddress.py",
+        "bytes": 78294,
+        "sha256": "cc9831e239bd81c1480a12733bded744002d93815fd0d083c77aea348c956e67"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/json/__init__.py",
+        "bytes": 14020,
+        "sha256": "d5d41e2c29049515d295d81a6d40b4890fbec8d8482cfb401630f8ef2f77e4d5"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/json/decoder.py",
+        "bytes": 12473,
+        "sha256": "9f02654649816145bc76f8c210a5fe3ba1de142d4d97a1c93105732e747c285b"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/json/encoder.py",
+        "bytes": 16070,
+        "sha256": "af7bd40a0d0d0a3e726a9b4b3a2a543019f6ab97a340d0162a9c29ca9da97869"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/json/scanner.py",
+        "bytes": 2425,
+        "sha256": "8604d9d03786d0d509abb49e9f069337278ea988c244069ae8ca2c89acc2cb08"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/keyword.py",
+        "bytes": 1073,
+        "sha256": "18c2be738c04ad20ad375f6a71db34b3823c7f40b0340f5294d0e89f3c9b093b"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/lib-dynload/_bz2.cpython-312-x86_64-linux-gnu.so",
+        "bytes": 32112,
+        "sha256": "eff8df23cdc54d38ce9ca600d07c21ccfd7f22bd52a0720e599e6828d3e2eb76"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/lib-dynload/_ctypes.cpython-312-x86_64-linux-gnu.so",
+        "bytes": 137968,
+        "sha256": "aad3e24f186e6c0a1c7efa8f16004f951f527db86f6451d30118657384a456c1"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/lib-dynload/_hashlib.cpython-312-x86_64-linux-gnu.so",
+        "bytes": 64368,
+        "sha256": "8dc6cda6dd9495b95a2bfb5b26e8cf06b72f36dc0213d958b9277a958287f0fe"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/lib-dynload/_json.cpython-312-x86_64-linux-gnu.so",
+        "bytes": 48952,
+        "sha256": "ca8e35c58f7bc8e27258c4af43651c941413bc6318903621253485b0395758a3"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/lib-dynload/_lzma.cpython-312-x86_64-linux-gnu.so",
+        "bytes": 49256,
+        "sha256": "cb298120e40f064dc047e638d911f8b3b0abf625bf1d6bd07902b46efd820fd7"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/lib-dynload/_ssl.cpython-312-x86_64-linux-gnu.so",
+        "bytes": 221360,
+        "sha256": "80c755c80688b92e0f32af9168a605f1283256077f35d30f6cf518252f2a6660"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/locale.py",
+        "bytes": 78562,
+        "sha256": "d1134b7212bad37b7b81339061dc37a19a194aa183ec2cb60412cf365993b151"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/lzma.py",
+        "bytes": 13277,
+        "sha256": "58fb9d2fdc8a8af7b25e218f17ea3b51bdfa53bdf40f440ab33c605974ca5c2e"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/ntpath.py",
+        "bytes": 30027,
+        "sha256": "c4dd79bf103677daaad873952b89fc1f973425e7b250006cc35af4c164181da8"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/operator.py",
+        "bytes": 10965,
+        "sha256": "b2af20f67667203c1730e686cc5d0427becc94db4c97f1d3efe3ed2158473f6a"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/os.py",
+        "bytes": 39786,
+        "sha256": "316d1b7307fd851bded3423c9d437e0a383c725d993f0fcff2e8b749fe560b62"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/pathlib.py",
+        "bytes": 51153,
+        "sha256": "b43e134bf7479759838b4ecec3d78e0e67fdfde2d671c5c2d7886a47da93885d"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/platform.py",
+        "bytes": 43331,
+        "sha256": "ed0defe8ff7c116710493ffd099b566d3de686ab1b431a3d5401056798e59341"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/posixpath.py",
+        "bytes": 17623,
+        "sha256": "c443d7b8afad1717e7060ce49b3e04423058de56cd4246ee6bcc1ac962eb5c2b"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/quopri.py",
+        "bytes": 7183,
+        "sha256": "e808f1327b86800e6fcabf98bc194733dbd4348c06d92e8fc9c39829ed477c3b"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/random.py",
+        "bytes": 34683,
+        "sha256": "0693d4ded36916f5b07d6c395cc331dbf1011bb70e90daaa29eaa32490a09425"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/re/__init__.py",
+        "bytes": 16315,
+        "sha256": "8ff3c37c63b917fcf8dc8d50993a502292a3dc159e41de4f4018c72a53d1c07b"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/re/_casefix.py",
+        "bytes": 5446,
+        "sha256": "41572ac50cf96b04496e676d8a6708898bb8e752e06dad34ed4c50c5d8f1fe40"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/re/_compiler.py",
+        "bytes": 26089,
+        "sha256": "c05067f8bfa4c13cbbf1eedc4d5cafc9b621bcb6ebc5771ba0518a18095af15a"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/re/_constants.py",
+        "bytes": 5930,
+        "sha256": "fa4fdb200f238f9e7817b63892b0d69833d8165134801e775e10cc113348a375"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/re/_parser.py",
+        "bytes": 41201,
+        "sha256": "a51a85b37cf3f44ba7ff25754da5f31306e4ccfa6eb3c017f9d37bdf4e770840"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/reprlib.py",
+        "bytes": 6569,
+        "sha256": "8da31054076803065758311f54b18b8a616824941977d907dc3ee729228e9015"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/selectors.py",
+        "bytes": 19671,
+        "sha256": "1eeb102373e18c96311203f30c516e785bd8642275aa0bd66e43a284c9692385"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/shlex.py",
+        "bytes": 13353,
+        "sha256": "f927227de5ba5b1b2bdd75e3d9c8cb72b602b3bba3cc8edbf8fb554de0dc1fd7"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/shutil.py",
+        "bytes": 58120,
+        "sha256": "819e518cb7a539d09b2526138015541b34d2646afb9c2f6ae4ffd476d6a0fcf4"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/signal.py",
+        "bytes": 2495,
+        "sha256": "0363c964c90ac0b3e515de5749205e6e6454051a1211058375d84d91eab6071a"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/socket.py",
+        "bytes": 37411,
+        "sha256": "b59366f7c35583a274c8031351c146d9c64c4e680adf45d99a3335536a20a6cc"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/ssl.py",
+        "bytes": 50822,
+        "sha256": "ca7dd38c7d39af5112b9669abffcef3f1bb374fb8fa0a2cd071aea09fce203da"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/stat.py",
+        "bytes": 5485,
+        "sha256": "052af0327eae6941b69b05c088b3e748f79995635f80ac4cc7125eb333eb4c77"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/string.py",
+        "bytes": 11786,
+        "sha256": "24aeae1f0526250f442022022bf98df9a823b1cb330543ee79e70e44907462e9"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/stringprep.py",
+        "bytes": 12917,
+        "sha256": "60b6c83581093029312efb6670b11c540090b3f78bcf72264467b494f02f21a5"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/struct.py",
+        "bytes": 257,
+        "sha256": "9c231f9497caf513a22dee8f790b07f969b0e45854a0bdd6dd84b492e08c2856"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/subprocess.py",
+        "bytes": 88725,
+        "sha256": "baa9f9138d8d20df6284f67e7d2e790f847f65e2c5370de322d54cccd737f2d9"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/tarfile.py",
+        "bytes": 113907,
+        "sha256": "664f862558196d80a46663a81bc16cd51061ccec6c1fdda5950a106e97e12512"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/tempfile.py",
+        "bytes": 37334,
+        "sha256": "8c8033ed1426ace79e07a6608887d2a1694d817d63d61b04c3d59339f24b4269"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/threading.py",
+        "bytes": 60123,
+        "sha256": "8273b4cf5b6f274b4993f5cae08634dd272c6952af9867ff9aa13ed446f1549b"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/types.py",
+        "bytes": 10993,
+        "sha256": "345474ef027a1273f353da9bdc1f7c18f65335e72e681bcc0376774cc51f2405"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/urllib/__init__.py",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/urllib/error.py",
+        "bytes": 2415,
+        "sha256": "d12b3cc66af3f42a8ebe63e1c91d24f92c6237b6a93a3702938dffabd812d77b"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/urllib/parse.py",
+        "bytes": 45591,
+        "sha256": "a67b5694763137dbac085adbf0c22821d435ec8ca22d3bd3786d2c9f4ee748d5"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/urllib/request.py",
+        "bytes": 103013,
+        "sha256": "96ae4b051b87eb7694da24f5fa75bf3931486b49b755699934bf15ab0ca5829d"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/urllib/response.py",
+        "bytes": 2361,
+        "sha256": "7e6c3b6d7a95f0d74f5968f51a87adae8a51bf42390cdfec98c7a99203e7bb76"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/uuid.py",
+        "bytes": 29656,
+        "sha256": "fe357bff7241e9fd6f86ee81567fd20aeec2e17460428ea9b7924bebf57301fc"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/warnings.py",
+        "bytes": 21760,
+        "sha256": "8eb1bb88d0beb82ebecfe7ee5cf54ed9b77b4a7acee1989e392a65de42017c49"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/weakref.py",
+        "bytes": 21513,
+        "sha256": "56f8d313fb74019e53eb9287400702fbce788b7fe30e097b0b6e06296f3f080c"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/zipfile/__init__.py",
+        "bytes": 88365,
+        "sha256": "fa12220ba68d58a75767133c93af70d968a4be79da05ef3d67fb32ad5f518f84"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/zipfile/_path/__init__.py",
+        "bytes": 10753,
+        "sha256": "be1a1a534b92d4f597b7fde633a5ff847fa9e6725c0dd6867839e735d39f31c2"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/zipfile/_path/glob.py",
+        "bytes": 893,
+        "sha256": "7020d375669c257879b5b1278e7649ef51cbfe16e9aef967e5aca51cca11f893"
+      },
+      {
+        "relative": "PYTHON/lib/python3.12/zipimport.py",
+        "bytes": 28132,
+        "sha256": "4ac94d92219c2e1c0d67ad3fff3753ec3a3756af62a36a2f696f02cd12d518f0"
+      },
+      {
+        "relative": "REPO/tools/linux_qualification_job.py",
+        "bytes": 4865,
+        "sha256": "0d63594368cb6839145d4b1798730fe8fab05f6a94d86834f3a82d52475e7227"
+      },
+      {
+        "relative": "REPO/tools/materialize_qualification_linux.py",
+        "bytes": 8094,
+        "sha256": "5f0dbb951cbe615d8c6dd9edbb63b11143cc457319bdcc9000ea9a486f660fb8"
+      },
+      {
+        "relative": "REPO/tools/qualification_input_guard.py",
+        "bytes": 10157,
+        "sha256": "7420b08d78d3b1476be41385d179a42212a2a7e1a965a8d8ea3b67bb14da7925"
+      },
+      {
+        "relative": "REPO/tools/qualify_dotnet11_linux.py",
+        "bytes": 14164,
+        "sha256": "2182f7989e9d7c4bf3aa4fb7d8878106fbf75de9f49f0746dea2cad8c0e35d4e"
+      },
+      {
+        "relative": "REPO/tools/sdk11_ci_facts.py",
+        "bytes": 7376,
+        "sha256": "6531854ac6d66827998bee7cdac97b534500b62bb6e941abcf6b9745c6b8daec"
+      },
+      {
+        "relative": "REPO/tools/sdk11_ci_runtime.py",
+        "bytes": 30194,
+        "sha256": "0c079e050119d80caadb085825e543b2baac24860637a1803c0b5444a5cc624b"
+      }
+    ],
+    "nativeTools": [
+      {
+        "name": "sudo",
+        "sha256": "6ae6665cc51295ea8aaba94a3377dafa563f950aafc6296c0704fb33401a31ff",
+        "version": "Actualdpkg:binutils|2.42-4ubuntu2.10;coreutils|9.4-3ubuntu6.3;git|1:2.56.1-0ppa1~ubuntu24.04.1;libc-bin|2.39-0ubuntu8.9;python3.12-minimal|3.12.3-1ubuntu0.17;sudo|1.9.15p5-3ubuntu5.24.04.4;systemd|255.4-1ubuntu8.18",
+        "provenance": "ExistingGitHubhostedimage; no acquisition/install; SHA is measuredidentity not independentpublisherverification."
+      },
+      {
+        "name": "systemd-run",
+        "sha256": "de28cc5757d3789efa5f6fed5659893410469f68b42175d4531f5b34d3a09e16",
+        "version": "Actualdpkg:binutils|2.42-4ubuntu2.10;coreutils|9.4-3ubuntu6.3;git|1:2.56.1-0ppa1~ubuntu24.04.1;libc-bin|2.39-0ubuntu8.9;python3.12-minimal|3.12.3-1ubuntu0.17;sudo|1.9.15p5-3ubuntu5.24.04.4;systemd|255.4-1ubuntu8.18",
+        "provenance": "ExistingGitHubhostedimage; no acquisition/install; SHA is measuredidentity not independentpublisherverification."
+      },
+      {
+        "name": "systemctl",
+        "sha256": "37ec607113f55f1b385b4fa75588a43402aec0de57927500763b267713f10f63",
+        "version": "Actualdpkg:binutils|2.42-4ubuntu2.10;coreutils|9.4-3ubuntu6.3;git|1:2.56.1-0ppa1~ubuntu24.04.1;libc-bin|2.39-0ubuntu8.9;python3.12-minimal|3.12.3-1ubuntu0.17;sudo|1.9.15p5-3ubuntu5.24.04.4;systemd|255.4-1ubuntu8.18",
+        "provenance": "ExistingGitHubhostedimage; no acquisition/install; SHA is measuredidentity not independentpublisherverification."
+      },
+      {
+        "name": "python",
+        "sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+        "version": "Actualdpkg:binutils|2.42-4ubuntu2.10;coreutils|9.4-3ubuntu6.3;git|1:2.56.1-0ppa1~ubuntu24.04.1;libc-bin|2.39-0ubuntu8.9;python3.12-minimal|3.12.3-1ubuntu0.17;sudo|1.9.15p5-3ubuntu5.24.04.4;systemd|255.4-1ubuntu8.18",
+        "provenance": "ExistingGitHubhostedimage; no acquisition/install; SHA is measuredidentity not independentpublisherverification."
+      },
+      {
+        "name": "readelf",
+        "sha256": "64c58e15274bbbb5153f31078e455e9e77ee5f51489e709bba5bb788ce9df2b0",
+        "version": "Actualdpkg:binutils|2.42-4ubuntu2.10;coreutils|9.4-3ubuntu6.3;git|1:2.56.1-0ppa1~ubuntu24.04.1;libc-bin|2.39-0ubuntu8.9;python3.12-minimal|3.12.3-1ubuntu0.17;sudo|1.9.15p5-3ubuntu5.24.04.4;systemd|255.4-1ubuntu8.18",
+        "provenance": "ExistingGitHubhostedimage; no acquisition/install; SHA is measuredidentity not independentpublisherverification."
+      },
+      {
+        "name": "ldconfig",
+        "sha256": "bfd5df90c7f070feab584435f106f254ffffaa268a04de5b5c3bd61d59c092f3",
+        "version": "Actualdpkg:binutils|2.42-4ubuntu2.10;coreutils|9.4-3ubuntu6.3;git|1:2.56.1-0ppa1~ubuntu24.04.1;libc-bin|2.39-0ubuntu8.9;python3.12-minimal|3.12.3-1ubuntu0.17;sudo|1.9.15p5-3ubuntu5.24.04.4;systemd|255.4-1ubuntu8.18",
+        "provenance": "ExistingGitHubhostedimage; no acquisition/install; SHA is measuredidentity not independentpublisherverification."
+      },
+      {
+        "name": "git",
+        "sha256": "08ca4d2ee4d8915e86f1faaa52603752507c57af1d16d451dec9992bc9b6d801",
+        "version": "Actualdpkg:binutils|2.42-4ubuntu2.10;coreutils|9.4-3ubuntu6.3;git|1:2.56.1-0ppa1~ubuntu24.04.1;libc-bin|2.39-0ubuntu8.9;python3.12-minimal|3.12.3-1ubuntu0.17;sudo|1.9.15p5-3ubuntu5.24.04.4;systemd|255.4-1ubuntu8.18",
+        "provenance": "ExistingGitHubhostedimage; no acquisition/install; SHA is measuredidentity not independentpublisherverification."
+      }
+    ]
+  },
+  "cpu": {
+    "method": "ALL_LOGICAL_PROC_CPUINFO_FLAGS",
+    "processorCount": 4,
+    "evidenceSha256": "b5a35a694dd7e4da1d1736a77599bc82cfeab75a92e6cf32b84c20fdb23d6bb2",
+    "features": [
+      "CX16",
+      "LAHF_SAHF",
+      "POPCNT",
+      "SSE3",
+      "SSSE3",
+      "SSE4_1",
+      "SSE4_2"
+    ]
+  },
+  "archive": {
+    "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/11.0.100/dotnet-sdk-11.0.100-linux-x64.tar.gz",
+    "bytes": 211463422,
+    "sha512": "1bec9cca2ec689b1e80245b84f2b53c9441d1aa6daccf2ceb27490768bffa95954fa585bd275def31069d874d543d9ba9e6591fe9ade2dbd9f34ec5c0fd0050c",
+    "httpStatus": 200,
+    "contentLength": 211463422,
+    "redirects": 0,
+    "contentEncoding": "identity"
+  },
+  "tree": {
+    "memberManifestSha256": "d411111d23492b4d101dd62851d1d1fedf3a4badc057d999aedc155ae4cc103a",
+    "members": 7055,
+    "outputFiles": 6015,
+    "outputDirectories": 1040,
+    "expandedFileBytes": 733424833,
+    "criticalMembers": [
+      {
+        "path": "dotnet",
+        "type": "file",
+        "bytes": 34184,
+        "mode": 493,
+        "sha256": "bb015c1dbaec79f69addde16893609baf880ccdc5931db354d40096769010e3e"
+      },
+      {
+        "path": "sdk/11.0.100/Roslyn/bincore/csc.dll",
+        "type": "file",
+        "bytes": 148264,
+        "mode": 420,
+        "sha256": "4fb68e07ab5573fd18c3a167159b230c9b39a7d23411defe2fd4420ff0e31e14"
+      },
+      {
+        "path": "sdk/11.0.100/dotnet.dll",
+        "type": "file",
+        "bytes": 4514088,
+        "mode": 420,
+        "sha256": "f5b29837105f0ba6b8cc23b355e03b8b5e237f2786b2817ad30c683a36462c26"
+      },
+      {
+        "path": "host/fxr/11.0.0/libhostfxr.so",
+        "type": "file",
+        "bytes": 322744,
+        "mode": 493,
+        "sha256": "b0f73eb2f2eed3eecf39068bb432dfac81966e2afa62d66318daee54f307faf8"
+      },
+      {
+        "path": "shared/Microsoft.NETCore.App/11.0.0/libclrjit.so",
+        "type": "file",
+        "bytes": 3987208,
+        "mode": 493,
+        "sha256": "dffe1203c30224ea512518c0e0f67431e808f5c17593eae3c6a3faf456a0921b"
+      },
+      {
+        "path": "shared/Microsoft.NETCore.App/11.0.0/libcoreclr.so",
+        "type": "file",
+        "bytes": 5283536,
+        "mode": 493,
+        "sha256": "f1c71f4752aed4f8bd3e712e356260f4a4d4cbb977fc46c0e2a3207ee3ae4bf1"
+      }
+    ],
+    "notices": [
+      {
+        "path": "sdk/11.0.100/Sdks/Microsoft.Build.Tasks.Git/LICENSE.txt",
+        "type": "file",
+        "bytes": 1115,
+        "mode": 420,
+        "sha256": "ae48df11a335dc1a615f4f938b69cba73bcf4485c4f97af49b38efb0f216353b"
+      },
+      {
+        "path": "sdk/11.0.100/Sdks/Microsoft.SourceLink.Common/LICENSE.txt",
+        "type": "file",
+        "bytes": 1115,
+        "mode": 420,
+        "sha256": "ae48df11a335dc1a615f4f938b69cba73bcf4485c4f97af49b38efb0f216353b"
+      },
+      {
+        "path": "sdk/11.0.100/Sdks/Microsoft.SourceLink.AzureRepos.Git/LICENSE.txt",
+        "type": "file",
+        "bytes": 1115,
+        "mode": 420,
+        "sha256": "ae48df11a335dc1a615f4f938b69cba73bcf4485c4f97af49b38efb0f216353b"
+      },
+      {
+        "path": "sdk/11.0.100/Sdks/Microsoft.SourceLink.GitHub/LICENSE.txt",
+        "type": "file",
+        "bytes": 1115,
+        "mode": 420,
+        "sha256": "ae48df11a335dc1a615f4f938b69cba73bcf4485c4f97af49b38efb0f216353b"
+      },
+      {
+        "path": "sdk/11.0.100/Sdks/Microsoft.SourceLink.Bitbucket.Git/LICENSE.txt",
+        "type": "file",
+        "bytes": 1115,
+        "mode": 420,
+        "sha256": "ae48df11a335dc1a615f4f938b69cba73bcf4485c4f97af49b38efb0f216353b"
+      },
+      {
+        "path": "sdk/11.0.100/Sdks/Microsoft.SourceLink.GitLab/LICENSE.txt",
+        "type": "file",
+        "bytes": 1115,
+        "mode": 420,
+        "sha256": "ae48df11a335dc1a615f4f938b69cba73bcf4485c4f97af49b38efb0f216353b"
+      },
+      {
+        "path": "sdk/11.0.100/Sdks/Microsoft.NET.Sdk.WindowsDesktop/THIRD-PARTY-NOTICES.TXT",
+        "type": "file",
+        "bytes": 2703,
+        "mode": 420,
+        "sha256": "d23dba2fee20c6b59d8f7088ee9ed372459c952a319b7ca90f3eec370cc76eb9"
+      },
+      {
+        "path": "sdk/11.0.100/Sdks/Microsoft.NET.Sdk.WindowsDesktop/LICENSE.TXT",
+        "type": "file",
+        "bytes": 1115,
+        "mode": 420,
+        "sha256": "ae48df11a335dc1a615f4f938b69cba73bcf4485c4f97af49b38efb0f216353b"
+      },
+      {
+        "path": "ThirdPartyNotices.txt",
+        "type": "file",
+        "bytes": 78151,
+        "mode": 420,
+        "sha256": "d30078edf6426ec7ef9427b3048b407fee214d1eb7834a681a3a09290387d591"
+      },
+      {
+        "path": "LICENSE.txt",
+        "type": "file",
+        "bytes": 1116,
+        "mode": 420,
+        "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310"
+      }
+    ]
+  },
+  "caps": {
+    "kind": "actual-Linux-cgroup-v2",
+    "memoryMax": 4294967296,
+    "tasksMax": 64,
+    "effectiveCpuCores": 2,
+    "swapMax": 0,
+    "membershipBeforeExec": true,
+    "heldChildIdentityBeforeExec": true,
+    "uid": 1001,
+    "gid": 1001,
+    "kernelReadbackSha256": "c3c28f22395a62031fbdd6348f2c3b98f83ffc8e1cdd32b690790cfe5c1189c4",
+    "peakMemoryBytes": 1191141376
+  },
+  "commands": [
+    {
+      "name": "version",
+      "exitCode": 0,
+      "outputSha256": "ce0ed33fa65d926bf35a4b5fa3e9bd13266a9931237db41d283edcc123ecb9ff",
+      "outputPreview": "11.0.100\n",
+      "membershipBeforeExec": true,
+      "pid": 2252,
+      "processStartIdentity": "12170",
+      "terminal": true,
+      "evidenceSha256": "0060c0e97b35818eed9f2fe17b596a673dcfe37c52eaaef2d0b26dd96f0e8823",
+      "seconds": 0.05287326600000597
+    },
+    {
+      "name": "info",
+      "exitCode": 0,
+      "outputSha256": "5240c3bdebe3bd3f723779b95ba2e2d725d7091303f9910e1fb019ec624adcd1",
+      "outputPreview": ".NET SDK:\n Version:           11.0.100\n Commit:            297acf930f\n Workload version:  11.0.100-manifests.08e30c08\n MSBuild version:   18.12.2-1.26529.118+297acf930\n\nRuntime Environment:\n OS Name:     ubuntu\n OS Version:  24.04\n OS Platform: Linux\n RID:         linux-x64\n Base Path:   <PRIVATE_WORK>/sdk/sdk/11.0.100\n\n.NET workloads installed:\nThere are no installed workloads to display.\nConfigured to use workload sets when installing new manifests.\nNo workload sets are installed. Run \"dotnet workload restore\" to install a workload set.\n\nHost:\n  Version:      11.0.0\n  Architecture: x64\n  Commit:       297acf930f\n\n.NET SDKs installed:\n  11.0.100 [<PRIVATE_WORK>/sdk/sdk]\n\n.NET runtimes installed:\n  Microsoft.AspNetCore.App 11.0.0 [<PRIVATE_WORK>/sdk/shared/Microsoft.AspNetCore.App]\n  Microsoft.NETCore.App 11.0.0 [<PRIVATE_WORK>/sdk/shared/Microsoft.NETCore.App]\n\nOther architectures found:\n  None\n\nEnvironment variables:\n  DOTNET_CLI_DO_NOT_USE_MSBUILD_SERVER     [1]\n  DOTNET_CLI_HOME                          [<PRIVATE_WORK>/cli-home]\n  DOTNET_CLI_TELEMETRY_OPTOUT              [1]\n  DOTNET_CLI_USE_MSBUILD_SERVER            [0]\n  DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE [true]\n  DOTNET_GENERATE_ASPNET_CERTIFICATE       [false]\n  DOTNET_HOST_PATH                         [<PRIVATE_WORK>/sdk/dotnet]\n  DOTNET_MULTILEVEL_LOOKUP                 [0]\n  DOTNET_PROCESSOR_COUNT                   [2]\n  DOTNET_ROOT                              [<PRIVATE_WORK>/sdk]\n  DOTNET_ROOT_X64                          [<PRIVATE_WORK>/sdk]\n  DOTNET_SKIP_FIRST_TIME_EXPERIENCE        [1]\n\nglobal.json file:\n  <PRIVATE_WORK>/qualification/global.json\n\nLearn more:\n  https://aka.ms/dotnet/info\n\nDownload .NET:\n  https://aka.ms/dotnet/download\n",
+      "membershipBeforeExec": true,
+      "pid": 2259,
+      "processStartIdentity": "12179",
+      "terminal": true,
+      "evidenceSha256": "b8017ae5eb977692f5dcd4cbd556cd474f575f4b4755f228270b7dc4578f9828",
+      "seconds": 0.05295450500000243
+    },
+    {
+      "name": "list-sdks",
+      "exitCode": 0,
+      "outputSha256": "bd2d58ea0c34af483d5362c7fef654f3774aa2a7974d1694e9ee3ef33f72f7ef",
+      "outputPreview": "11.0.100 [<PRIVATE_WORK>/sdk/sdk]\n",
+      "membershipBeforeExec": true,
+      "pid": 2266,
+      "processStartIdentity": "12187",
+      "terminal": true,
+      "evidenceSha256": "ad50847d6024eb31cf3bd8c2c827f3b6f13e025160d4d4ba55fad6f02611e80a",
+      "seconds": 0.0529168999999996
+    },
+    {
+      "name": "list-runtimes",
+      "exitCode": 0,
+      "outputSha256": "c28064bb77961f00c092d26820e68f03543d1f8668d2a30820100d81c54e253f",
+      "outputPreview": "Microsoft.AspNetCore.App 11.0.0 [<PRIVATE_WORK>/sdk/shared/Microsoft.AspNetCore.App]\nMicrosoft.NETCore.App 11.0.0 [<PRIVATE_WORK>/sdk/shared/Microsoft.NETCore.App]\n",
+      "membershipBeforeExec": true,
+      "pid": 2267,
+      "processStartIdentity": "12196",
+      "terminal": true,
+      "evidenceSha256": "eed3c6120626bdb1e392dd8e09c98b2839c52eed19be770576dbd8b39b0a43e9",
+      "seconds": 0.05297310400000299
+    },
+    {
+      "name": "compiler",
+      "exitCode": 0,
+      "outputSha256": "d5d4f906a76637504f516974eb81790702a3fb9ed9c7b2ee565b64688f11c0ae",
+      "outputPreview": "5.12.0-1.26529.118 (297acf930fb0f5c07fd4e51d78e521b4ad2e5d1f)\n",
+      "membershipBeforeExec": true,
+      "pid": 2268,
+      "processStartIdentity": "12204",
+      "terminal": true,
+      "evidenceSha256": "0be7a74980573a875dc3443d49808e6ee70ed4896a3a6ca46b7fb33f6a08af53",
+      "seconds": 0.10311311499999931
+    },
+    {
+      "name": "restore",
+      "exitCode": 0,
+      "outputSha256": "54bcf9f7fa1afd3a3e1d96d3aeb89783c33573c9ae11e27a513946500df8b4fa",
+      "outputPreview": "  Determining projects to restore...\n  Restored <PRIVATE_WORK>/qualification/qualification.csproj (in 74 ms).\n",
+      "membershipBeforeExec": true,
+      "pid": 2277,
+      "processStartIdentity": "12218",
+      "terminal": true,
+      "evidenceSha256": "a6faa2b17b3a4d8a0c54943a037c13117701a9d5046aad7fb55c77b441669a3c",
+      "seconds": 0.8043203949999906
+    },
+    {
+      "name": "build",
+      "exitCode": 0,
+      "outputSha256": "44c0ffc55ec2b2e8f1f4672b57658b19d39ce5d6af8e5bb29f339ee4a0c34112",
+      "outputPreview": "  qualification -> <PRIVATE_WORK>/qualification/bin/Release/net11.0/qualification.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:01.30\n",
+      "membershipBeforeExec": true,
+      "pid": 2315,
+      "processStartIdentity": "12301",
+      "terminal": true,
+      "evidenceSha256": "14f975f035d2a63e6b72783fa86f344027685546859707d6e06ea219d4da5a41",
+      "seconds": 1.506259182000008
+    },
+    {
+      "name": "hello",
+      "exitCode": 0,
+      "outputSha256": "530e0d1da6d3b82fca735d4e2c9a6e2605f8ae34a34b1662032252bcdbc9f61b",
+      "outputPreview": "SDK11_QUALIFIED_TOKEN\n.NET 11.0.0\n",
+      "membershipBeforeExec": true,
+      "pid": 2351,
+      "processStartIdentity": "12455",
+      "terminal": true,
+      "evidenceSha256": "1b7c4119c273cb6f9f7780200633fa90b30732575d113f9d6489b3bb112b93a0",
+      "seconds": 0.05289973399999326
+    }
+  ],
+  "denials": [
+    {
+      "mode": "normal",
+      "optimize": 0,
+      "count": 12,
+      "candidateSpawns": 0,
+      "networkAttempts": 0,
+      "receiptSha256": "0bdbbe7c98f49d6dfc2606d99dfc54c67f18f3ed56306282b53dcf82ec5d98f2"
+    },
+    {
+      "mode": "O",
+      "optimize": 1,
+      "count": 12,
+      "candidateSpawns": 0,
+      "networkAttempts": 0,
+      "receiptSha256": "ae4ff7d888699e641a98dd25514023ee0a469f4e0eef8010dccda0654cdd6997"
+    },
+    {
+      "mode": "env2",
+      "optimize": 2,
+      "count": 12,
+      "candidateSpawns": 0,
+      "networkAttempts": 0,
+      "receiptSha256": "deddca9eed7a4c68ecd6c4d38738739e75c910ecdae42d73dec931ec17e75ff1"
+    }
+  ],
+  "publisherAndNative": [
+    {
+      "name": "dotnet",
+      "kind": "ELFDependencyClosure",
+      "status": "ObservedExistingHostDependenciesNoInventedELFSignature:[{\"import\":\"libdl.so.2\",\"resolvedName\":\"libdl.so.2\",\"sha256\":\"c2994527172cc23b7fb0f7d611b71e00a37da27af12c2e5e9e0dc1a742886c96\"},{\"import\":\"libpthread.so.0\",\"resolvedName\":\"libpthread.so.0\",\"sha256\":\"90491a21ce44efcf3bd4b65ec82501c091d7ebe7f8d9b341dd01d721001d9ecd\"},{\"import\":\"libstdc++.so.6\",\"resolvedName\":\"libstdc++.so.6\",\"sha256\":\"1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11\"},{\"import\":\"libm.so.6\",\"resolvedName\":\"libm.so.6\",\"sha256\":\"fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0\"},{\"import\":\"libgcc_s.so.1\",\"resolvedName\":\"libgcc_s.so.1\",\"sha256\":\"d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb\"},{\"import\":\"libc.so.6\",\"resolvedName\":\"libc.so.6\",\"sha256\":\"3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf\"},{\"import\":\"ld-linux-x86-64.so.2\",\"resolvedName\":\"ld-linux-x86-64.so.2\",\"sha256\":\"c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da\"}]",
+      "evidenceSha256": "62b73afeb6cb248f78f0390eec5c5bc0a3bd5ddd9297ddd26924b9b92706dab2"
+    },
+    {
+      "name": "host/fxr/11.0.0/libhostfxr.so",
+      "kind": "ELFDependencyClosure",
+      "status": "ObservedExistingHostDependenciesNoInventedELFSignature:[{\"import\":\"libdl.so.2\",\"resolvedName\":\"libdl.so.2\",\"sha256\":\"c2994527172cc23b7fb0f7d611b71e00a37da27af12c2e5e9e0dc1a742886c96\"},{\"import\":\"libpthread.so.0\",\"resolvedName\":\"libpthread.so.0\",\"sha256\":\"90491a21ce44efcf3bd4b65ec82501c091d7ebe7f8d9b341dd01d721001d9ecd\"},{\"import\":\"libstdc++.so.6\",\"resolvedName\":\"libstdc++.so.6\",\"sha256\":\"1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11\"},{\"import\":\"libm.so.6\",\"resolvedName\":\"libm.so.6\",\"sha256\":\"fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0\"},{\"import\":\"libgcc_s.so.1\",\"resolvedName\":\"libgcc_s.so.1\",\"sha256\":\"d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb\"},{\"import\":\"libc.so.6\",\"resolvedName\":\"libc.so.6\",\"sha256\":\"3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf\"},{\"import\":\"ld-linux-x86-64.so.2\",\"resolvedName\":\"ld-linux-x86-64.so.2\",\"sha256\":\"c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da\"}]",
+      "evidenceSha256": "62b73afeb6cb248f78f0390eec5c5bc0a3bd5ddd9297ddd26924b9b92706dab2"
+    },
+    {
+      "name": "shared/Microsoft.NETCore.App/11.0.0/libcoreclr.so",
+      "kind": "ELFDependencyClosure",
+      "status": "ObservedExistingHostDependenciesNoInventedELFSignature:[{\"import\":\"libgcc_s.so.1\",\"resolvedName\":\"libgcc_s.so.1\",\"sha256\":\"d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb\"},{\"import\":\"libpthread.so.0\",\"resolvedName\":\"libpthread.so.0\",\"sha256\":\"90491a21ce44efcf3bd4b65ec82501c091d7ebe7f8d9b341dd01d721001d9ecd\"},{\"import\":\"librt.so.1\",\"resolvedName\":\"librt.so.1\",\"sha256\":\"6d072187d88e092e81561a44c03a4a41397319022c6d43519757cc051c576d82\"},{\"import\":\"libdl.so.2\",\"resolvedName\":\"libdl.so.2\",\"sha256\":\"c2994527172cc23b7fb0f7d611b71e00a37da27af12c2e5e9e0dc1a742886c96\"},{\"import\":\"libstdc++.so.6\",\"resolvedName\":\"libstdc++.so.6\",\"sha256\":\"1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11\"},{\"import\":\"libm.so.6\",\"resolvedName\":\"libm.so.6\",\"sha256\":\"fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0\"},{\"import\":\"libc.so.6\",\"resolvedName\":\"libc.so.6\",\"sha256\":\"3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf\"},{\"import\":\"ld-linux-x86-64.so.2\",\"resolvedName\":\"ld-linux-x86-64.so.2\",\"sha256\":\"c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da\"}]",
+      "evidenceSha256": "2bcd10ef5f72ca81ca20969cc2b833929101ec3ed46c5b5d299cb981e9f9f085"
+    },
+    {
+      "name": "shared/Microsoft.NETCore.App/11.0.0/libclrjit.so",
+      "kind": "ELFDependencyClosure",
+      "status": "ObservedExistingHostDependenciesNoInventedELFSignature:[{\"import\":\"libgcc_s.so.1\",\"resolvedName\":\"libgcc_s.so.1\",\"sha256\":\"d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb\"},{\"import\":\"libpthread.so.0\",\"resolvedName\":\"libpthread.so.0\",\"sha256\":\"90491a21ce44efcf3bd4b65ec82501c091d7ebe7f8d9b341dd01d721001d9ecd\"},{\"import\":\"librt.so.1\",\"resolvedName\":\"librt.so.1\",\"sha256\":\"6d072187d88e092e81561a44c03a4a41397319022c6d43519757cc051c576d82\"},{\"import\":\"libdl.so.2\",\"resolvedName\":\"libdl.so.2\",\"sha256\":\"c2994527172cc23b7fb0f7d611b71e00a37da27af12c2e5e9e0dc1a742886c96\"},{\"import\":\"libstdc++.so.6\",\"resolvedName\":\"libstdc++.so.6\",\"sha256\":\"1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11\"},{\"import\":\"libm.so.6\",\"resolvedName\":\"libm.so.6\",\"sha256\":\"fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0\"},{\"import\":\"libc.so.6\",\"resolvedName\":\"libc.so.6\",\"sha256\":\"3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf\"},{\"import\":\"ld-linux-x86-64.so.2\",\"resolvedName\":\"ld-linux-x86-64.so.2\",\"sha256\":\"c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da\"}]",
+      "evidenceSha256": "2bcd10ef5f72ca81ca20969cc2b833929101ec3ed46c5b5d299cb981e9f9f085"
+    }
+  ],
+  "boundaries": [
+    "ORIGINAL_GLOBAL_SDK_READY_REMAINS_FALSE",
+    "LOCAL_R3_STOP_UNQUALIFIED",
+    "LOCAL_WINDOWS26H2_UNKNOWN_EXCLUDED",
+    "QUALIFIED_ON_IS_IMMUTABLE_PRODUCER_HISTORY",
+    "CONSUMER_ADMITTED_FOR_HOST_CLASS_IS_SEPARATE",
+    "NO_PRODUCT_COMPATIBILITY_OR_PERFORMANCE_PROOF",
+    "INDEPENDENT_GITHUB_RUN_JOB_SOURCE_READBACK_STILL_REQUIRED"
+  ],
+  "terminal": {
+    "workerExitCode": 0,
+    "ownedPopulation": 0,
+    "supervisorObservedTerminal": true,
+    "typedStopResult": "success",
+    "terminalEvidenceSha256": "598843905aead73d3e73220210c00395081681c06eacc15199f2509984f09835"
+  }
+}

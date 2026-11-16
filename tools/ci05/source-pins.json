@@ -1,0 +1,453 @@
+{
+  "schema": "sdk11-own-source-pins/v1",
+  "state": "EXACT_SOURCE_REVIEWED",
+  "projectId": "05",
+  "repository": "pouriajamali/point-in-time-reference-lab",
+  "sourcePins": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "gitBlob": "b8e1e5042b95bf8199eb3ff7bff943458648f5f1"
+    },
+    {
+      "path": ".github/ci/policy.py",
+      "mode": "100644",
+      "gitBlob": "548a09fac1ffb1bdd2519ec0c211444f25b3e252"
+    },
+    {
+      "path": ".github/ci/test_policy.py",
+      "mode": "100644",
+      "gitBlob": "ef9117c6fce03be94e404ebfb2ff78aba02a4a22"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "mode": "100644",
+      "gitBlob": "b18183416b441ba5392d3dc525562566a0952583"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "gitBlob": "b62c2b180bee719e0a23658ab1fcc3c5a1200233"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "gitBlob": "296e6009783a1a931e54eadab58e2e3de0466fc4"
+    },
+    {
+      "path": "Directory.Build.props",
+      "mode": "100644",
+      "gitBlob": "2ce40fce64337f6c150506f39a39f92ecbe0bfde"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "gitBlob": "e67e64a5ab7fcec5def82845d73fc7f96f82c9ba"
+    },
+    {
+      "path": "NOTICE.md",
+      "mode": "100644",
+      "gitBlob": "ac33d3b917511d5bdf3455ccf83f90b96a4a98df"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "mode": "100644",
+      "gitBlob": "4c89d204ef30af0b6b22d5be69c0559f2eb6f93a"
+    },
+    {
+      "path": "PointInTimeReference.slnx",
+      "mode": "100644",
+      "gitBlob": "3594e1d39280f3067f16919ccc5c9435e16deaa5"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "gitBlob": "a1bea0f211bd07a47d3c848691ff3eb5e27a4b63"
+    },
+    {
+      "path": "SIGNING-PUBLIC-KEY.pub",
+      "mode": "100644",
+      "gitBlob": "260690d2d8ede6631c0792fe61d2883c383f5466"
+    },
+    {
+      "path": "docs/ACTIONLINT-BUILD.md",
+      "mode": "100644",
+      "gitBlob": "ee9399616f178bbd8e3d2915fd5426f6f7f0fb51"
+    },
+    {
+      "path": "docs/ADR.md",
+      "mode": "100644",
+      "gitBlob": "0ae0ccc8deb7309947eeea55bd8a46106df6a7f6"
+    },
+    {
+      "path": "docs/CI-POLICY.md",
+      "mode": "100644",
+      "gitBlob": "70b9dab392afc9b54eda0220a7b04b061a648154"
+    },
+    {
+      "path": "docs/CONNECTION-OWNERSHIP.md",
+      "mode": "100644",
+      "gitBlob": "e31a0c1511e9aca6c9cff0ee967dc5e7e363ed46"
+    },
+    {
+      "path": "docs/CONTRACT.md",
+      "mode": "100644",
+      "gitBlob": "1ee7deb00c5305f3687acd26dafc3cdb7b93bf74"
+    },
+    {
+      "path": "docs/RELEASE.md",
+      "mode": "100644",
+      "gitBlob": "3687bc010fd92f05ff4d217cce07dbb5a0b34e3b"
+    },
+    {
+      "path": "docs/RUNBOOK.md",
+      "mode": "100644",
+      "gitBlob": "6ab0b479a59a9102168db344b80b1aec39846116"
+    },
+    {
+      "path": "examples/first.json",
+      "mode": "100644",
+      "gitBlob": "a199fa7bbe0298ab57b5007bd799c0994c8cd64a"
+    },
+    {
+      "path": "examples/late-correction.json",
+      "mode": "100644",
+      "gitBlob": "46b2523cca4de8c6976d7d5f8b72f27017d8c39a"
+    },
+    {
+      "path": "global.json",
+      "mode": "100644",
+      "gitBlob": "358949390c3e30f6a7f3ad491a914ecd69d437a2"
+    },
+    {
+      "path": "src/Reference.Cli/Program.cs",
+      "mode": "100644",
+      "gitBlob": "f241c6c4d0fa0bc5129f10d263c1e691653c028f"
+    },
+    {
+      "path": "src/Reference.Cli/Reference.Cli.csproj",
+      "mode": "100644",
+      "gitBlob": "fae095a17cb54d8128e5d62e124d206a079031a8"
+    },
+    {
+      "path": "src/Reference.Cli/packages.lock.json",
+      "mode": "100644",
+      "gitBlob": "82311912a8cee4de61851ef22f273f8c3c42500f"
+    },
+    {
+      "path": "src/Reference.Core/Domain.cs",
+      "mode": "100644",
+      "gitBlob": "e322fca0655d0421fe0f1ae86b1b94a2c4003f89"
+    },
+    {
+      "path": "src/Reference.Core/Reference.Core.csproj",
+      "mode": "100644",
+      "gitBlob": "9b55484aefe9d8d54a06dabaebfaf8539cc77317"
+    },
+    {
+      "path": "src/Reference.Core/Store.cs",
+      "mode": "100644",
+      "gitBlob": "6cee0e9dae9001639942fc09d0d00c45d53e5f8e"
+    },
+    {
+      "path": "src/Reference.Core/packages.lock.json",
+      "mode": "100644",
+      "gitBlob": "fadd4e9bb15fbee5d3f7f978ab72bdfd4a50a15e"
+    },
+    {
+      "path": "tests/Reference.Tests/ConnectionOwnershipTests.cs",
+      "mode": "100644",
+      "gitBlob": "11314341505e77463c417ac7925377426f8906c7"
+    },
+    {
+      "path": "tests/Reference.Tests/DomainTests.cs",
+      "mode": "100644",
+      "gitBlob": "9feb6c4ee4c8d7d53f77e589793a12b32a142b3f"
+    },
+    {
+      "path": "tests/Reference.Tests/HistoryPageContractTests.cs",
+      "mode": "100644",
+      "gitBlob": "3d1163899fa6c9bc44f5efce1d5d5455fe580ab0"
+    },
+    {
+      "path": "tests/Reference.Tests/Reference.Tests.csproj",
+      "mode": "100644",
+      "gitBlob": "aa8c78e9f6993f86494fe983cf558c929347a7f2"
+    },
+    {
+      "path": "tests/Reference.Tests/packages.lock.json",
+      "mode": "100644",
+      "gitBlob": "1f4a163f2992d6e3538811b3bfec40298853df74"
+    },
+    {
+      "path": "tests/provenance-fixture/SHA256SUMS.txt",
+      "mode": "100644",
+      "gitBlob": "383c0b9695297ce407f2a1622cfc677a18eecb00"
+    },
+    {
+      "path": "tests/provenance-fixture/SHA256SUMS.txt.sig",
+      "mode": "100644",
+      "gitBlob": "7679a69f7bfee52e07ff025b30927d9567c52368"
+    },
+    {
+      "path": "tests/provenance-fixture/fixture.zip",
+      "mode": "100644",
+      "gitBlob": "4561b7cdb956801e75e105f1ab4f58f0930d3b03"
+    },
+    {
+      "path": "tools/.gitattributes",
+      "mode": "100644",
+      "gitBlob": "c94d137248722df11d6e87903162f65d2ff6e118"
+    },
+    {
+      "path": "tools/actionlint-build.lock.json",
+      "mode": "100644",
+      "gitBlob": "438e4080517a06042752171da960f8bf7f5370c5"
+    },
+    {
+      "path": "tools/actionlint-notices.json",
+      "mode": "100644",
+      "gitBlob": "bb5665179a8c6debf242cbe9fca2ebfbe5097286"
+    },
+    {
+      "path": "tools/audit_dependencies.py",
+      "mode": "100644",
+      "gitBlob": "983481be98ef0737940d7d9896dff0c4506d9835"
+    },
+    {
+      "path": "tools/bounded_actionlint.py",
+      "mode": "100644",
+      "gitBlob": "d34d706f1f7e53bdfce427a5b532ec96c5f143f1"
+    },
+    {
+      "path": "tools/build_actionlint.py",
+      "mode": "100644",
+      "gitBlob": "cebead054994a7b0321586ff741e09a9874096e1"
+    },
+    {
+      "path": "tools/check_actionlint.py",
+      "mode": "100644",
+      "gitBlob": "1c95a8bababa608048a78ed725262f8a59c0045d"
+    },
+    {
+      "path": "tools/check_dotnet11.py",
+      "mode": "100644",
+      "gitBlob": "313e6978edca571d32e1092d222f3aae54c40b27"
+    },
+    {
+      "path": "tools/check_package.py",
+      "mode": "100644",
+      "gitBlob": "8ae865f06b011c33864f6c6309ff7f747b593434"
+    },
+    {
+      "path": "tools/check_release.py",
+      "mode": "100644",
+      "gitBlob": "3a7897b829fba23faa6bc6091d7afac909f8d64f"
+    },
+    {
+      "path": "tools/ci05/.gitattributes",
+      "mode": "100644",
+      "gitBlob": "625449502ba4b4d7c229c6ccee42e3ec41cc780c"
+    },
+    {
+      "path": "tools/ci05/actual_host05.py",
+      "mode": "100644",
+      "gitBlob": "d71c10431b9beceb297bd8ccf2852df3a66aca37"
+    },
+    {
+      "path": "tools/ci05/bounded_linux_ci05.py",
+      "mode": "100644",
+      "gitBlob": "701da48ca65570dd3d073cf6ebf9ec0422f31f40"
+    },
+    {
+      "path": "tools/ci05/bounded_windows05.py",
+      "mode": "100644",
+      "gitBlob": "2a4db9fd9dc5339af43f6d1611be01f1871b9f60"
+    },
+    {
+      "path": "tools/ci05/ci_root_starter05.py",
+      "mode": "100644",
+      "gitBlob": "cdfe8ee91b7e46303bd4553c9232b23f9796322c"
+    },
+    {
+      "path": "tools/ci05/ci_route05.py",
+      "mode": "100644",
+      "gitBlob": "410aab6a252a98d47164d2c8b80b9645e0b5d01d"
+    },
+    {
+      "path": "tools/ci05/contract.json",
+      "mode": "100644",
+      "gitBlob": "7c9a83c0d48a71a10e1426ad26a14fef14a88b44"
+    },
+    {
+      "path": "tools/ci05/guard-plan.json",
+      "mode": "100644",
+      "gitBlob": "67b36900fd5d128558c8b08ff10199308ac10df6"
+    },
+    {
+      "path": "tools/ci05/host-admissions.json",
+      "mode": "100644",
+      "gitBlob": "3da7c3f82ff5b96ab2ccb4774c8f562cea12d6ef"
+    },
+    {
+      "path": "tools/ci05/host_fact05.py",
+      "mode": "100644",
+      "gitBlob": "aba8321e13cf99d58f0a0c3030441c007cb2796d"
+    },
+    {
+      "path": "tools/ci05/manager-admission.json",
+      "mode": "100644",
+      "gitBlob": "bd9c1fd52e7046d3637830d652a428be5f54d55a"
+    },
+    {
+      "path": "tools/ci05/native_adapter05.py",
+      "mode": "100644",
+      "gitBlob": "2938087b630085dab0f9c20401f639bae47fa5f2"
+    },
+    {
+      "path": "tools/ci05/normal-profile.json",
+      "mode": "100644",
+      "gitBlob": "b2b6f695814e4ff469082b54ab3aa10a33332705"
+    },
+    {
+      "path": "tools/ci05/normal_binding05.py",
+      "mode": "100644",
+      "gitBlob": "651a2cd614b89a260e72c3426e030452b70f054e"
+    },
+    {
+      "path": "tools/ci05/product-recipes.json",
+      "mode": "100644",
+      "gitBlob": "b32f8a4e87beca22f3b71f95d1fe3f581650750d"
+    },
+    {
+      "path": "tools/ci05/profile.json",
+      "mode": "100644",
+      "gitBlob": "e2c2cc1d7d573b89d606bfaad97380bcb14dcaf3"
+    },
+    {
+      "path": "tools/ci05/sdk0-cases.json",
+      "mode": "100644",
+      "gitBlob": "114cd1c65ef23ad31500b29192aa4367734f3225"
+    },
+    {
+      "path": "tools/ci05/sdk0_boundary05.py",
+      "mode": "100644",
+      "gitBlob": "3d0b1858302e635d838a102aa28cf7fe5b2dc7cf"
+    },
+    {
+      "path": "tools/ci05/test_normal_binding05.py",
+      "mode": "100644",
+      "gitBlob": "f6095552cc3df420ed63ad15e79f3baa265faa99"
+    },
+    {
+      "path": "tools/dotnet11-host-qualification.schema.json",
+      "mode": "100644",
+      "gitBlob": "4c505869b03dbf79c194bf8c7ca7b376ceee0223"
+    },
+    {
+      "path": "tools/extract_package.py",
+      "mode": "100644",
+      "gitBlob": "c73f70446c5868ee2f1521a768c37cedb137ee3b"
+    },
+    {
+      "path": "tools/fetch_services.py",
+      "mode": "100644",
+      "gitBlob": "93c30498e5beaca66d771ac8f0b5ca41fe2d5b77"
+    },
+    {
+      "path": "tools/integration.py",
+      "mode": "100644",
+      "gitBlob": "e6a780e2ef05b3b160c5bc555a6ea6873e8bb6db"
+    },
+    {
+      "path": "tools/knowledge_boundary.py",
+      "mode": "100644",
+      "gitBlob": "ee90176112df8d201e6c8812600ddbaf5597fba7"
+    },
+    {
+      "path": "tools/materialize_qualification_linux.py",
+      "mode": "100644",
+      "gitBlob": "16e4e7ef7b2e7747a17714e4f6a551c40c9a4829"
+    },
+    {
+      "path": "tools/notices.py",
+      "mode": "100644",
+      "gitBlob": "4455e1bb1c342671e61e41b0df7c898a2f99c1f6"
+    },
+    {
+      "path": "tools/package.py",
+      "mode": "100644",
+      "gitBlob": "dd8c5b0325782d59ac6a2a4ed06ceb4bd88396c8"
+    },
+    {
+      "path": "tools/pg_host.py",
+      "mode": "100644",
+      "gitBlob": "96bbe0e13d720d55e496de39a1fe493c76bec584"
+    },
+    {
+      "path": "tools/prepare_linux.py",
+      "mode": "100644",
+      "gitBlob": "21b4780ae4391355a8bfde5d44f2d547d01c66c1"
+    },
+    {
+      "path": "tools/qualification_input_guard.py",
+      "mode": "100644",
+      "gitBlob": "ebc36eade0d00b3d419aa995f4913117ba64abd6"
+    },
+    {
+      "path": "tools/run_actionlint.py",
+      "mode": "100644",
+      "gitBlob": "069ad3a3e772027d476975cb0ff58680c6fe22f1"
+    },
+    {
+      "path": "tools/sdk11-normal-inputs.lock.json",
+      "mode": "100644",
+      "gitBlob": "67eed2c29e0b11a3cc4b405994dfe41e7808f45d"
+    },
+    {
+      "path": "tools/sdk11-normal/.gitattributes",
+      "mode": "100644",
+      "gitBlob": "bbd7984e8d8399fecf37567807fd2c32c7489081"
+    },
+    {
+      "path": "tools/sdk11-normal/accepted-linux-acceptance.json",
+      "mode": "100644",
+      "gitBlob": "9ed6ac75a97db595caa5c6d9b84e03b7f21e7f2e"
+    },
+    {
+      "path": "tools/sdk11-normal/accepted-linux-fact.json",
+      "mode": "100644",
+      "gitBlob": "391173426f2a48f2fb9797d70cc7cb618bd5ffaf"
+    },
+    {
+      "path": "tools/test_actionlint_admission.py",
+      "mode": "100644",
+      "gitBlob": "1bce1b595e37e35ad4ca8f777b1c2688c499f785"
+    },
+    {
+      "path": "tools/test_verifier.py",
+      "mode": "100644",
+      "gitBlob": "d8209900946705cee166aa22a05d6cd45744014e"
+    },
+    {
+      "path": "tools/upstream.lock.json",
+      "mode": "100644",
+      "gitBlob": "e0401d36976c8f34e4dfd4659820a3b1713a97e3"
+    },
+    {
+      "path": "tools/verify_downloads.py",
+      "mode": "100644",
+      "gitBlob": "f799020e91fa9a4248f129dad0fb988b541a18af"
+    },
+    {
+      "path": "vendor/notices/NOTICE-SOURCES.json",
+      "mode": "100644",
+      "gitBlob": "010af06f29b5224ad7c3b5eb2e8266e2af156252"
+    },
+    {
+      "path": "vendor/notices/Npgsql-10.0.3-LICENSE.txt",
+      "mode": "100644",
+      "gitBlob": "c551cb7b0c921b082c2424f213e12fb6b84a864c"
+    }
+  ]
+}

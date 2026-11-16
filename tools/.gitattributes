@@ -1,0 +1,7 @@
+.gitattributes -text
+sdk11-normal/.gitattributes -text
+check_dotnet11.py -text
+sdk11-normal-inputs.lock.json -text
+dotnet11-host-qualification.schema.json -text
+qualification_input_guard.py -text
+materialize_qualification_linux.py -text
