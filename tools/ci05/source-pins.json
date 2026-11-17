@@ -300,14 +300,24 @@
       "gitBlob": "ba015101066dff386ebcc114edaf4af68efb1b23"
     },
     {
+      "path": "tools/ci05/local-native-plan05.json",
+      "mode": "100644",
+      "gitBlob": "2ff9f3986240a7423f1c405971c56500963237b0"
+    },
+    {
       "path": "tools/ci05/local_managed05.py",
       "mode": "100644",
       "gitBlob": "5dc72106794d8c7622b742e3d748afb41a53e587"
     },
     {
+      "path": "tools/ci05/local_native05.py",
+      "mode": "100644",
+      "gitBlob": "4a5b5cd6307a798b1bee5cc1b30a7b10df5c4adb"
+    },
+    {
       "path": "tools/ci05/local_windows05.py",
       "mode": "100644",
-      "gitBlob": "7e936addd5db962b8b3e8637fe60f0989777164e"
+      "gitBlob": "5f18479daa2616fbdb45fc6e2ce9d828395a2e91"
     },
     {
       "path": "tools/ci05/manager-admission.json",

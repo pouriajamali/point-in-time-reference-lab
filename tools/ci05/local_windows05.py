@@ -40,6 +40,8 @@ def worker(specpath,digest):
  common=load(Path(s['sharedTools'])/'check_dotnet11.py','producer04_local_data_only',COMMON_SHA);native=common._load('normal_windows_input',common.PINS['windowsNormalHelperSha256']);cpu=native.measure_cpu(common,out)
  catalog,fact,schema=common._documents('win-x64');sdk=Path(s['sdk']);need(sdk.is_dir() and not sdk.is_symlink(),'EXISTING_SDK_ONLY');common.verify_tree(sdk,catalog['members'],'win-x64',full=True);write(out/'sdk-input.json',{'SDKPath':str(sdk),'memberManifestSHA256':catalog['memberManifestSha256'],'producerQualifiedOn':fact['qualifiedOn'],'scope':'Historical producer input bytes only; own current caps/host separately observed. No SDK download/copy or common qualification replay.','cpu':cpu})
  home=out/'home';home.mkdir();env={k:v for k,v in os.environ.items() if not k.startswith(('DOTNET_','COMPlus_','NUGET_')) and k not in ('GITHUB_TOKEN','ACTIONS_RUNTIME_TOKEN','MSBuildSDKsPath','MSBUILD_EXE_PATH')};env.update(DOTNET_ROOT=str(sdk),DOTNET_HOST_PATH=str(sdk/'dotnet.exe'),DOTNET_CLI_HOME=str(home),DOTNET_CLI_TELEMETRY_OPTOUT='1',DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE='true',DOTNET_SKIP_FIRST_TIME_EXPERIENCE='1',DOTNET_EnableDiagnostics='0',DOTNET_NOLOGO='1',DOTNET_PROCESSOR_COUNT='1',MSBUILDDISABLENODEREUSE='1',DOTNET_CLI_USE_MSBUILD_SERVER='0',TESTINGPLATFORM_TELEMETRY_OPTOUT='1')
+ if s['phase']=='inputs':
+  native_phase=load(HERE/'local_native05.py','own05_local_native','5f546fc3d271445546fa9988d3e4eb8b61abe3250b41de28a5f5085db820c948');native_phase.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
  if s['phase']=='unit':
   managed=load(HERE/'local_managed05.py','own05_local_managed','4efd46f59656f61a0c07baea8c6c7d42921d84ed691255b1bb9f4077e8ee9286');managed.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
  rows=[]
@@ -52,7 +54,7 @@ def worker(specpath,digest):
  common.verify_tree(sdk,catalog['members'],'win-x64',full=True);write(out/'RESULT.json',{'state':'OWN05_LOCAL_HOST_CAPS_AND_NET11_PROJECT_GRAPH_OBSERVED','host':current,'caps':actual,'sourceCommit':s['HEAD'],'controllerSHA256':s['controllerSHA256'],'commands':rows,'SDKGlobalReadiness':False,'otherConsumerAdmission':False,'inputLocksOrProductTestsQualified':False,'Actions':0})
 
 def parent(args):
- need(args.phase in ('graph','unit'),'FIXED_PHASE');out=Path(args.out).resolve();need(out.is_relative_to(ROOT.parents[1]/'outputs') and not out.exists(),'OWN_FRESH_OUTPUT');out.mkdir(parents=True);control=load(HERE/'bounded_windows05.py','own05_local_parent_caps',CAPS_SHA);h=host();head=git('rev-parse','HEAD');need(not git('status','--porcelain=v1'),'CLEAN_CURRENT_SOURCE')
+ need(args.phase in ('graph','unit','inputs'),'FIXED_PHASE');out=Path(args.out).resolve();need(out.is_relative_to(ROOT.parents[1]/'outputs') and not out.exists(),'OWN_FRESH_OUTPUT');out.mkdir(parents=True);control=load(HERE/'bounded_windows05.py','own05_local_parent_caps',CAPS_SHA);h=host();head=git('rev-parse','HEAD');need(not git('status','--porcelain=v1'),'CLEAN_CURRENT_SOURCE')
  lease=ROOT.parents[2]/'portfolio-management/development-management-20261110/wave2-state/LOCAL-FIXTURE-LEASE.json';token=uuid.uuid4().hex;identity=start_identity();holder={'projectId':'05','randomToken':token,'ownerOS':'Windows','ownerPID':os.getpid(),'ownerProcessStartIdentity':identity,'phase':'own05-local-'+args.phase,'receiptDirectory':str(out)}
  with lease.open('x') as f:json.dump(holder,f);f.flush();os.fsync(f.fileno());inode=os.fstat(f.fileno()).st_ino
  s={'phase':args.phase,'out':str(out),'sdk':str(Path(args.sdk).resolve()),'sharedTools':str(Path(args.shared_tools).resolve()),'host':h,'HEAD':head,'controllerSHA256':sha(__file__),'supervisorPID':os.getpid(),'supervisorStartIdentity':identity,'rowStartedMonotonicNs':time.monotonic_ns()};s['deadlineMonotonicNs']=s['rowStartedMonotonicNs']+1200*10**9;sp=out/'context.json';write(sp,s);failure=None;terminal=False
@@ -65,6 +67,6 @@ def parent(args):
  need(terminal and failure is None and (out/'RESULT.json').exists(),'LOCAL_PHASE_HOLD:'+str(failure));print(json.dumps({'state':'LOCAL05_PHASE_COMPLETE','phase':args.phase,'out':str(out),'HEAD':head}))
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--phase',choices=['graph','unit']);p.add_argument('--out');p.add_argument('--sdk');p.add_argument('--shared-tools');p.add_argument('--worker',nargs=2);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--phase',choices=['graph','unit','inputs']);p.add_argument('--out');p.add_argument('--sdk');p.add_argument('--shared-tools');p.add_argument('--worker',nargs=2);a=p.parse_args()
  if a.worker:worker(a.worker[0],a.worker[1])
  else:parent(a)

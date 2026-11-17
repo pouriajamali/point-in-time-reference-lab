@@ -1,0 +1,77 @@
+{
+  "schema": "own05-native-windows-local-consumer-curation/v1",
+  "purpose": "Current direct owner request to resolve missing Windows native inputs and complete non-Actions delivery; own05 only. Shared producer sources/catalogs remain immutable.",
+  "packages": [
+    {
+      "id": "Microsoft.NETCore.App.Runtime.win-x64",
+      "version": "11.0.0",
+      "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.win-x64/11.0.0/microsoft.netcore.app.runtime.win-x64.11.0.0.nupkg",
+      "declaredBytes": 43769220,
+      "catalogDeclaredSHA512": "ZZQq6Upo0OyYCtNDsF/n4msWEOetdGlbPim6KMdKVQpJ+6pliMmVcw8sIIf7WJZhbc5FQAA9q9Xavs0I/RubSA==",
+      "existingBody": "E:\\Codex WorkSpace\\Git Projects\\market-data-integrity-lab\\outputs\\tech-refresh-m0-20261114\\local-windows-native-package-8c48e6a-20261117\\private\\feed\\microsoft.netcore.app.runtime.win-x64.11.0.0.nupkg",
+      "rawSHA256": "1acb5da59cd994d3d50c9c52a9701bc8342948a1d8e4165f49bedf267c286b36",
+      "rawSHA512Base64": "ZZQq6Upo0OyYCtNDsF/n4msWEOetdGlbPim6KMdKVQpJ+6pliMmVcw8sIIf7WJZhbc5FQAA9q9Xavs0I/RubSA==",
+      "normalizedNuGetContentHash": "nAsnzl0M8c9nqmkmC/+eIgTsfLadtoCMkSYlerf3fuasvKYNhVXmbxpi2bJzpx3kW343wuH4HI38DDZ8QeAA4A=="
+    },
+    {
+      "id": "Microsoft.AspNetCore.App.Runtime.win-x64",
+      "version": "11.0.0",
+      "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.win-x64/11.0.0/microsoft.aspnetcore.app.runtime.win-x64.11.0.0.nupkg",
+      "declaredBytes": 13367527,
+      "catalogDeclaredSHA512": "t2qPSpfKVtJLBkX0DoJIM8DZAUq15usgdiLT/ebh2yqOUpYDURzAiWHY/OG3IjePNiRIvfS+Us2QH3uKhEhZMQ==",
+      "existingBody": "E:\\Codex WorkSpace\\Git Projects\\market-data-integrity-lab\\outputs\\tech-refresh-m0-20261114\\local-windows-native-package-8c48e6a-20261117\\private\\feed\\microsoft.aspnetcore.app.runtime.win-x64.11.0.0.nupkg",
+      "rawSHA256": "b121c568f8a9f02ffc24d72c29063157ad489d97904acc2d06ea0bc220049f35",
+      "rawSHA512Base64": "t2qPSpfKVtJLBkX0DoJIM8DZAUq15usgdiLT/ebh2yqOUpYDURzAiWHY/OG3IjePNiRIvfS+Us2QH3uKhEhZMQ==",
+      "normalizedNuGetContentHash": "9C5d4MdoOMnvqiWgUSl3ScvXHB41XYMEpXLwrgZJOhQuD4ekSlBLVzj8wDVKTjL1OGQTYMCfcOys/7e+zny0yg=="
+    },
+    {
+      "id": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+      "version": "11.0.0",
+      "url": "https://api.nuget.org/v3-flatcontainer/microsoft.windowsdesktop.app.runtime.win-x64/11.0.0/microsoft.windowsdesktop.app.runtime.win-x64.11.0.0.nupkg",
+      "metadataDiscovery": "https://api.nuget.org/v3/registration5-semver1/microsoft.windowsdesktop.app.runtime.win-x64/11.0.0.json",
+      "declaredBytes": null,
+      "catalogDeclaredSHA512": null
+    }
+  ],
+  "archiveBytesMax": 134217728,
+  "allGETsMax": 3,
+  "bodyGETsMax": 1,
+  "perBodySeconds": 45,
+  "perMetadataSeconds": 15,
+  "SDKVerifyCommandsMax": 1,
+  "SDKVerifySeconds": 45,
+  "expectedAuthorSHA256": "9A1B131BEE0605433056A4EA3815478A8E177961A968C6C0027C1093D1FEB630",
+  "expectedRepositorySHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+  "expectedTimestampSHA256": "2DA09DA7F4131F9FE72DB6C5E6E9C9656755AF043F1EA742CC0D2120E141EBFC",
+  "existingRootSHA256": [
+    "3e9099b5015e8f486c00bcea9d111ee721faba355a89bcf1df69561e3dc6325c",
+    "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988"
+  ],
+  "inspectorSHA256": "bbcebab03332fc2ea5ee3eb0344e82c83b5a56fc269cfb8fc9825dfb77ff0daf",
+  "verifyParserSHA256": "9e199eadd9d399dbb940f635a64d57e11ddd37f91e5bad15eba5bd6cd3f15216",
+  "metadataLabels": "Catalog packageHash is declared policy data only; raw signed SHA512 and SDK normalized content hash are observed and recorded separately.",
+  "limits": {
+    "cpu": 1,
+    "memory": 4294967296,
+    "tasks": 64,
+    "rowSeconds": 1200,
+    "scratch": 2147483648,
+    "logs": 16777216
+  },
+  "SDKQualificationReplay": false,
+  "otherConsumerAdmission": false,
+  "Actions": 0,
+  "reusedSignatureReceipt": {
+    "path": "E:\\Codex WorkSpace\\Git Projects\\market-data-integrity-lab\\outputs\\tech-refresh-m0-20261114\\local-windows-native-package-8c48e6a-20261117\\NATIVE-INPUT-QUALIFICATION.json",
+    "sha256": "8d2293013139435b4caae13ff3169d9d12701ab426e43bf2b9a066df7774c737"
+  },
+  "reusedVerifyLog": {
+    "path": "E:\\Codex WorkSpace\\Git Projects\\market-data-integrity-lab\\outputs\\tech-refresh-m0-20261114\\local-windows-native-package-8c48e6a-20261117\\verify-new-native-inputs.stdout",
+    "sha256": "269321696484fc2bca584572e1809d9d3b7324cf6bda974961422806bfc6ddf1"
+  },
+  "producerHandoff": {
+    "path": "E:/Codex WorkSpace/Git Projects/portfolio-management/development-management-20261110/wave4-state/project04-shared-normal-final-20261117/ORDINARY01-DATA-HANDOFF.json",
+    "sha256": "81dbd8b82a2c4d24f5fcaa8664e3dda0cc3e7bd76095ca288809dc4e0d174786"
+  },
+  "methodSHA256": "e882af75dc56a5a0f9eb9b4101f2ccaf88141fa3ced9037ea0fd7b1eb357ed74"
+}
