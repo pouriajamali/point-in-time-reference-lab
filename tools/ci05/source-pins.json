@@ -317,7 +317,7 @@
     {
       "path": "tools/ci05/local_windows05.py",
       "mode": "100644",
-      "gitBlob": "9f74e2f093dd5c4c250b6fdd2d5b7c583ebff2b8"
+      "gitBlob": "afa48e0b2bad9d5a7b3c4ed219033d698286b355"
     },
     {
       "path": "tools/ci05/manager-admission.json",

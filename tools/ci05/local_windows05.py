@@ -65,7 +65,19 @@ def claim_when_available(lease,holder,seconds=600):
   need(time.monotonic()<end,'RESOURCE_QUEUE_WAIT_EXPIRED')
   try:foreign=read(lease)
   except FileNotFoundError:continue
-  need(str(foreign.get('ownerOS')).lower() in ('nt','windows'),'FOREIGN_NONWINDOWS_LANE_WAIT_REQUIRES_EXISTING_GUEST_METHOD');pid=foreign['ownerPID'];h=k.OpenProcess(0x100000|0x1000,False,pid);need(h,'FOREIGN_LANE_OWNER_NOT_INSPECTABLE_NO_RESET')
+  need(str(foreign.get('ownerOS')).lower() in ('nt','windows'),'FOREIGN_NONWINDOWS_LANE_WAIT_REQUIRES_EXISTING_GUEST_METHOD');pid=foreign['ownerPID'];h=k.OpenProcess(0x100000|0x1000,False,pid)
+  if not h:
+   error=ctypes.get_last_error();need(error in (5,87),'FOREIGN_OWNER_OPEN_ERROR');k.FindFirstChangeNotificationW.argtypes=[W.LPCWSTR,W.BOOL,W.DWORD];k.FindFirstChangeNotificationW.restype=W.HANDLE;k.FindNextChangeNotification.argtypes=[W.HANDLE];k.FindCloseChangeNotification.argtypes=[W.HANDLE];watch=k.FindFirstChangeNotificationW(str(lease.parent),False,0x1|0x8|0x10);need(watch not in (None,ctypes.c_void_p(-1).value),'RESOURCE_DIRECTORY_NOTIFICATION')
+   try:
+    if not lease.exists():continue
+    current=read(lease)
+    if current!=foreign:continue
+    while True:
+     left=end-time.monotonic();need(left>0,'RESOURCE_QUEUE_WAIT_EXPIRED');code=k.WaitForSingleObject(watch,min(45000,max(1,int(left*1000))));need(code in (0,258),'RESOURCE_DIRECTORY_WAIT')
+     if code==0:break
+    events.append({'projectId':foreign['projectId'],'phase':foreign['phase'],'pid':pid,'ownerOpenError':error,'leaseDirectoryChangeObserved':True,'foreignLeaseReset':False});need(len(events)<=32,'RESOURCE_QUEUE_EVENT_BOUND')
+   finally:k.FindCloseChangeNotification(watch)
+   continue
   try:
    a,b,c,d=(W.FILETIME() for _ in range(4));need(k.GetProcessTimes(h,ctypes.byref(a),ctypes.byref(b),ctypes.byref(c),ctypes.byref(d)),'FOREIGN_OWNER_START_READ');identity=str((a.dwHighDateTime<<32)|a.dwLowDateTime);need(identity==str(foreign['ownerProcessStartIdentity']).removeprefix('FILETIME:'),'FOREIGN_OWNER_PID_REUSE')
    while True:
