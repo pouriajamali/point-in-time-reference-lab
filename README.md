@@ -165,3 +165,13 @@ perOS, verifier8 tests/27 subprocess scenarios, and the Linux PostgreSQL18.6
 14-case/23-correction/1866-point matrix plus17-correction/19-row/18-active history,
 page/replay/conflict scenario. Packages are released only after their own actual
 acceptance. The current local inputs are not global SDK or other-consumer admission.
+
+
+Windows local validation completed at signed source
+`625b1335aaf76a28fc1e7416c0187d356eaa60d8`:51 units,8 native package checks,
+7 wire responses and verifier8 tests/27 subprocess scenarios passed on the actual
+self-contained archive. This is local Windows evidence, with Actions0.
+Linux native acceptance is pending: Ubuntu-24.04 reports Running, but minimal
+read-only guest commands time out. Distribution termination/restart requires the
+owner's decision because it can interrupt other processes in that distribution.
+Preview.4 remains unpublished; preview.3 is the public download baseline.

@@ -35,3 +35,13 @@ SDK10.0.404, Core/ASP.NET10.0.15 and Npgsql10.0.3 remain the selected applicatio
 Download the Windows x64 ZIP, Linux x64 tar.gz or exact source ZIP together with SHA256SUMS.txt, SHA256SUMS.txt.sig and SIGNING-PUBLIC-KEY.pub. Verify with a separately trusted verifier and fingerprint SHA256:AgU5bZlJSjUu0KsWMmVEEr+BfXpcMVNroTA33bHcQdU, file namespace, principal pouriajamali. The co-downloaded key is not an independent trust root.
 
 Existing preview.1/preview.2 releases, tags, keys and signatures remain immutable. No CV, shared project, paid infrastructure, production deployment or other wave is included.
+
+
+Windows local validation completed at signed source
+`625b1335aaf76a28fc1e7416c0187d356eaa60d8`:51 units,8 native package checks,
+7 wire responses and verifier8 tests/27 subprocess scenarios passed on the actual
+self-contained archive. This is local Windows evidence, with Actions0.
+Linux native acceptance is pending: Ubuntu-24.04 reports Running, but minimal
+read-only guest commands time out. Distribution termination/restart requires the
+owner's decision because it can interrupt other processes in that distribution.
+Preview.4 remains unpublished; preview.3 is the public download baseline.
