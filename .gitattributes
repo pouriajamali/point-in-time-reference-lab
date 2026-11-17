@@ -1,2 +1,4 @@
 * text=auto eol=lf
 *.zip binary
+# Preserve exact SDK-generated lock bytes across platforms.
+**/packages.lock.json -text

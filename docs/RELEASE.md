@@ -1,14 +1,26 @@
-# v0.1.0-preview.4 — prepared .NET11 maintenance source, unpublished
+# v0.1.0-preview.4 - .NET11 maintenance candidate, unpublished
 
-Prepared declarations: SDK11.0.100, net11.0, stable C#15 and Core/ASP.NET11.0.0. This candidate preserves the complete existing application, tests, schema, ownership/temporal behavior and semantic fixtures. No new feature or performance/quality improvement is claimed.
+SDK11.0.100, net11.0, C#15 and Core/ASP.NET11.0.0 are pinned. Npgsql10.0.3,
+xunit.v3 4.0.3, all original application semantics and acceptance cases remain.
+The actual SDK generated all three locks and passed both RID contexts. Its
+normal framework pruning removed two Microsoft.Extensions Abstractions10.0.0
+entries; all18 retained version/content identities stayed exact.
 
-Source preparation has not run an SDK, restore, build, unit/native/helper test or package. The current lockfiles and runtime notice map retain their actual .NET10 baseline identity. Net11 lock regeneration and actual raw-signed/normalized runtime11/full-notice evidence are pending the single admitted SDK11 producer handoff and reviewed project05 kernel controls. There are no new runtime hashes, compatibility results, signed archives, public CI or downloads to report.
+Windows Core/ASP.NET original bodies and healthy signature receipts were reused.
+WindowsDesktop11.0.0 was acquired and natively verified; the existing Windows
+apphost input was verified separately. Linux's three accepted native inputs were
+reused by exact body identity. Full original runtime notices and current complete
+advisory data were checked for the27-package input closure. Signature validation
+remains required and pinned to repository certificates already verified for the
+frozen inputs; no untrusted root or audit exception was added.
 
-The accepted preview.3 release and all earlier tags/assets/signatures remain immutable. Fresh preview.4 binaries must come from their own future exact source; earlier bytes will not be renamed or relabeled. Publication requires the separate exact candidate/CI/signing/download gate.
+A dotnet restore --runtime check narrowed the RID set and failed NU1004. Target
+RuntimeIdentifier properties preserve the original declared RuntimeIdentifiers
+and the SDK-generated lock bytes. Successful operations were retained without
+replay. This is input/lock evidence; complete native product tests and release
+remain pending. Actions was not run per owner instruction. Preview.3 is retained.
 
----
-
-# v0.1.0-preview.3 — Point-in-Time Instrument Reference Lab
+## v0.1.0-preview.3 — Point-in-Time Instrument Reference Lab
 
 The history client rejects omitted or truncated pages unless they contain exactly min(16, headRevision-afterRevision) original receipts, consecutively from afterRevision+1. Full receipt validation remains active; storage row_id gaps remain legal. This is a synthetic, literal-loopback-only reference API/CLI, with no real feed, trading account or production-service claim.
 
@@ -23,27 +35,3 @@ SDK10.0.404, Core/ASP.NET10.0.15 and Npgsql10.0.3 remain the selected applicatio
 Download the Windows x64 ZIP, Linux x64 tar.gz or exact source ZIP together with SHA256SUMS.txt, SHA256SUMS.txt.sig and SIGNING-PUBLIC-KEY.pub. Verify with a separately trusted verifier and fingerprint SHA256:AgU5bZlJSjUu0KsWMmVEEr+BfXpcMVNroTA33bHcQdU, file namespace, principal pouriajamali. The co-downloaded key is not an independent trust root.
 
 Existing preview.1/preview.2 releases, tags, keys and signatures remain immutable. No CV, shared project, paid infrastructure, production deployment or other wave is included.
-
-
-## Local SDK11 maintenance status (2026-11-17)
-
-The local Windows route now records its actual client host, clean source,
-suspended-child Job membership, CPU1/4GiB/64-task caps and terminal teardown.
-Five SDK11 project-graph evaluations passed. The original bounded controller's
-future-import syntax error was repaired without changing its resource limits.
-
-A subsequent isolated restore used the existing20 managed archives and accepted
-Linux apphost bytes. It failed with NU1101 for missing runtime package inputs,
-including WindowsDesktop11.0.0 enumerated by the SDK for RuntimeIdentifiers.
-The SDK's [ProcessFrameworkReferences implementation](https://raw.githubusercontent.com/dotnet/sdk/v11.0.100/src/Tasks/Microsoft.NET.Build.Tasks/ProcessFrameworkReferences.cs)
-processes additional RIDs for known framework packs even without a direct
-application reference. No download-avoidance flag or framework/SDK edit was used.
-Failed-restore private data contains18 unchanged managed version/content pairs
-and prunes the two Microsoft.Extensions Abstractions10.0.0 packages. Complete
-accepted native inputs and reconciliation of that actual generated closure are
-required before source locks, build/tests and new packages proceed.
-
-The unit suite did not execute; this is neither completed product validation nor
-CI success. Actions was not run per owner instruction. Existing preview.3 is the
-released baseline; preview.4 remains unpublished. No branch protection,
-validation, trust, security or billing setting was changed.

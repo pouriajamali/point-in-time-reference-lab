@@ -7,7 +7,7 @@
     {
       "path": ".gitattributes",
       "mode": "100644",
-      "gitBlob": "b8e1e5042b95bf8199eb3ff7bff943458648f5f1"
+      "gitBlob": "3459885850ed4fe03b71477b6a7ccbd624fcf666"
     },
     {
       "path": ".github/ci/policy.py",
@@ -47,12 +47,12 @@
     {
       "path": "NOTICE.md",
       "mode": "100644",
-      "gitBlob": "ac33d3b917511d5bdf3455ccf83f90b96a4a98df"
+      "gitBlob": "49ec53b06cc19148dfb83bd91d7de8773cf1604c"
     },
     {
       "path": "PROVENANCE.md",
       "mode": "100644",
-      "gitBlob": "4c89d204ef30af0b6b22d5be69c0559f2eb6f93a"
+      "gitBlob": "9af3535364227b42646205db1bd55007bf034454"
     },
     {
       "path": "PointInTimeReference.slnx",
@@ -62,7 +62,7 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "gitBlob": "b97ee4ecda054b388b80ec7a1d573bf7e46d9720"
+      "gitBlob": "c98e1a4b655bfdb5cad3ff3b93bb1f3e0e5327dd"
     },
     {
       "path": "SIGNING-PUBLIC-KEY.pub",
@@ -97,7 +97,7 @@
     {
       "path": "docs/RELEASE.md",
       "mode": "100644",
-      "gitBlob": "fe554bacbbfa9e02b7e0ca659914100981d1ee1a"
+      "gitBlob": "53a87fe707f8a89d24ceedbee57b051aeb441b17"
     },
     {
       "path": "docs/RUNBOOK.md",
@@ -132,7 +132,7 @@
     {
       "path": "src/Reference.Cli/packages.lock.json",
       "mode": "100644",
-      "gitBlob": "82311912a8cee4de61851ef22f273f8c3c42500f"
+      "gitBlob": "360da89427fa7a00b5e0f24a7adb56442dcaf4a2"
     },
     {
       "path": "src/Reference.Core/Domain.cs",
@@ -152,7 +152,7 @@
     {
       "path": "src/Reference.Core/packages.lock.json",
       "mode": "100644",
-      "gitBlob": "fadd4e9bb15fbee5d3f7f978ab72bdfd4a50a15e"
+      "gitBlob": "3fe06157ef298420a56f83a8321537b3a62d4223"
     },
     {
       "path": "tests/Reference.Tests/ConnectionOwnershipTests.cs",
@@ -177,7 +177,7 @@
     {
       "path": "tests/Reference.Tests/packages.lock.json",
       "mode": "100644",
-      "gitBlob": "1f4a163f2992d6e3538811b3bfec40298853df74"
+      "gitBlob": "5aacaeca351e9900073f144dec8c3e0be0fcc455"
     },
     {
       "path": "tests/provenance-fixture/SHA256SUMS.txt",
@@ -315,9 +315,14 @@
       "gitBlob": "2d68e10bd4ad4f6271b8edfea24dee31239375ba"
     },
     {
+      "path": "tools/ci05/local_product05.py",
+      "mode": "100644",
+      "gitBlob": "b296308bd0294a1358f807ae2a66fc1dee55091a"
+    },
+    {
       "path": "tools/ci05/local_windows05.py",
       "mode": "100644",
-      "gitBlob": "afa48e0b2bad9d5a7b3c4ed219033d698286b355"
+      "gitBlob": "a18cca6f2d7f69f3be377007ddd95163e17a75ee"
     },
     {
       "path": "tools/ci05/manager-admission.json",
@@ -382,12 +387,12 @@
     {
       "path": "tools/integration.py",
       "mode": "100644",
-      "gitBlob": "e6a780e2ef05b3b160c5bc555a6ea6873e8bb6db"
+      "gitBlob": "d6ea78ffa221e30a7c96ee798148cc5a3aaff5e3"
     },
     {
       "path": "tools/knowledge_boundary.py",
       "mode": "100644",
-      "gitBlob": "ee90176112df8d201e6c8812600ddbaf5597fba7"
+      "gitBlob": "4e9acb759d673544c1564244e1fcaa82e754f1e2"
     },
     {
       "path": "tools/materialize_qualification_linux.py",
@@ -402,7 +407,7 @@
     {
       "path": "tools/package.py",
       "mode": "100644",
-      "gitBlob": "dd8c5b0325782d59ac6a2a4ed06ceb4bd88396c8"
+      "gitBlob": "ac9a7cbd894ae590518c67fa90b5dd6e00163763"
     },
     {
       "path": "tools/pg_host.py",
@@ -467,7 +472,7 @@
     {
       "path": "vendor/notices/NOTICE-SOURCES.json",
       "mode": "100644",
-      "gitBlob": "010af06f29b5224ad7c3b5eb2e8266e2af156252"
+      "gitBlob": "692dc351a92402839de288d0c58e0aa818654b0a"
     },
     {
       "path": "vendor/notices/Npgsql-10.0.3-LICENSE.txt",

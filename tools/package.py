@@ -17,11 +17,12 @@ def git(*args):return subprocess.check_output(['git','-C',str(ROOT),*args],text=
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for name in ['commit','rid','work','out']:p.add_argument('--'+name,required=True)
-    p.add_argument('--dotnet',default='dotnet');p.add_argument('--local-candidate',action='store_true');a=p.parse_args()
+    p.add_argument('--dotnet',default='dotnet');p.add_argument('--nuget-config',type=Path);p.add_argument('--local-candidate',action='store_true');a=p.parse_args()
     require(a.rid in ['win-x64','linux-x64'] and git('rev-parse','HEAD')==a.commit and not git('status','--porcelain'),'Exact clean HEAD required')
     if not a.local_candidate:require(platform.system()==('Windows' if a.rid=='win-x64' else 'Linux'),'Native public build host must match RID')
     work=Path(a.work).resolve();work.mkdir(parents=True,exist_ok=False);out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True);published=work/'published'
     commands=[[a.dotnet,'restore','src/Reference.Cli/Reference.Cli.csproj','--locked-mode'],[a.dotnet,'publish','src/Reference.Cli/Reference.Cli.csproj','-c','Release','-r',a.rid,'--self-contained','true','--no-restore','-m:1','-p:UseSharedCompilation=false','-p:SourceRevisionId='+a.commit,'-o',str(published)]]
+    if a.nuget_config:commands[0]+=['--configfile',str(a.nuget_config.resolve())]
     with (work/'build.log').open('wb') as log:
         for command in commands:subprocess.run(command,cwd=ROOT,check=True,stdout=log,stderr=subprocess.STDOUT,timeout=300)
     require(not git('status','--porcelain'),'Build changed frozen source')

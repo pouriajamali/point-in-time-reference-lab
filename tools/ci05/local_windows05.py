@@ -40,6 +40,8 @@ def worker(specpath,digest):
  common=load(Path(s['sharedTools'])/'check_dotnet11.py','producer04_local_data_only',COMMON_SHA);native=common._load('normal_windows_input',common.PINS['windowsNormalHelperSha256']);cpu=native.measure_cpu(common,out)
  catalog,fact,schema=common._documents('win-x64');sdk=Path(s['sdk']);need(sdk.is_dir() and not sdk.is_symlink(),'EXISTING_SDK_ONLY');common.verify_tree(sdk,catalog['members'],'win-x64',full=True);write(out/'sdk-input.json',{'SDKPath':str(sdk),'memberManifestSHA256':catalog['memberManifestSha256'],'producerQualifiedOn':fact['qualifiedOn'],'scope':'Historical producer input bytes only; own current caps/host separately observed. No SDK download/copy or common qualification replay.','cpu':cpu})
  home=out/'home';home.mkdir();env={k:v for k,v in os.environ.items() if not k.startswith(('DOTNET_','COMPlus_','NUGET_')) and k not in ('GITHUB_TOKEN','ACTIONS_RUNTIME_TOKEN','MSBuildSDKsPath','MSBUILD_EXE_PATH')};env.update(DOTNET_ROOT=str(sdk),DOTNET_HOST_PATH=str(sdk/'dotnet.exe'),DOTNET_CLI_HOME=str(home),DOTNET_CLI_TELEMETRY_OPTOUT='1',DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE='true',DOTNET_SKIP_FIRST_TIME_EXPERIENCE='1',DOTNET_EnableDiagnostics='0',DOTNET_NOLOGO='1',DOTNET_PROCESSOR_COUNT='1',MSBUILDDISABLENODEREUSE='1',DOTNET_CLI_USE_MSBUILD_SERVER='0',TESTINGPLATFORM_TELEMETRY_OPTOUT='1')
+ if s['phase']=='product':
+  product=load(HERE/'local_product05.py','own05_local_product','ffd95c9c9fc53aa343fc54983b1ac665763564677d8c4322fec56b7bee6784c5');product.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
  if s['phase']=='inputs':
   native_phase=load(HERE/'local_native05.py','own05_local_native','0e3173463ac6bf762d89e9b8c18835b5237529e1d3015da5b7c36ae42b898aeb');native_phase.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
  if s['phase'] in ('curate','curate-resume','curate-audit-resume'):
@@ -87,7 +89,7 @@ def claim_when_available(lease,holder,seconds=600):
   finally:k.CloseHandle(h)
 
 def parent(args):
- need(args.phase in ('graph','curate','curate-resume','curate-audit-resume','inputs'),'FIXED_PHASE');out=Path(args.out).resolve();need(out.is_relative_to(ROOT.parents[1]/'outputs') and not out.exists(),'OWN_FRESH_OUTPUT');out.mkdir(parents=True);control=load(HERE/'bounded_windows05.py','own05_local_parent_caps',CAPS_SHA);h=host();head=git('rev-parse','HEAD');need(not git('status','--porcelain=v1'),'CLEAN_CURRENT_SOURCE')
+ need(args.phase in ('graph','curate','curate-resume','curate-audit-resume','inputs','product'),'FIXED_PHASE');out=Path(args.out).resolve();need(out.is_relative_to(ROOT.parents[1]/'outputs') and not out.exists(),'OWN_FRESH_OUTPUT');out.mkdir(parents=True);control=load(HERE/'bounded_windows05.py','own05_local_parent_caps',CAPS_SHA);h=host();head=git('rev-parse','HEAD');need(not git('status','--porcelain=v1'),'CLEAN_CURRENT_SOURCE')
  lease=ROOT.parents[2]/'portfolio-management/development-management-20261110/wave2-state/LOCAL-FIXTURE-LEASE.json';token=uuid.uuid4().hex;identity=start_identity();holder={'projectId':'05','randomToken':token,'ownerOS':'Windows','ownerPID':os.getpid(),'ownerProcessStartIdentity':identity,'phase':'own05-local-'+args.phase,'receiptDirectory':str(out)}
  inode,queueEvents=claim_when_available(lease,holder);write(out/'resource-queue.json',{'events':queueEvents,'acquiredByExactOwner':holder,'scope':'Wait before original own row clock; no other owner reset or process termination.'})
  s={'phase':args.phase,'out':str(out),'sdk':str(Path(args.sdk).resolve()),'sharedTools':str(Path(args.shared_tools).resolve()),'host':h,'HEAD':head,'controllerSHA256':sha(__file__),'supervisorPID':os.getpid(),'supervisorStartIdentity':identity,'rowStartedMonotonicNs':time.monotonic_ns()};s['deadlineMonotonicNs']=s['rowStartedMonotonicNs']+1200*10**9;sp=out/'context.json';write(sp,s);failure=None;terminal=False
@@ -100,6 +102,6 @@ def parent(args):
  need(terminal and failure is None and (out/'RESULT.json').exists(),'LOCAL_PHASE_HOLD:'+str(failure));print(json.dumps({'state':'LOCAL05_PHASE_COMPLETE','phase':args.phase,'out':str(out),'HEAD':head}))
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--phase',choices=['graph','curate','curate-resume','curate-audit-resume','inputs']);p.add_argument('--out');p.add_argument('--sdk');p.add_argument('--shared-tools');p.add_argument('--worker',nargs=2);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--phase',choices=['graph','curate','curate-resume','curate-audit-resume','inputs','product']);p.add_argument('--out');p.add_argument('--sdk');p.add_argument('--shared-tools');p.add_argument('--worker',nargs=2);a=p.parse_args()
  if a.worker:worker(a.worker[0],a.worker[1])
  else:parent(a)

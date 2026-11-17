@@ -22,7 +22,7 @@ def main():
     args=['python3',linux(tools/'pg_host.py'),'--fixtures',linux(a.fixtures),'--out',linux(hostdir)]
     if os.name=='nt':args=['wsl','-d','Ubuntu-24.04','--']+args
     hostlog=(out/'host-console.log').open('wb');host=subprocess.Popen(args,stdout=hostlog,stderr=subprocess.STDOUT)
-    environment=os.environ.copy();environment['DOTNET_PROCESSOR_COUNT']='2';children=[];logs=[];history=[];checks=[];expected={};counter=0;input_counter=0;query_count=0;started=time.monotonic()
+    environment=os.environ.copy();environment.setdefault('DOTNET_PROCESSOR_COUNT','2');children=[];logs=[];history=[];checks=[];expected={};counter=0;input_counter=0;query_count=0;started=time.monotonic()
     def wait(path,seconds=90):
         until=time.monotonic()+seconds
         while time.monotonic()<until:

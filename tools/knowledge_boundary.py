@@ -61,7 +61,7 @@ class Client:
         self.environment = os.environ.copy()
         for name in ('REFERENCE_LAB_DB', 'REFERENCE_LAB_PAUSE', 'REFERENCE_LAB_HOOK_DIR'):
             self.environment.pop(name, None)
-        self.environment['DOTNET_PROCESSOR_COUNT'] = '2'
+        self.environment.setdefault('DOTNET_PROCESSOR_COUNT', '2')
         self.started, self.history = time.monotonic(), []
 
     def remaining(self, cap=20):

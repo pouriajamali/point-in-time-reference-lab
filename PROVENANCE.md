@@ -26,8 +26,14 @@ Go Vulnerability Database CC-BY-4.0 license/attribution. Producer path strings
 are observations; fresh runtime reads only reviewed source and archive-relative
 inputs. See docs/ACTIONLINT-BUILD.md for controlled import/default/direct routes.
 
-## Source-only preview.4 boundary
+## Preview.4 maintenance candidate
 
-The technology-refresh branch changes declared framework/compiler/runtime/version pins only. It has no new executable, signed runtime archive, admitted runtime11 notice map, regenerated net11 lockfile or exact-commit CI evidence yet. Old preview.3/bf05702 artifacts and signatures keep their original commits; a filename or version change never upgrades their attribution.
+The SDK11.0.100/net11.0/C#15 candidate uses original signed runtime11.0.0 bytes
+and SDK-generated locks. Raw archive hashes, normalized NuGet content identities,
+CMS/RFC3161 verification and current certificate/CRL/snapshot evidence retain
+separate scopes. No package hash is relabeled between those meanings.
 
-Before target execution, project05 must bind the single reviewed SDK11 producer handoff and its own reviewed controls/native containment. Fresh runtime raw-signed SHA512, normalized NuGet contentHash and full original notice identities remain separate required evidence. New exact-source archives, known-key signatures, public CI and actual downloads each require their later exact gate. The trusted fingerprint and verification procedure above are unchanged.
+Local source/PID/start, native host and own kernel containment are required.
+The host's observed compatibility does not establish hosted CI or new vendor
+certification. Actions was not run by owner instruction. Full native product
+acceptance and public downloads remain separate pending delivery gates.
