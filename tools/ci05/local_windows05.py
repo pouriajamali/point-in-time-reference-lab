@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,ctypes,datetime,hashlib,importlib.util,json,os,platform,subprocess,sys,time,uuid,winreg
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
-CAPS_SHA='691d5056d3e2a156f39b60e57f4ed4061ae22299559d89e046b5960d19a26ab3'
+CAPS_SHA='5d1091df16607fa23deff8ec1f22dc2cc87fd4f0b77d00e9993897ef5e231e6d'
 COMMON_SHA='c37e2f48ee21ef1f02e4afb2bb1cd0af397781e487265c31e43fe06ea182befd'
 class Hold(RuntimeError):pass
 

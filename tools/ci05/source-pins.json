@@ -262,7 +262,7 @@
     {
       "path": "tools/ci05/bounded_windows05.py",
       "mode": "100644",
-      "gitBlob": "2a4db9fd9dc5339af43f6d1611be01f1871b9f60"
+      "gitBlob": "0c10f0561591a5f08f49ac5de577bdd5e5daf413"
     },
     {
       "path": "tools/ci05/ci_root_starter05.py",
@@ -297,12 +297,12 @@
     {
       "path": "tools/ci05/local_windows05.py",
       "mode": "100644",
-      "gitBlob": "7c801be47e63490fd6074efaaf50a11044c8a5b5"
+      "gitBlob": "d6cdb463a733193366f58b08b2ff295c04d8fe4f"
     },
     {
       "path": "tools/ci05/manager-admission.json",
       "mode": "100644",
-      "gitBlob": "bd9c1fd52e7046d3637830d652a428be5f54d55a"
+      "gitBlob": "b55f317124362d41a73ae6649796d4209750fa58"
     },
     {
       "path": "tools/ci05/native_adapter05.py",

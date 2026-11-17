@@ -1,6 +1,6 @@
-LOG_MAX=16*1024*1024
 """Actual aggregate child supervision; library only, never an arbitrary command CLI."""
 from __future__ import annotations
+LOG_MAX=16*1024*1024
 import contextlib, ctypes, hashlib, json, math, os, signal, subprocess, time
 from pathlib import Path
 MEMORY=4294967296
