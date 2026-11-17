@@ -307,7 +307,7 @@
     {
       "path": "tools/ci05/local_managed05.py",
       "mode": "100644",
-      "gitBlob": "ff55f2fa94af034be86e99b7bda79f8864dc51ca"
+      "gitBlob": "dd5c81cab49c9afb954e3a943d4462e40f928324"
     },
     {
       "path": "tools/ci05/local_native05.py",
@@ -317,7 +317,7 @@
     {
       "path": "tools/ci05/local_windows05.py",
       "mode": "100644",
-      "gitBlob": "ff889f51541142387557f514b52e2958fbdd078e"
+      "gitBlob": "0b766667ec523796007e8f52b797e36a7d44fe62"
     },
     {
       "path": "tools/ci05/manager-admission.json",
