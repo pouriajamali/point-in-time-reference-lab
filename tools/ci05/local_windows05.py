@@ -43,7 +43,7 @@ def worker(specpath,digest):
  if s['phase']=='inputs':
   native_phase=load(HERE/'local_native05.py','own05_local_native','0e3173463ac6bf762d89e9b8c18835b5237529e1d3015da5b7c36ae42b898aeb');native_phase.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
  if s['phase']=='curate':
-  managed=load(HERE/'local_managed05.py','own05_local_managed','5f41866888f82490e2a94292e7f108bbc570511e3ad0748f61844dd54dd0eef9');managed.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
+  managed=load(HERE/'local_managed05.py','own05_local_managed','79b941fb9a01dac60cdab69a764dbfc5f706fdd18a0600acbe132612c6d8d0c4');managed.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
  rows=[]
  for project in ('src/Reference.Core/Reference.Core.csproj','src/Reference.Cli/Reference.Cli.csproj','tests/Reference.Tests/Reference.Tests.csproj'):
   contexts=('win-x64','linux-x64') if '/tests/' not in '/'+project else ('framework-dependent',)
