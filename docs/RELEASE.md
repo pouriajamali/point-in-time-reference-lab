@@ -23,3 +23,27 @@ SDK10.0.404, Core/ASP.NET10.0.15 and Npgsql10.0.3 remain the selected applicatio
 Download the Windows x64 ZIP, Linux x64 tar.gz or exact source ZIP together with SHA256SUMS.txt, SHA256SUMS.txt.sig and SIGNING-PUBLIC-KEY.pub. Verify with a separately trusted verifier and fingerprint SHA256:AgU5bZlJSjUu0KsWMmVEEr+BfXpcMVNroTA33bHcQdU, file namespace, principal pouriajamali. The co-downloaded key is not an independent trust root.
 
 Existing preview.1/preview.2 releases, tags, keys and signatures remain immutable. No CV, shared project, paid infrastructure, production deployment or other wave is included.
+
+
+## Local SDK11 maintenance status (2026-11-17)
+
+The local Windows route now records its actual client host, clean source,
+suspended-child Job membership, CPU1/4GiB/64-task caps and terminal teardown.
+Five SDK11 project-graph evaluations passed. The original bounded controller's
+future-import syntax error was repaired without changing its resource limits.
+
+A subsequent isolated restore used the existing20 managed archives and accepted
+Linux apphost bytes. It failed with NU1101 for missing runtime package inputs,
+including WindowsDesktop11.0.0 enumerated by the SDK for RuntimeIdentifiers.
+The SDK's [ProcessFrameworkReferences implementation](https://raw.githubusercontent.com/dotnet/sdk/v11.0.100/src/Tasks/Microsoft.NET.Build.Tasks/ProcessFrameworkReferences.cs)
+processes additional RIDs for known framework packs even without a direct
+application reference. No download-avoidance flag or framework/SDK edit was used.
+Failed-restore private data contains18 unchanged managed version/content pairs
+and prunes the two Microsoft.Extensions Abstractions10.0.0 packages. Complete
+accepted native inputs and reconciliation of that actual generated closure are
+required before source locks, build/tests and new packages proceed.
+
+The unit suite did not execute; this is neither completed product validation nor
+CI success. Actions was not run per owner instruction. Existing preview.3 is the
+released baseline; preview.4 remains unpublished. No branch protection,
+validation, trust, security or billing setting was changed.

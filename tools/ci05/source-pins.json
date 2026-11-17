@@ -62,7 +62,7 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "gitBlob": "596aae327a6a1c95f1af1cb990ac200c66603833"
+      "gitBlob": "b97ee4ecda054b388b80ec7a1d573bf7e46d9720"
     },
     {
       "path": "SIGNING-PUBLIC-KEY.pub",
@@ -97,7 +97,7 @@
     {
       "path": "docs/RELEASE.md",
       "mode": "100644",
-      "gitBlob": "3687bc010fd92f05ff4d217cce07dbb5a0b34e3b"
+      "gitBlob": "fe554bacbbfa9e02b7e0ca659914100981d1ee1a"
     },
     {
       "path": "docs/RUNBOOK.md",
