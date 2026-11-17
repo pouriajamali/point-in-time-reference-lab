@@ -62,7 +62,7 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "gitBlob": "8e9308813bd00491bed4ce56caccca75818b2ec6"
+      "gitBlob": "596aae327a6a1c95f1af1cb990ac200c66603833"
     },
     {
       "path": "SIGNING-PUBLIC-KEY.pub",
@@ -295,9 +295,19 @@
       "gitBlob": "aba8321e13cf99d58f0a0c3030441c007cb2796d"
     },
     {
+      "path": "tools/ci05/local-managed-inputs05.json",
+      "mode": "100644",
+      "gitBlob": "de6f2554dc34fd925cc3219129fd55d11d930e0e"
+    },
+    {
+      "path": "tools/ci05/local_managed05.py",
+      "mode": "100644",
+      "gitBlob": "8a0a6e71cef816723357950b8020fc8b2a7e2ba3"
+    },
+    {
       "path": "tools/ci05/local_windows05.py",
       "mode": "100644",
-      "gitBlob": "d6cdb463a733193366f58b08b2ff295c04d8fe4f"
+      "gitBlob": "c2e2352442ab5996e5012f41eb772ef7ce389112"
     },
     {
       "path": "tools/ci05/manager-admission.json",

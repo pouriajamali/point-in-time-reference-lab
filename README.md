@@ -6,7 +6,7 @@ A late correction can change a later query while leaving an earlier as-known que
 
 Synthetic, literal-loopback-only lab. No real feed, vendor data, historical price reconstruction, orders, account connection, prediction or production service.
 
-## .NET 11 technology refresh — source preparation only
+## .NET 11 technology refresh â€” source preparation only
 
 The `v0.1.0-preview.4` working branch pins SDK11.0.100, `net11.0`, stable C#15 and Core/ASP.NET11.0.0. This is a maintenance candidate, with no feature, schema, temporal contract or performance change claimed.
 
@@ -25,7 +25,7 @@ Npgsql10.0.3, xunit.v3 4.0.3, all application/test code, semantic fixtures and t
 | Uncertain commit is not a new correction | Kill an owned API before/after commit, then resolve with the same identity |
 | A parsed response may still be wrong | Client validates returned intent, instrument, effective time, cutoff and origin revision |
 
-## History page completeness — v0.1.0-preview.3
+## History page completeness â€” v0.1.0-preview.3
 
 The [v0.1.0-preview.3 release](https://github.com/pouriajamali/point-in-time-reference-lab/releases/tag/v0.1.0-preview.3) binds its native packages and source archive to signed source `8c844fe917b0d7b1f4389a635bd7950f1cb839b7`. Its exact-tag Windows/Linux CI and actual signed downloads are separate from the earlier local checkpoints described below. Local source unit runs recorded 51 passing cases on both Windows and Linux, including the twelve new validator vectors. The actual Windows/Linux archives each passed eight package checks and seven wire responses at signed local application checkpoint90130fe; the retained fourteen-case PostgreSQL suite and new seventeen-correction scenario also passed on Linux. It rejects a history page unless it contains exactly `min(16, headRevision-afterRevision)` original receipts with consecutive committed revisions starting at `afterRevision+1`. Receipt validation stays in place. An empty tail with `afterRevision=16` and `headRevision=17` is incomplete even though its entries are trivially ordered.
 
@@ -175,7 +175,10 @@ GitHub runner or turn other consumers' evidence into project05 admission.
 The .NET11 OS table dated2026-09-28 omits26H2, so local test results are observed
 compatibility evidence, not a new Microsoft support certification.
 
-This route starts with SDK project-graph evaluation only. Actual net11 locks,
+Five actual SDK11 project-graph evaluations passed under the own CPU1 Job.
+The fixed managed phase reuses the20 existing package bodies, generates actual
+private Core/test locks, preserves every version/content identity and runs the
+original51 units. It does not apply incomplete product locks. Actual net11 CLI locks,
 raw/normalized package identity, signatures/notices/advisory and the complete
 original product tests are still required before a new package is released.
 The accepted preview.3 release remains the delivery baseline. CI was not run
