@@ -41,9 +41,9 @@ def worker(specpath,digest):
  catalog,fact,schema=common._documents('win-x64');sdk=Path(s['sdk']);need(sdk.is_dir() and not sdk.is_symlink(),'EXISTING_SDK_ONLY');common.verify_tree(sdk,catalog['members'],'win-x64',full=True);write(out/'sdk-input.json',{'SDKPath':str(sdk),'memberManifestSHA256':catalog['memberManifestSha256'],'producerQualifiedOn':fact['qualifiedOn'],'scope':'Historical producer input bytes only; own current caps/host separately observed. No SDK download/copy or common qualification replay.','cpu':cpu})
  home=out/'home';home.mkdir();env={k:v for k,v in os.environ.items() if not k.startswith(('DOTNET_','COMPlus_','NUGET_')) and k not in ('GITHUB_TOKEN','ACTIONS_RUNTIME_TOKEN','MSBuildSDKsPath','MSBUILD_EXE_PATH')};env.update(DOTNET_ROOT=str(sdk),DOTNET_HOST_PATH=str(sdk/'dotnet.exe'),DOTNET_CLI_HOME=str(home),DOTNET_CLI_TELEMETRY_OPTOUT='1',DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE='true',DOTNET_SKIP_FIRST_TIME_EXPERIENCE='1',DOTNET_EnableDiagnostics='0',DOTNET_NOLOGO='1',DOTNET_PROCESSOR_COUNT='1',MSBUILDDISABLENODEREUSE='1',DOTNET_CLI_USE_MSBUILD_SERVER='0',TESTINGPLATFORM_TELEMETRY_OPTOUT='1')
  if s['phase']=='inputs':
-  native_phase=load(HERE/'local_native05.py','own05_local_native','19831ae0b11c5822d1b272c2bb94eaafb4a8c44e160d210db90d69b3b5a88d31');native_phase.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
+  native_phase=load(HERE/'local_native05.py','own05_local_native','0e3173463ac6bf762d89e9b8c18835b5237529e1d3015da5b7c36ae42b898aeb');native_phase.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
  if s['phase']=='curate':
-  managed=load(HERE/'local_managed05.py','own05_local_managed','0ad0d2f261d1ae23ddb9d9828a365f7cb204bb4a5d2f7c785e2f5aa9feca2ae5');managed.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
+  managed=load(HERE/'local_managed05.py','own05_local_managed','d478f603da21dcd3169ba057d12da536ddf9b8ade7560e2426fe4ee7cd8feb2a');managed.run(sys.modules[__name__],s,out,sdk,env,control,common,catalog);return
  rows=[]
  for project in ('src/Reference.Core/Reference.Core.csproj','src/Reference.Cli/Reference.Cli.csproj','tests/Reference.Tests/Reference.Tests.csproj'):
   contexts=('win-x64','linux-x64') if '/tests/' not in '/'+project else ('framework-dependent',)

@@ -43,10 +43,10 @@
       }
     }
   ],
-  "archiveBytesMax": 134217728,
+  "archiveBytesMax": 67108864,
   "allGETsMax": 1,
   "bodyGETsMax": 1,
-  "perBodySeconds": 45,
+  "perBodySeconds": 540,
   "perMetadataSeconds": 15,
   "SDKVerifyCommandsMax": 1,
   "SDKVerifySeconds": 45,
@@ -87,8 +87,16 @@
   "actualPriorBodyFailure": {
     "scope": "native-01 body connection closed before HTTP response; no partial nupkg file exists",
     "stderrSHA256": "5564f4937851ea2dff4f1bbc48ee6f861b59e3e86ad5d4603982e1280161c583",
-    "priorBodyAttempts": 1,
-    "changedMethod": "Use existing producer04 public-original method: explicit direct ProxyHandler({}), Connection:close and original45s socket/absolute budget; no metadata replay.",
-    "currentBodyAttemptsMax": 1
-  }
+    "priorBodyAttempts": 2,
+    "changedMethod": "Same working direct transport; bounded whole-body request within the original635s own work slot and1200s row. Estimated whole-body duration from observed transfer is about514s. Metadata and healthy signature operations are reused; partial data is not appended or reconstructed.",
+    "currentBodyAttemptsMax": 1,
+    "secondAttempt": {
+      "result": "Direct HTTPS body began but reached45s deadline",
+      "observedPartialBytes": 3538944,
+      "declaredBytes": 39246236,
+      "processReceiptSHA256": "bb082075911dbc27c6935c7a2f3cadabe5434a1b931dd4edb64332795c05ebf9",
+      "partialFileRetainedNotResumed": true
+    }
+  },
+  "workSecondsMax": 635
 }
