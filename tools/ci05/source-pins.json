@@ -297,17 +297,17 @@
     {
       "path": "tools/ci05/local-managed-inputs05.json",
       "mode": "100644",
-      "gitBlob": "de6f2554dc34fd925cc3219129fd55d11d930e0e"
+      "gitBlob": "ba015101066dff386ebcc114edaf4af68efb1b23"
     },
     {
       "path": "tools/ci05/local_managed05.py",
       "mode": "100644",
-      "gitBlob": "8a0a6e71cef816723357950b8020fc8b2a7e2ba3"
+      "gitBlob": "5dc72106794d8c7622b742e3d748afb41a53e587"
     },
     {
       "path": "tools/ci05/local_windows05.py",
       "mode": "100644",
-      "gitBlob": "c2e2352442ab5996e5012f41eb772ef7ce389112"
+      "gitBlob": "7e936addd5db962b8b3e8637fe60f0989777164e"
     },
     {
       "path": "tools/ci05/manager-admission.json",

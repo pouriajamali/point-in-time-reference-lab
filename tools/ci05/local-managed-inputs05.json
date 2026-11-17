@@ -165,5 +165,5 @@
     }
   ],
   "historicalSignatureScope": "Exact immutable bodies verified by previous SDK10 NuGet; current restore retains normal signature and audit validation. This is not a new SDK11 shared/native qualification.",
-  "nativeCatalogSHA256": "1f24dedfc1ff63c19948a3a9786431a3b888defbcff70fd3c4e8c827b3cdf4"
+  "nativeCatalogSHA256": "1f24dedfc1ff63c19948a3a9786431a3a3b888defbcff70fd3c4e8c827b3cdf4"
 }

@@ -1,7 +1,7 @@
 """Fixed own05 managed-lock/unit phase; native product admission remains separate."""
 from pathlib import Path
 import hashlib,json,os,shutil,subprocess,tarfile,xml.etree.ElementTree as ET
-PLAN_SHA='88f06dd700ee17b0e260ca0ff3bb4c8f63857d72e3cfa3e14eefaaf2518a256b'
+PLAN_SHA='8f68667e455dbb2ce3de5774baaa6ccd25d0c74fa1467a800ab731efd9e59ca2'
 def run(L,s,out,sdk,env,control,common,catalog):
  root=L.ROOT; base=root.parents[1]; planpath=Path(__file__).with_name('local-managed-inputs05.json');L.need(L.sha(planpath)==PLAN_SHA,'MANAGED_PLAN_SOURCE');plan=L.read(planpath);old=base/'state/acquisition-raw-cache-01/outputs/receipts/A-ACQUISITION-RECEIPT.json';sig=base/'state/execution-evidence/nuget-signature-verification.json';L.need(L.sha(old)==plan['oldAcquisitionReceiptSHA256'] and L.sha(sig)==plan['oldSignatureReceiptSHA256'],'HISTORICAL_REUSE_IDENTITY');L.need(L.read(sig)['status']=='ALL28_SDK_NUGET_VERIFY_SUCCESS','HISTORICAL_VERIFY_SCOPE')
  feed=out/'feed';feed.mkdir();inputs=[]
