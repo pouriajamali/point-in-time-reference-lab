@@ -62,7 +62,7 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "gitBlob": "a1bea0f211bd07a47d3c848691ff3eb5e27a4b63"
+      "gitBlob": "8e9308813bd00491bed4ce56caccca75818b2ec6"
     },
     {
       "path": "SIGNING-PUBLIC-KEY.pub",
@@ -293,6 +293,11 @@
       "path": "tools/ci05/host_fact05.py",
       "mode": "100644",
       "gitBlob": "aba8321e13cf99d58f0a0c3030441c007cb2796d"
+    },
+    {
+      "path": "tools/ci05/local_windows05.py",
+      "mode": "100644",
+      "gitBlob": "7c801be47e63490fd6074efaaf50a11044c8a5b5"
     },
     {
       "path": "tools/ci05/manager-admission.json",

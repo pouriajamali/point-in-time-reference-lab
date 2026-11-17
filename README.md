@@ -162,3 +162,23 @@ Linux14case/23correction/1866point and17newcorrection/19row/18active/page/replay
 checks and verifier8test/27process scope remain required. Existing preview.3 downloads
 and runtime evidence are unchanged. One consolidated exact source/runtime/public
 approval is still required before apply, acquisition, SDK/native work, CI or publication.
+
+
+## Local maintenance route without Actions (2026-11-17)
+
+The owner has disabled Actions for this maintenance task. The separate
+`tools/ci05/local_windows05.py` consumer route uses the actual local Windows11
+client identity and its own suspended-child Job proof (CPU1/4GiB/64 tasks),
+source commit and original1200s clock. It reuses existing exact SDK11 bytes and
+historical input/local compatibility receipts; it does not impersonate a
+GitHub runner or turn other consumers' evidence into project05 admission.
+The .NET11 OS table dated2026-09-28 omits26H2, so local test results are observed
+compatibility evidence, not a new Microsoft support certification.
+
+This route starts with SDK project-graph evaluation only. Actual net11 locks,
+raw/normalized package identity, signatures/notices/advisory and the complete
+original product tests are still required before a new package is released.
+The accepted preview.3 release remains the delivery baseline. CI was not run
+per owner instruction. No workflow, protection, trust or billing setting is
+changed; any later authorized push must use a signed `[skip ci]` HEAD after
+its actual trigger set is checked.
