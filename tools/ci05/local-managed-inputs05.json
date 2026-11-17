@@ -9,7 +9,13 @@
       "filename": "microsoft.applicationinsights.2.23.0.nupkg",
       "bytes": 1737910,
       "rawSHA512": "dd497bfad0c65e54a4f78d2a1644f3d0854d4cd01dd83ba506f8d5d53635e28152c7c13210dd5dd3985780aab146a7620de3ebaead8ef12c6f87088676c2157f",
-      "normalizedContentHash": "nWArUZTdU7iqZLycLKWe0TDms48KKGE6pONH2terYNa8REXiqixrMOkf1sk5DHGMaUTqONU2YkS4SAXBhLStgw=="
+      "normalizedContentHash": "nWArUZTdU7iqZLycLKWe0TDms48KKGE6pONH2terYNa8REXiqixrMOkf1sk5DHGMaUTqONU2YkS4SAXBhLStgw==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-01\\stdout.log",
+        "sha256": "42b2ec2f6e134bc7df36bfcbcdb15185fad75d42ace816fca35b8591cda3771f",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "Microsoft.Bcl.AsyncInterfaces",
@@ -17,7 +23,13 @@
       "filename": "microsoft.bcl.asyncinterfaces.6.0.0.nupkg",
       "bytes": 76354,
       "rawSHA512": "221a05a0c910f7a87b620d8f3831ed392b4eb95d112bee274d35f27009ad2a26445de9d7cd235fe6fb4a03f2550874bda3be3dddd96edaf9c0852a9c23d7b099",
-      "normalizedContentHash": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg=="
+      "normalizedContentHash": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
+      "existingVerifiedRepositorySignerSHA256": "5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-02\\stdout.log",
+        "sha256": "a42f97293df1ab46cbaef8b7e3a7b13b49650df64d1519050da7f8c07fc10dad",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
@@ -25,7 +37,13 @@
       "filename": "microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg",
       "bytes": 285647,
       "rawSHA512": "475254983871f35cd70118fbff743049ec623bd94d1363c13d7c8ae3bb1b9521883a5e0977ad222d8f30b6627f3738695ed3c1892393327d8a158b9fed069123",
-      "normalizedContentHash": "L3AdmZ1WOK4XXT5YFPEwyt0ep6l8lGIPs7F5OOBZc77Zqeo01Of7XXICy47628sdVl0v/owxYJTe86DTgFwKCA=="
+      "normalizedContentHash": "L3AdmZ1WOK4XXT5YFPEwyt0ep6l8lGIPs7F5OOBZc77Zqeo01Of7XXICy47628sdVl0v/owxYJTe86DTgFwKCA==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-03\\stdout.log",
+        "sha256": "f6967c86c65400bde192e9609e10cee211869820c252dcca3e9896df6ccfe91b",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "Microsoft.Extensions.Logging.Abstractions",
@@ -33,7 +51,13 @@
       "filename": "microsoft.extensions.logging.abstractions.10.0.0.nupkg",
       "bytes": 822954,
       "rawSHA512": "0849462f3ea2ee5a06d8ab8a8b13f05f3cf466de66ebbc6a0a9cac4befc91ceb180ae03c42089ab0ca7a26ca7fe5b4ed1a8f73e235e1308d9997c9529c369dd1",
-      "normalizedContentHash": "FU/IfjDfwaMuKr414SSQNTIti/69bHEMb+QKrskRb26oVqpx3lNFXMjs/RC9ZUuhBhcwDM2BwOgoMw+PZ+beqQ=="
+      "normalizedContentHash": "FU/IfjDfwaMuKr414SSQNTIti/69bHEMb+QKrskRb26oVqpx3lNFXMjs/RC9ZUuhBhcwDM2BwOgoMw+PZ+beqQ==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-04\\stdout.log",
+        "sha256": "5d44bf415bbce0bf397d587bbf1707fbd06a3fe3558cc3a1f2a110af7fe6d6ce",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "Microsoft.Testing.Extensions.Telemetry",
@@ -41,7 +65,13 @@
       "filename": "microsoft.testing.extensions.telemetry.2.5.2.nupkg",
       "bytes": 517775,
       "rawSHA512": "9a372a18499687500c9f33fd324450d7f6fc96f78ac86be08b7f39f5bc2f7cd9137eb6513550df82d2b6be4d03cddbf82dc4873cf098e4d3bd0d38bf8338c99c",
-      "normalizedContentHash": "j1XGKCBrmfNm0tmotMa05GlqVtb2cW5UaMkKCFHPyyFHz5rdOy7TD0SVXnZJ+QMrjPAHjRoRqn5qcsUjICSWwg=="
+      "normalizedContentHash": "j1XGKCBrmfNm0tmotMa05GlqVtb2cW5UaMkKCFHPyyFHz5rdOy7TD0SVXnZJ+QMrjPAHjRoRqn5qcsUjICSWwg==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-05\\stdout.log",
+        "sha256": "a2a85252fe340322b8d11b898cc547da8c36fb2db6af32f63cb1c3f229cb6f60",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "Microsoft.Testing.Extensions.TrxReport.Abstractions",
@@ -49,7 +79,13 @@
       "filename": "microsoft.testing.extensions.trxreport.abstractions.2.5.2.nupkg",
       "bytes": 114290,
       "rawSHA512": "74fbdeaf0f237c21dd5eb8edbf5dffa5b7c46625d2d2b29eb26e172d19002e31b476aa8a51dd5bfa560ea241830ec6b710974fd63f719950a16cc741b2e6ac28",
-      "normalizedContentHash": "+xTIaIU9H44GxOyjrfieMSZnxltGvleA3jCRtdEAzlXKb85pMmVYMLUv2JS8KwD+U2wQHUgvy5YfQfWoPEfVdQ=="
+      "normalizedContentHash": "+xTIaIU9H44GxOyjrfieMSZnxltGvleA3jCRtdEAzlXKb85pMmVYMLUv2JS8KwD+U2wQHUgvy5YfQfWoPEfVdQ==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-06\\stdout.log",
+        "sha256": "6887694ac1e002f901d7e89c691e4eff5cefe77da391380a904af128df982000",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "Microsoft.Testing.Platform",
@@ -57,7 +93,13 @@
       "filename": "microsoft.testing.platform.2.5.2.nupkg",
       "bytes": 3792942,
       "rawSHA512": "e8aa808d280c15589f50e11bb9191bd5b81a797ed7d7c24286933ef8d596d6e001a5c9b9665712de50a7f4454cbd35faf84d8f610316840313efe41e1ad1fd7a",
-      "normalizedContentHash": "ocX0rgGY78dKfmZlZe4hB0/dvlh7wJgUAWS+KfwrqxB9DpNsjshnne9dppCKnFNEOkX4QYsrdUU++NInFPiCBw=="
+      "normalizedContentHash": "ocX0rgGY78dKfmZlZe4hB0/dvlh7wJgUAWS+KfwrqxB9DpNsjshnne9dppCKnFNEOkX4QYsrdUU++NInFPiCBw==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-07\\stdout.log",
+        "sha256": "d64767fdc1334657eff74fd85513f91ec0f7f372384879c47812244c802a0690",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "Microsoft.Testing.Platform.MSBuild",
@@ -65,7 +107,13 @@
       "filename": "microsoft.testing.platform.msbuild.2.5.2.nupkg",
       "bytes": 2279673,
       "rawSHA512": "08afa4b6a9a8709b22ec1f8b35a56c859c6fec269c561e0dca3eedbec8eec6615e6b9d8e7739b127b115eed705c8809fa92ab13e643595e9a85ff6dcecd39174",
-      "normalizedContentHash": "Jey2v0hd7WHHa7pr6MRNKtA07FvxcOMTCtIhTI7uBZ/qR5m1mgCVCo5L1rtVAtqgMhGA205bUwq9+is4LiCzpw=="
+      "normalizedContentHash": "Jey2v0hd7WHHa7pr6MRNKtA07FvxcOMTCtIhTI7uBZ/qR5m1mgCVCo5L1rtVAtqgMhGA205bUwq9+is4LiCzpw==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-08\\stdout.log",
+        "sha256": "4609e0329584f34b1f50b24a3e4e1fbe5a539f8b5e0bb77cb05d6f756b2e0b8b",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "Microsoft.Win32.Registry",
@@ -73,7 +121,13 @@
       "filename": "microsoft.win32.registry.5.0.0.nupkg",
       "bytes": 354731,
       "rawSHA512": "471e66567ce59cc86475aece7815d05261264ce114e0c1688ba2551dd51494901fa72dd7a8f74f8e8f0f3dba74af8595f177552f3c06abb4bfce76692197076e",
-      "normalizedContentHash": "dDoKi0PnDz31yAyETfRntsLArTlVAVzUzCIvvEDsDsucrl33Dl8pIJG06ePTJTI3tGpeyHS9Cq7Foc/s4EeKcg=="
+      "normalizedContentHash": "dDoKi0PnDz31yAyETfRntsLArTlVAVzUzCIvvEDsDsucrl33Dl8pIJG06ePTJTI3tGpeyHS9Cq7Foc/s4EeKcg==",
+      "existingVerifiedRepositorySignerSHA256": "0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-09\\stdout.log",
+        "sha256": "5b947900ec0e9e1cb39b9341dd825b999f0dfb803a00a3b3c45b614e33690aae",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "Npgsql",
@@ -81,7 +135,13 @@
       "filename": "npgsql.10.0.3.nupkg",
       "bytes": 1847911,
       "rawSHA512": "f70658951eabd6e2c69c0c41b943ce0a681b4ba483b552b21a4674b4318f6811d86db7440c46a30f4544aeaf96fdd9f78077c9dd6bce75968d34dc9b9c50aea4",
-      "normalizedContentHash": "7nb5YzXuvWWJxB0J8DiyL3we+X4FOctZrt0fIBnucOIaIevFEEwGQVZKtiu9olXdlNAK1eNgqSral6r/jlhI4w=="
+      "normalizedContentHash": "7nb5YzXuvWWJxB0J8DiyL3we+X4FOctZrt0fIBnucOIaIevFEEwGQVZKtiu9olXdlNAK1eNgqSral6r/jlhI4w==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-10\\stdout.log",
+        "sha256": "af65ace81d461429017e63380452e6539537fc77ea44e56279fda86e493ad259",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "System.Security.AccessControl",
@@ -89,7 +149,13 @@
       "filename": "system.security.accesscontrol.6.0.1.nupkg",
       "bytes": 235270,
       "rawSHA512": "e1beba70b45f8cc5ae06fdecf365f0bb5b58b9af6d7c79accfef15b5a7c7bbef65e10cf9f299418eb413aac86ffefaa0eab9d91650ce77cc398d390f0597ed42",
-      "normalizedContentHash": "IQ4NXP/B3Ayzvw0rDQzVTYsCKyy0Jp9KI6aYcK7UnGVlR9+Awz++TIPCQtPYfLJfOpm8ajowMR09V7quD3sEHw=="
+      "normalizedContentHash": "IQ4NXP/B3Ayzvw0rDQzVTYsCKyy0Jp9KI6aYcK7UnGVlR9+Awz++TIPCQtPYfLJfOpm8ajowMR09V7quD3sEHw==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-11\\stdout.log",
+        "sha256": "8d5a29d58109c279700724281899fe97c276254d389ca48c37dace7194909b2b",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "xunit.analyzers",
@@ -97,7 +163,13 @@
       "filename": "xunit.analyzers.2.3.0.nupkg",
       "bytes": 341517,
       "rawSHA512": "0a9a735543bcc89eaf52b2b84c0cfabd914a9e040377fedc16ab8d73ce6ef66b782b710bf69077dfabae0ae5c4c842d1850f803f7ace0436c399231b5a69d232",
-      "normalizedContentHash": "FcuLqoNBgQA4MmQXOdNWsDnlw+LBysWUcWOql6MCTXXFJZPn+qjbxHA9F9KBRiPH0Y97MLr1VE6LxdH8MgKUoQ=="
+      "normalizedContentHash": "FcuLqoNBgQA4MmQXOdNWsDnlw+LBysWUcWOql6MCTXXFJZPn+qjbxHA9F9KBRiPH0Y97MLr1VE6LxdH8MgKUoQ==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-12\\stdout.log",
+        "sha256": "4982bc3e4ffebd7fe2349e1e1a3f233afacde1fe4dffe240fe8851232f8cf63a",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "xunit.v3",
@@ -105,7 +177,13 @@
       "filename": "xunit.v3.4.0.3.nupkg",
       "bytes": 32099,
       "rawSHA512": "72910d8c1348d6122b4c9ac373818ac7ce7df1aed3d578077fc03dd533844a3ed10929eacaec9c2e10d884a79d08ab9d7ae6074bca5954faea4113662b459803",
-      "normalizedContentHash": "GxBopTuV5aU7NS0iE1P6I6YCQscIAP0iIyyZqZhs1c8Ry3cdiOouEtQQpX8cA7E1gEnKGRMNA+7NlhBy13AEyg=="
+      "normalizedContentHash": "GxBopTuV5aU7NS0iE1P6I6YCQscIAP0iIyyZqZhs1c8Ry3cdiOouEtQQpX8cA7E1gEnKGRMNA+7NlhBy13AEyg==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-13\\stdout.log",
+        "sha256": "a035506a9c4d5f1dc7524466a294f00c87722b46f48f3c2e30d3701a425226b1",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "xunit.v3.assert",
@@ -113,7 +191,13 @@
       "filename": "xunit.v3.assert.4.0.3.nupkg",
       "bytes": 293921,
       "rawSHA512": "177366f17701e99d5ee6d8cbec8065818cd1ef28023e012616620f5f034f1e9bdf5ccdb62d5a2052b70be4c007a5359484fd3b0830de6b8ace68b9f73256666b",
-      "normalizedContentHash": "RrlWQ3yXla+ud9JBWDIY9GnUS/DS44r3ObqqV7wdWt1GhS+SveCe0MBDL238VXYoV2mWnX/DhO2LdTq5FTlT7g=="
+      "normalizedContentHash": "RrlWQ3yXla+ud9JBWDIY9GnUS/DS44r3ObqqV7wdWt1GhS+SveCe0MBDL238VXYoV2mWnX/DhO2LdTq5FTlT7g==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-14\\stdout.log",
+        "sha256": "e3d0906563ff3e77959db81562ee24ae076af420fc8aaa60b2fdfd273da80acc",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "xunit.v3.common",
@@ -121,7 +205,13 @@
       "filename": "xunit.v3.common.4.0.3.nupkg",
       "bytes": 170002,
       "rawSHA512": "d3bee9c5d2a6b9b38f8a665892cf2f9e32cd148a8d6d6290017c559cda941bbe421d4124d5b40f528095141d182188ec5cb4a2a9c3d038410b3ff916751c0aa4",
-      "normalizedContentHash": "+2qGz3rcveIxzbXeZVHU8dhMyaawt01mgm/zv1FJH2FPcvJpfTUqc1vQ3hK2V5zVt8QEDddA+B6fkf9/LWf/Pg=="
+      "normalizedContentHash": "+2qGz3rcveIxzbXeZVHU8dhMyaawt01mgm/zv1FJH2FPcvJpfTUqc1vQ3hK2V5zVt8QEDddA+B6fkf9/LWf/Pg==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-15\\stdout.log",
+        "sha256": "f2876d66ada327bbf3da9041ff4e6a22e4d66cd23e466e664de63cfccbbba85f",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "xunit.v3.core.mtp-v2",
@@ -129,7 +219,13 @@
       "filename": "xunit.v3.core.mtp-v2.4.0.3.nupkg",
       "bytes": 434468,
       "rawSHA512": "8f01179acb34758aeb620a0a26a3842e0c7c75d8db44cad726d574b97f0b480bb00bb55c652a144b228cc1856a7fcc7f9fd57c9f7cfef2f0748ae2d7030e413a",
-      "normalizedContentHash": "CsmxEanMln1chMExl6TUjnH5kF0XUDb/SqWKXqnGD8UjpkZARAXi8JDtsUYdxuROcIIdwEfs3iHZeHmTeA8DUA=="
+      "normalizedContentHash": "CsmxEanMln1chMExl6TUjnH5kF0XUDb/SqWKXqnGD8UjpkZARAXi8JDtsUYdxuROcIIdwEfs3iHZeHmTeA8DUA==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-16\\stdout.log",
+        "sha256": "af842fdccc0d885a0b0f6bf80209e235ffabf231cb3284f72089c6bd2bd9148d",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "xunit.v3.extensibility.core",
@@ -137,7 +233,13 @@
       "filename": "xunit.v3.extensibility.core.4.0.3.nupkg",
       "bytes": 383461,
       "rawSHA512": "3f514cd8afaada1a22864fa845cdb3ab7b7d74f7585cead3e4d6eddbfac1ece4835b418dac964c7c83ced9370bc033ca953f6e44c499f4a2e28b1bd85b9eeefa",
-      "normalizedContentHash": "TBYqQKyT+XBDLSHjG6PnmQpooqatflBcWvNiESVS5ptQxWXVf/FGlkUfkNyHKRCUDSCxxHIJNgwO+SRosUmZEw=="
+      "normalizedContentHash": "TBYqQKyT+XBDLSHjG6PnmQpooqatflBcWvNiESVS5ptQxWXVf/FGlkUfkNyHKRCUDSCxxHIJNgwO+SRosUmZEw==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-17\\stdout.log",
+        "sha256": "c72573ef8edbc36ae3e4a191fd94a88db6c691295956451496c94da184019d2b",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "xunit.v3.mtp-v2",
@@ -145,7 +247,13 @@
       "filename": "xunit.v3.mtp-v2.4.0.3.nupkg",
       "bytes": 32233,
       "rawSHA512": "04bc0703bd22cc59c8719d5ca3e680dc5008f8cdeb865d46b930f20dbdfa059c77bdcacecf804d4a0d6920099ae76929c439ebc428fa234e38817f0c1a31a1e3",
-      "normalizedContentHash": "lad1hGmodKkfp3AgIwHVVIYeA9GfW125tnkYj7HvOyiwbDH8gpMKPPhzHRC1wc0w4a+0UsOHx2Ero/DtLXvtqA=="
+      "normalizedContentHash": "lad1hGmodKkfp3AgIwHVVIYeA9GfW125tnkYj7HvOyiwbDH8gpMKPPhzHRC1wc0w4a+0UsOHx2Ero/DtLXvtqA==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-18\\stdout.log",
+        "sha256": "77f506f208afec00cff23e65dfe101a50126cb7d482fefcdc50da34e442d011e",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "xunit.v3.runner.common",
@@ -153,7 +261,13 @@
       "filename": "xunit.v3.runner.common.4.0.3.nupkg",
       "bytes": 531944,
       "rawSHA512": "c490d10b8f110b27625975a6e7e0add5d1eee269f844483fe5f01a0ae50ffa12d591c29550553cfca4f50ebdfc4c2fdfa2c1d50ead2940ffb15b8543240eac26",
-      "normalizedContentHash": "J/kkhBgJg3wu1xI8gY2Esm3oRE47gNrGmKpT/XZDPOzZ3/F33yTK/ZH1CM6qDpAHoTT3GY/JgrVbS4T1JEKYiQ=="
+      "normalizedContentHash": "J/kkhBgJg3wu1xI8gY2Esm3oRE47gNrGmKpT/XZDPOzZ3/F33yTK/ZH1CM6qDpAHoTT3GY/JgrVbS4T1JEKYiQ==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-19\\stdout.log",
+        "sha256": "760085942c4f613fb88b8bdfce31d72c24f703fe6fa275a1035983184cdb5690",
+        "recordedExitCode": 0
+      }
     },
     {
       "id": "xunit.v3.runner.inproc.console",
@@ -161,9 +275,25 @@
       "filename": "xunit.v3.runner.inproc.console.4.0.3.nupkg",
       "bytes": 134619,
       "rawSHA512": "2eaadc0e4acf32baa403bfad007eeff518134e6602c819037c0e8c814b37cd7c86081e04725e102872d5eb5e224fc054010813a5c028097fd5bec14f968644ca",
-      "normalizedContentHash": "lDvNs5exa8rBdWXX/wdapPTp81SNCvUarXC5iXzr1qvO168+Sx/Ytrk9VSLbSD3Y9KNK8PcOjMl1q7JfCoo3LQ=="
+      "normalizedContentHash": "lDvNs5exa8rBdWXX/wdapPTp81SNCvUarXC5iXzr1qvO168+Sx/Ytrk9VSLbSD3Y9KNK8PcOjMl1q7JfCoo3LQ==",
+      "existingVerifiedRepositorySignerSHA256": "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "priorVerifyLog": {
+        "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\state\\execution-evidence\\nuget-verify-20\\stdout.log",
+        "sha256": "f3e1cffadc9488b6925db34c27d299b646614a754debd6c31dea52cda67dee53",
+        "recordedExitCode": 0
+      }
     }
   ],
   "historicalSignatureScope": "Exact immutable bodies verified by previous SDK10 NuGet; current restore retains normal signature and audit validation. This is not a new SDK11 shared/native qualification.",
-  "nativeCatalogSHA256": "1f24dedfc1ff63c19948a3a9786431a3a3b888defbcff70fd3c4e8c827b3cdf4"
+  "nativeCatalogSHA256": "1f24dedfc1ff63c19948a3a9786431a3a3b888defbcff70fd3c4e8c827b3cdf4",
+  "requiredSignaturePolicy": {
+    "mode": "require",
+    "serviceIndex": "https://api.nuget.org/v3/index.json",
+    "repositoryCertificateSHA256": [
+      "0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D",
+      "1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D",
+      "5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4"
+    ],
+    "authority": "Only exact repository signer certificates already present in the twenty frozen bodies and proven by the matching prior native NuGet verify exit0/log/content hash receipts. Native11 packages use the same accepted2024 signer. No trust-store/root/allowUntrustedRoot relaxation."
+  }
 }

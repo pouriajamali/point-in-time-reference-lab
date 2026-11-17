@@ -297,7 +297,7 @@
     {
       "path": "tools/ci05/local-managed-inputs05.json",
       "mode": "100644",
-      "gitBlob": "ba015101066dff386ebcc114edaf4af68efb1b23"
+      "gitBlob": "c6fa63710a1f7c2677c79ba8243dc5451038ccee"
     },
     {
       "path": "tools/ci05/local-native-plan05.json",
@@ -307,7 +307,7 @@
     {
       "path": "tools/ci05/local_managed05.py",
       "mode": "100644",
-      "gitBlob": "f29c60fc484e20a71a6d6c145eedf5577a9d5236"
+      "gitBlob": "5634b06349ce5f419c2aaba5b8f6a8bb39019d39"
     },
     {
       "path": "tools/ci05/local_native05.py",
@@ -317,7 +317,7 @@
     {
       "path": "tools/ci05/local_windows05.py",
       "mode": "100644",
-      "gitBlob": "4ec16aaef6880f49f3bf2b4ec96ec492a04917bd"
+      "gitBlob": "8bea2c347491418ac5e14e5cba7ada1e50f0b381"
     },
     {
       "path": "tools/ci05/manager-admission.json",
