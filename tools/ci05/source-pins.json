@@ -302,22 +302,22 @@
     {
       "path": "tools/ci05/local-native-plan05.json",
       "mode": "100644",
-      "gitBlob": "2ff9f3986240a7423f1c405971c56500963237b0"
+      "gitBlob": "c28c1eb1114d1238fc76f96606d4aa8d0f3c3b4c"
     },
     {
       "path": "tools/ci05/local_managed05.py",
       "mode": "100644",
-      "gitBlob": "a785adeeddd9a17f626013b4b5761fcec1f7fbac"
+      "gitBlob": "669facfffb7d823412199a0b55e68e1f45b4a866"
     },
     {
       "path": "tools/ci05/local_native05.py",
       "mode": "100644",
-      "gitBlob": "4a5b5cd6307a798b1bee5cc1b30a7b10df5c4adb"
+      "gitBlob": "a176d91c18e0220c1a8362ffab1791d3f80529e2"
     },
     {
       "path": "tools/ci05/local_windows05.py",
       "mode": "100644",
-      "gitBlob": "3a2474ba0bf5bf51e4405a22a0da6e2d3cfba39c"
+      "gitBlob": "c23e95d9b75cddc04fc30d61292f97eca5915612"
     },
     {
       "path": "tools/ci05/manager-admission.json",

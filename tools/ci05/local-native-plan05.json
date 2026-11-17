@@ -30,11 +30,21 @@
       "url": "https://api.nuget.org/v3-flatcontainer/microsoft.windowsdesktop.app.runtime.win-x64/11.0.0/microsoft.windowsdesktop.app.runtime.win-x64.11.0.0.nupkg",
       "metadataDiscovery": "https://api.nuget.org/v3/registration5-semver1/microsoft.windowsdesktop.app.runtime.win-x64/11.0.0.json",
       "declaredBytes": null,
-      "catalogDeclaredSHA512": null
+      "catalogDeclaredSHA512": null,
+      "reusedMetadata": {
+        "registration": {
+          "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\outputs\\tech-refresh-m0-20261114\\local05-20261117\\native-01\\desktop-registration.json",
+          "sha256": "47d29d0949de7563bee33b111c0e0f46bc75f90c199c3eed541eabe32dd8ced9"
+        },
+        "catalog": {
+          "path": "E:\\Codex WorkSpace\\Git Projects\\point-in-time-reference-lab\\outputs\\tech-refresh-m0-20261114\\local05-20261117\\native-01\\desktop-catalog.json",
+          "sha256": "5d97c9a7348e30955d6dd73cb139cd337459113a071d991fe7fbd6a7340eb430"
+        }
+      }
     }
   ],
   "archiveBytesMax": 134217728,
-  "allGETsMax": 3,
+  "allGETsMax": 1,
   "bodyGETsMax": 1,
   "perBodySeconds": 45,
   "perMetadataSeconds": 15,
@@ -73,5 +83,12 @@
     "path": "E:/Codex WorkSpace/Git Projects/portfolio-management/development-management-20261110/wave4-state/project04-shared-normal-final-20261117/ORDINARY01-DATA-HANDOFF.json",
     "sha256": "81dbd8b82a2c4d24f5fcaa8664e3dda0cc3e7bd76095ca288809dc4e0d174786"
   },
-  "methodSHA256": "e882af75dc56a5a0f9eb9b4101f2ccaf88141fa3ced9037ea0fd7b1eb357ed74"
+  "methodSHA256": "e882af75dc56a5a0f9eb9b4101f2ccaf88141fa3ced9037ea0fd7b1eb357ed74",
+  "actualPriorBodyFailure": {
+    "scope": "native-01 body connection closed before HTTP response; no partial nupkg file exists",
+    "stderrSHA256": "5564f4937851ea2dff4f1bbc48ee6f861b59e3e86ad5d4603982e1280161c583",
+    "priorBodyAttempts": 1,
+    "changedMethod": "Use existing producer04 public-original method: explicit direct ProxyHandler({}), Connection:close and original45s socket/absolute budget; no metadata replay.",
+    "currentBodyAttemptsMax": 1
+  }
 }

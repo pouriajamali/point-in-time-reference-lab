@@ -1,7 +1,7 @@
 """Own05 finite Windows package DATA acquisition/verification. Shared evidence stays immutable."""
 from pathlib import Path
 import argparse,base64,ctypes,hashlib,json,os,re,shutil,sys,time,urllib.request,xml.etree.ElementTree as ET
-PLAN_SHA='9d55a5b592fde4300a18ff597bf670bb7935b76b614a4d6e3be5d13bc872050d'
+PLAN_SHA='79168b613d6dee10eab557ac2ad68fe463c160a15f94855fbc217ec49e463ba6'
 DESKTOP='microsoft.windowsdesktop.app.runtime.win-x64'
 class Hold(RuntimeError):pass
 def need(v,c):
@@ -21,8 +21,8 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
  def redirect_request(self,*args,**kwargs):raise Hold('NO_REDIRECT')
 def fetch(specpath,digest):
  need(sha(specpath)==digest,'FETCH_SPEC_IDENTITY');s=json.loads(Path(specpath).read_bytes());allowed_url(s['url'],s['kind']);need(sha(__file__)==s['sourceSHA256'],'FETCH_SOURCE_IDENTITY');end=s['deadlineMonotonicNs'];limit=s['limit'];start=time.monotonic();count=0;h256=hashlib.sha256();h512=hashlib.sha512();need(not Path(s['destination']).exists(),'FRESH_FETCH_OUTPUT')
- opener=urllib.request.build_opener(NoRedirect());request=urllib.request.Request(s['url'],headers={'User-Agent':'point-in-time-reference-own05-inputs','Accept-Encoding':'identity'})
- with opener.open(request,timeout=min(10,max(.1,(end-time.monotonic_ns())/1e9))) as response,Path(s['destination']).open('xb') as f:
+ opener=urllib.request.build_opener(urllib.request.ProxyHandler({}),NoRedirect());request=urllib.request.Request(s['url'],headers={'User-Agent':'point-in-time-reference-own05-inputs','Accept-Encoding':'identity','Connection':'close'})
+ with opener.open(request,timeout=max(.1,(end-time.monotonic_ns())/1e9)) as response,Path(s['destination']).open('xb') as f:
   need(response.status==200 and response.geturl()==s['url'],'HTTP_STATUS_OR_URL');cl=response.headers.get_all('Content-Length',[]);te=response.headers.get_all('Transfer-Encoding',[]);ce=response.headers.get_all('Content-Encoding',[]);need(len(cl)<=1 and len(te)<=1 and len(ce)<=1 and (not ce or ce[0].lower()=='identity'),'HTTP_HEADER_COUNTS_ENCODING');need((len(cl)==1 and not te and re.fullmatch(r'[0-9]+',cl[0]) and int(cl[0])<=limit) or (not cl and te==['chunked']),'HTTP_BOUNDED_FRAMING')
   while True:
    need(time.monotonic_ns()<end,'FETCH_ABSOLUTE_DEADLINE');chunk=response.read(65536)
@@ -43,7 +43,7 @@ def run(L,s,out,sdk,env,control,common,catalog):
   if 'existingBody' in row:
    src=Path(row['existingBody']);need(src.stat().st_size==row['declaredBytes'] and sha(src)==row['rawSHA256'],'EXACT_REUSED_RAW_BODY');shutil.copyfile(src,dest);normalized=row['normalizedNuGetContentHash'];a=original.index(('Verifying '+id+'.11.0.0').encode());z=original.index(("Successfully verified package '"+id+".11.0.0'.").encode(),a);block=original[a:z+len(("Successfully verified package '"+id+".11.0.0'.").encode())];verified=V.content_hash(block,id,'11.0.0',0,{'id':id,'version':'11.0.0','sha256':sha(dest)});need(verified['normalizedNuGetContentHash']==normalized,'REUSED_NORMALIZED_HASH');signature={'reused':True,'receipt':plan['reusedSignatureReceipt'],'normalized':verified}
   else:
-   reg=get(row['metadataDiscovery'],'registration',out/'desktop-registration.json',131072,15);registration=json.loads(reg.read_bytes());uri=registration['catalogEntry'];cat=get(uri,'catalog',out/'desktop-catalog.json',2097152,15);metadata=json.loads(cat.read_bytes());need(metadata['id'].lower()==DESKTOP and metadata['version']=='11.0.0' and metadata['packageHashAlgorithm']=='SHA512' and metadata['licenseExpression']=='MIT' and 0<metadata['packageSize']<=plan['archiveBytesMax'],'DESKTOP_CATALOG_IDENTITY');row['declaredBytes']=metadata['packageSize'];row['catalogDeclaredSHA512']=metadata['packageHash'];get(row['url'],'body',dest,row['declaredBytes'],45);need(dest.stat().st_size==row['declaredBytes'],'DESKTOP_DECLARED_LENGTH');normalized=None;signature=None
+   metadataRefs=row['reusedMetadata'];need(all(sha(ref['path'])==ref['sha256'] for ref in metadataRefs.values()),'EXACT_EXISTING_DESKTOP_METADATA');registration=json.loads(Path(metadataRefs['registration']['path']).read_bytes());allowed_url(registration['catalogEntry'],'catalog');metadata=json.loads(Path(metadataRefs['catalog']['path']).read_bytes());need(metadata['id'].lower()==DESKTOP and metadata['version']=='11.0.0' and metadata['packageHashAlgorithm']=='SHA512' and metadata['licenseExpression']=='MIT' and 0<metadata['packageSize']<=plan['archiveBytesMax'],'DESKTOP_CATALOG_IDENTITY');row['declaredBytes']=metadata['packageSize'];row['catalogDeclaredSHA512']=metadata['packageHash'];get(row['url'],'body',dest,row['declaredBytes'],45);need(dest.stat().st_size==row['declaredBytes'],'DESKTOP_DECLARED_LENGTH');normalized=None;signature=None
   with dest.open('rb') as f:raw512=hashlib.file_digest(f,'sha512').digest()
   need(base64.b64encode(raw512).decode()==row.get('rawSHA512Base64',row['catalogDeclaredSHA512']),'OFFICIAL_RAW_BODY_IDENTITY');directory=out/('package-'+str(index));directory.mkdir();members=[];retained=[]
   def emit(x):members.append(x);need(len(members)<=10000,'NATIVE_MEMBER_COUNT')

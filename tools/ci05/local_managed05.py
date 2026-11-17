@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,os,shutil,subprocess,time,xml.etree.ElementTree as ET
 PLAN_SHA='8f68667e455dbb2ce3de5774baaa6ccd25d0c74fa1467a800ab731efd9e59ca2'
-NATIVE_HELPER_SHA='5f546fc3d271445546fa9988d3e4eb8b61abe3250b41de28a5f5085db820c948'
+NATIVE_HELPER_SHA='19831ae0b11c5822d1b272c2bb94eaafb4a8c44e160d210db90d69b3b5a88d31'
 PRUNED={'microsoft.extensions.dependencyinjection.abstractions','microsoft.extensions.logging.abstractions'}
 def run(L,s,out,sdk,env,control,common,catalog):
  root=L.ROOT;base=root.parents[1];write=L.write;planpath=Path(__file__).with_name('local-managed-inputs05.json');L.need(L.sha(planpath)==PLAN_SHA,'MANAGED_PLAN_SOURCE');plan=L.read(planpath);old=base/'state/acquisition-raw-cache-01/outputs/receipts/A-ACQUISITION-RECEIPT.json';sig=base/'state/execution-evidence/nuget-signature-verification.json';L.need(L.sha(old)==plan['oldAcquisitionReceiptSHA256'] and L.sha(sig)==plan['oldSignatureReceiptSHA256'],'HISTORICAL_REUSE_IDENTITY');L.need(L.read(sig)['status']=='ALL28_SDK_NUGET_VERIFY_SUCCESS','HISTORICAL_VERIFY_SCOPE')
@@ -16,7 +16,7 @@ def run(L,s,out,sdk,env,control,common,catalog):
   name=p['id'].lower()+'.11.0.0.nupkg';src=nativebase/name;L.need(src.stat().st_size==p['rawSignedArchive']['bytes'],'LINUX_NATIVE_LENGTH')
   with src.open('rb') as f:L.need(hashlib.file_digest(f,'sha512').hexdigest()==p['rawSignedArchive']['sha512'],'LINUX_NATIVE_BODY')
   shutil.copyfile(src,feed/name);selected[p['id'].lower()]='11.0.0'
- nr=base/'outputs/tech-refresh-m0-20261114/local05-20261117/native-01/RESULT.json';win=L.read(nr);ctx=L.read(nr.parent/'context.json');L.need(win['state']=='OWN05_THREE_WINDOWS_NATIVE_RAW_SIGNATURE_NORMALIZED_NOTICES_VERIFIED' and L.read(nr.parent/'LEASE-RELEASED.json')['ownedWorkerTerminal'],'ACTUAL_OWN_NATIVE_RECEIPT');helper=subprocess.check_output(['git','show',ctx['HEAD']+':tools/ci05/local_native05.py'],cwd=root,timeout=10);L.need(hashlib.sha256(helper).hexdigest()==NATIVE_HELPER_SHA and win['sourceCommit']==ctx['HEAD'],'NATIVE_SOURCE_PROVENANCE');L.need(0<=time.time()-win['certificateCurrentProofReused']['nativeVerifiedAtUnix']<=86400,'CURRENT_PKI_SNAPSHOT_WINDOW')
+ nr=base/'outputs/tech-refresh-m0-20261114/local05-20261117/native-02/RESULT.json';win=L.read(nr);ctx=L.read(nr.parent/'context.json');L.need(win['state']=='OWN05_THREE_WINDOWS_NATIVE_RAW_SIGNATURE_NORMALIZED_NOTICES_VERIFIED' and L.read(nr.parent/'LEASE-RELEASED.json')['ownedWorkerTerminal'],'ACTUAL_OWN_NATIVE_RECEIPT');helper=subprocess.check_output(['git','show',ctx['HEAD']+':tools/ci05/local_native05.py'],cwd=root,timeout=10);L.need(hashlib.sha256(helper).hexdigest()==NATIVE_HELPER_SHA and win['sourceCommit']==ctx['HEAD'],'NATIVE_SOURCE_PROVENANCE');L.need(0<=time.time()-win['certificateCurrentProofReused']['nativeVerifiedAtUnix']<=86400,'CURRENT_PKI_SNAPSHOT_WINDOW')
  for p in win['packages']:
   a=p['rawArchive'];src=Path(a['path']);L.need(L.sha(src)==a['sha256'] and src.stat().st_size==a['bytes'],'WINDOWS_NATIVE_EXACT_BODY');shutil.copyfile(src,feed/(p['id'].lower()+'.11.0.0.nupkg'));selected[p['id'].lower()]='11.0.0'
  write(out/'reused-inputs.json',{'managed':inputs,'nativeLinuxCatalogSHA256':L.sha(nativepath),'nativeWindowsReceiptSHA256':L.sha(nr),'qualificationReplayed':False,'newNetworkBodies':0,'feedPackages':len(list(feed.iterdir()))})
