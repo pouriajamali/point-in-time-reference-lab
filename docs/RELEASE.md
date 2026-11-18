@@ -1,24 +1,34 @@
-# v0.1.0-preview.4 - .NET11 maintenance candidate, unpublished
+# v0.1.0-preview.4 - .NET11 maintenance release
 
-SDK11.0.100, net11.0, C#15 and Core/ASP.NET11.0.0 are pinned. Npgsql10.0.3,
-xunit.v3 4.0.3, all original application semantics and acceptance cases remain.
-The actual SDK generated all three locks and passed both RID contexts. Its
-normal framework pruning removed two Microsoft.Extensions Abstractions10.0.0
-entries; all18 retained version/content identities stayed exact.
+SDK11.0.100, net11.0, stable C#15 and Core/ASP.NET11.0.0; Npgsql10.0.3 and
+xunit.v3 4.0.3 remain pinned. Application features, schema, temporal semantics,
+fixtures and independent acceptance oracles are unchanged. No benchmark claim.
 
-Windows Core/ASP.NET original bodies and healthy signature receipts were reused.
-WindowsDesktop11.0.0 was acquired and natively verified; the existing Windows
-apphost input was verified separately. Linux's three accepted native inputs were
-reused by exact body identity. Full original runtime notices and current complete
-advisory data were checked for the27-package input closure. Signature validation
-remains required and pinned to repository certificates already verified for the
-frozen inputs; no untrusted root or audit exception was added.
+All three SDK-generated locks passed both RID contexts. Eighteen retained managed
+version/content identities are unchanged; SDK framework pruning removed the two
+Microsoft.Extensions Abstractions10.0.0 entries. Required signature validation,
+the already-verified repository signer pins, full original notices and complete
+current advisory data remain active. WindowsDesktop is an input, not a shipped
+framework; the shipped graph is Npgsql plus Core and ASP.NET runtimes.
 
-A dotnet restore --runtime check narrowed the RID set and failed NU1004. Target
-RuntimeIdentifier properties preserve the original declared RuntimeIdentifiers
-and the SDK-generated lock bytes. Successful operations were retained without
-replay. This is input/lock evidence; complete native product tests and release
-remain pending. Actions was not run per owner instruction. Preview.3 is retained.
+Both native archives bind signed source `625b1335aaf76a28fc1e7416c0187d356eaa60d8` and its exact tree.
+Each passed 51 units, eight native package checks, seven wire responses and the
+eight-test/27-subprocess signature-verifier suite. Linux additionally passed the
+original PostgreSQL18.6 14-case/23-correction/1,866-point matrix and the
+17-correction/19-row/18-active history/page/replay/conflict scenario.
+
+Windows was tested locally on Windows11 26H2/build26300; the reviewed official
+.NET11 OS table omits26H2, so this is observed compatibility. Linux was tested
+locally on Ubuntu24.04.5/WSL2 kernel6.18.33.2. No vendor or hosted-CI certification
+is inferred. GitHub Actions was not run by owner instruction.
+
+The immutable runtime/source archives retain the README and release-note snapshot
+present when source625b133 was built. Those embedded pending-publication statements
+are historical; this repository page and the release entry record final delivery.
+Healthy Windows tests and its archive were retained byte-for-byte, without replay.
+
+
+Download and verification instructions: [release](https://github.com/pouriajamali/point-in-time-reference-lab/releases/tag/v0.1.0-preview.4), [README](../README.md) and [PROVENANCE](../PROVENANCE.md). The two native archives, exact Git source ZIP, SHA256SUMS, SSH signature and public key are the six release assets. A co-downloaded key is not an independent trust root.
 
 ## v0.1.0-preview.3 — Point-in-Time Instrument Reference Lab
 
@@ -36,12 +46,3 @@ Download the Windows x64 ZIP, Linux x64 tar.gz or exact source ZIP together with
 
 Existing preview.1/preview.2 releases, tags, keys and signatures remain immutable. No CV, shared project, paid infrastructure, production deployment or other wave is included.
 
-
-Windows local validation completed at signed source
-`625b1335aaf76a28fc1e7416c0187d356eaa60d8`:51 units,8 native package checks,
-7 wire responses and verifier8 tests/27 subprocess scenarios passed on the actual
-self-contained archive. This is local Windows evidence, with Actions0.
-Linux native acceptance is pending: Ubuntu-24.04 reports Running, but minimal
-read-only guest commands time out. Distribution termination/restart requires the
-owner's decision because it can interrupt other processes in that distribution.
-Preview.4 remains unpublished; preview.3 is the public download baseline.

@@ -52,7 +52,7 @@
     {
       "path": "PROVENANCE.md",
       "mode": "100644",
-      "gitBlob": "9af3535364227b42646205db1bd55007bf034454"
+      "gitBlob": "4bc140da5135252417aa635f94ed4dfc52495220"
     },
     {
       "path": "PointInTimeReference.slnx",
@@ -62,7 +62,7 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "gitBlob": "50c3ce1436f9055f33a6803e60483bd54e27718c"
+      "gitBlob": "fa4410d4ec5958789c2e812aadcd93dfb6e3b32b"
     },
     {
       "path": "SIGNING-PUBLIC-KEY.pub",
@@ -97,7 +97,7 @@
     {
       "path": "docs/RELEASE.md",
       "mode": "100644",
-      "gitBlob": "60f475b5a6416a677b7fd35463f89a5778b6373c"
+      "gitBlob": "c8376d0bd8a99ad071ac3dd02f8b29bb161f9bfb"
     },
     {
       "path": "docs/RUNBOOK.md",

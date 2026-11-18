@@ -6,7 +6,7 @@ A late correction can change a later query while leaving an earlier as-known que
 
 Synthetic, literal-loopback-only lab. No real feed, vendor data, historical price reconstruction, orders, account connection, prediction or production service.
 
-## .NET11 maintenance candidate
+## .NET11 maintenance release
 
 Version `0.1.0-preview.4` pins SDK11.0.100, `net11.0`, stable C#15 and
 Core/ASP.NET11.0.0. Features, schema, temporal semantics and performance claims
@@ -20,10 +20,13 @@ full original license/notice mappings and the current complete advisory snapshot
 were verified separately. WindowsDesktop is a restore input, not a shipped app
 framework. The shipped graph remains Npgsql plus Core and ASP.NET runtimes.
 
-Full native product acceptance and publication remain pending. The existing
-[preview.3 downloads](https://github.com/pouriajamali/point-in-time-reference-lab/releases/tag/v0.1.0-preview.3)
-remain the published baseline. Candidate source or input qualification is not a
-new downloadable release, successful CI, production or vendor certification.
+Native Windows/Linux acceptance passed. [Preview.4 downloads](https://github.com/pouriajamali/point-in-time-reference-lab/releases/tag/v0.1.0-preview.4) use
+SDK11.0.100 and Core/ASP.NET11.0.0; preview.3 remains historical.
+
+Both native archives and the source ZIP bind signed application source
+`625b1335aaf76a28fc1e7416c0187d356eaa60d8`. They passed the original native
+acceptance below. Actions was not run by owner instruction. Embedded archive
+documents remain an immutable build-time snapshot; this page records delivery.
 
 ## Decision and proof first
 
@@ -59,7 +62,7 @@ This version closes a newly allocated connection if opening fails or is cancelle
 
 ## Run the preview
 
-Preview version: [`v0.1.0-preview.3`](https://github.com/pouriajamali/point-in-time-reference-lab/releases/tag/v0.1.0-preview.3). Download **[Windows x64](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.3/point-in-time-reference-lab-v0.1.0-preview.3-win-x64.zip)**, **[Linux x64](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.3/point-in-time-reference-lab-v0.1.0-preview.3-linux-x64.tar.gz)** or [source](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.3/point-in-time-reference-lab-v0.1.0-preview.3-source.zip). Get the [checksums](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.3/SHA256SUMS.txt), [checksum signature](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.3/SHA256SUMS.txt.sig) and [public key](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.3/SIGNING-PUBLIC-KEY.pub); verify downloaded bytes with [PROVENANCE.md](PROVENANCE.md) before executing them. Local builds and CI artifacts are separate from published releases.
+Preview version: [`v0.1.0-preview.4`](https://github.com/pouriajamali/point-in-time-reference-lab/releases/tag/v0.1.0-preview.4). Download **[Windows x64](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.4/point-in-time-reference-lab-v0.1.0-preview.4-win-x64.zip)**, **[Linux x64](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.4/point-in-time-reference-lab-v0.1.0-preview.4-linux-x64.tar.gz)** or [source](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.4/point-in-time-reference-lab-v0.1.0-preview.4-source.zip). Get the [checksums](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.4/SHA256SUMS.txt), [checksum signature](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.4/SHA256SUMS.txt.sig) and [public key](https://github.com/pouriajamali/point-in-time-reference-lab/releases/download/v0.1.0-preview.4/SIGNING-PUBLIC-KEY.pub); verify downloaded bytes with [PROVENANCE.md](PROVENANCE.md) before execution. The self-contained bundles require no installed .NET SDK. This release uses direct signed local delivery; Actions was not run.
 
 Windows PowerShell, from the extracted package:
 
@@ -118,7 +121,7 @@ flowchart LR
 
 ## Build
 
-Historical preview.3 release source: exact SDK10.0.404 / .NET10.0.15 / C#14 / Npgsql10.0.3. Local source restore/build/unit runs passed with all three managed lockfiles unchanged. Source units and published native-package proof are separate gates:
+Current preview.4 source: exact SDK11.0.100 / .NET11.0.0 / C#15 / Npgsql10.0.3. Use the SDK-generated locks with ordinary signature validation and audit-all enabled. Preview.3 historically used SDK10.0.404 / .NET10.0.15 / C#14:
 
 ```sh
 dotnet restore PointInTimeReference.slnx --locked-mode
@@ -126,7 +129,7 @@ dotnet build PointInTimeReference.slnx -c Release --no-restore -m:1
 dotnet run --project tests/Reference.Tests -c Release --no-build -- -result-xml artifacts/unit.xml
 ```
 
-Private preparation from the sealed local package source adds `-p:DisableTransitiveFrameworkReferenceDownloads=true` to avoid prefetching framework families that no project directly references. Required Core/ASP.NET .15 packs, default signature validation and audit-all remain enabled. Hosted CI uses its ordinary online restore route.
+Historical .NET10 private preparation from the sealed local package source added `-p:DisableTransitiveFrameworkReferenceDownloads=true` to avoid prefetching framework families that no project directly references. Required Core/ASP.NET .15 packs, default signature validation and audit-all remain enabled. Hosted CI uses its ordinary online restore route.
 
 See [temporal contract](docs/CONTRACT.md), [decisions](docs/ADR.md), [runbook](docs/RUNBOOK.md), [notices](NOTICE.md) and [provenance](PROVENANCE.md). Native local execution, local cross-builds, public CI and actual public downloads are separate evidence. Original code is MIT; private/shared assets and career materials remain outside scope.
 
@@ -143,7 +146,7 @@ The separate [maintainer actionlint build](docs/ACTIONLINT-BUILD.md) now consume
 Fresh CI/contributor lint imports the exact reviewed public sealed archive; no
 producer drive/private receipts or local compiler are required. Managed task
 checkouts retain the canonical gate. See [native profile and signed input setup](docs/ACTIONLINT-BUILD.md).
-The shared sealed input was published and independently downloaded at [its tooling tag](https://github.com/pouriajamali/data-admission-gate/releases/tag/tooling-actionlint-v1.7.12-go1.26.11-r1); [producer bootstrap CI](https://github.com/pouriajamali/data-admission-gate/actions/runs/43275123686) applies to that producer only. Consumer CPU1 and app packages use their own exact preview.3 CI evidence.
+The shared sealed input was published and independently downloaded at [its tooling tag](https://github.com/pouriajamali/data-admission-gate/releases/tag/tooling-actionlint-v1.7.12-go1.26.11-r1); [producer bootstrap CI](https://github.com/pouriajamali/data-admission-gate/actions/runs/43275123686) applies to that producer only. Historical preview.3 consumer CPU1 and app packages have their own exact-tag CI evidence. Current preview.4 uses the local native proof above, with Actions not run.
 
 
 ## Local maintenance without Actions
@@ -167,11 +170,19 @@ page/replay/conflict scenario. Packages are released only after their own actual
 acceptance. The current local inputs are not global SDK or other-consumer admission.
 
 
-Windows local validation completed at signed source
-`625b1335aaf76a28fc1e7416c0187d356eaa60d8`:51 units,8 native package checks,
-7 wire responses and verifier8 tests/27 subprocess scenarios passed on the actual
-self-contained archive. This is local Windows evidence, with Actions0.
-Linux native acceptance is pending: Ubuntu-24.04 reports Running, but minimal
-read-only guest commands time out. Distribution termination/restart requires the
-owner's decision because it can interrupt other processes in that distribution.
-Preview.4 remains unpublished; preview.3 is the public download baseline.
+Both native archives bind signed source `625b1335aaf76a28fc1e7416c0187d356eaa60d8` and its exact tree.
+Each passed 51 units, eight native package checks, seven wire responses and the
+eight-test/27-subprocess signature-verifier suite. Linux additionally passed the
+original PostgreSQL18.6 14-case/23-correction/1,866-point matrix and the
+17-correction/19-row/18-active history/page/replay/conflict scenario.
+
+Windows was tested locally on Windows11 26H2/build26300; the reviewed official
+.NET11 OS table omits26H2, so this is observed compatibility. Linux was tested
+locally on Ubuntu24.04.5/WSL2 kernel6.18.33.2. No vendor or hosted-CI certification
+is inferred. GitHub Actions was not run by owner instruction.
+
+The immutable runtime/source archives retain the README and release-note snapshot
+present when source625b133 was built. Those embedded pending-publication statements
+are historical; this repository page and the release entry record final delivery.
+Healthy Windows tests and its archive were retained byte-for-byte, without replay.
+
