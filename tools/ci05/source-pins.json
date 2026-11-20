@@ -62,7 +62,7 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "gitBlob": "fa4410d4ec5958789c2e812aadcd93dfb6e3b32b"
+      "gitBlob": "208dd045d7d86f254553eee74ad4bfa0a3304f02"
     },
     {
       "path": "SIGNING-PUBLIC-KEY.pub",
@@ -93,6 +93,11 @@
       "path": "docs/CONTRACT.md",
       "mode": "100644",
       "gitBlob": "1ee7deb00c5305f3687acd26dafc3cdb7b93bf74"
+    },
+    {
+      "path": "docs/MAINTENANCE-HISTORY.md",
+      "mode": "100644",
+      "gitBlob": "6ba4028a9945de347dacf367d0b3ce5e239b3a0f"
     },
     {
       "path": "docs/RELEASE.md",
